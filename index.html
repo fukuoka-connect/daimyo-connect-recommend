@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAIMYOU CONNECT RECOMMEND MAP｜縁のある店を地図で辿る</title>
+<meta name="description" content="ラジオ番組「DAIMYOU CONNECT」に縁のある飲食店・バー・ショップを地図で探せる福岡の観光レコメンドマップ。大名・薬院・博多・野間・糟屋・唐津エリア。">
+<meta property="og:title" content="DAIMYOU CONNECT RECOMMEND MAP">
+<meta property="og:description" content="DAIMYOU CONNECTに縁のある店を地図で辿る">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daimyo-connect-recommend.vercel.app/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<style>
+:root{
+  --bg:#f6f1e8;
+  --bg-2:#ece3d0;
+  --paper:#fffdf8;
+  --ink:#1e1a14;
+  --ink-2:#3a3226;
+  --muted:#7a6e5a;
+  --line:#231e17;
+  --accent:#c5402a;      /* 紅・のれん色 */
+  --accent-2:#d87a2c;    /* アンバー */
+  --accent-3:#4a6b3a;    /* ねぎ色 */
+  --gold:#b8944a;
+  --shadow: 3px 3px 0 var(--line);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;height:100%}
+body{
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 10% 0%, rgba(197,64,42,0.04) 0, transparent 40%),
+    radial-gradient(circle at 90% 100%, rgba(216,122,44,0.05) 0, transparent 40%),
+    repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(35,30,23,0.012) 3px, rgba(35,30,23,0.012) 4px);
+}
+
+/* ===== Header ===== */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:600;
+  background:var(--paper);
+  border-bottom:1.5px solid var(--line);
+  padding:10px 14px;
+}
+.site-header-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.brand-logo{
+  font-family:"Shippori Mincho",serif;
+  font-weight:800;
+  font-size:1.05rem;
+  letter-spacing:0.04em;
+  color:var(--accent);
+  line-height:1;
+}
+.brand-sub{
+  font-size:0.7rem;
+  color:var(--muted);
+  letter-spacing:0.08em;
+}
+.header-count{
+  font-size:0.75rem;
+  color:var(--muted);
+  padding:4px 10px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--bg-2);
+}
+
+/* ===== Hero ===== */
+.hero{
+  padding:28px 18px 14px;
+  text-align:center;
+  max-width:920px;
+  margin:0 auto;
+}
+.hero-tag{
+  display:inline-block;
+  font-family:"Shippori Mincho",serif;
+  font-size:0.78rem;
+  color:var(--accent);
+  letter-spacing:0.2em;
+  padding:4px 14px;
+  border-top:1px solid var(--accent);
+  border-bottom:1px solid var(--accent);
+  margin-bottom:12px;
+}
+.hero-title{
+  font-family:"Shippori Mincho",serif;
+  font-weight:800;
+  font-size:clamp(1.4rem, 4vw, 2rem);
+  line-height:1.35;
+  letter-spacing:0.04em;
+  margin:0 0 10px;
+}
+.hero-title .ink-accent{color:var(--accent)}
+.hero-lead{
+  font-size:0.9rem;
+  color:var(--ink-2);
+  line-height:1.7;
+  margin:0;
+  max-width:640px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* ===== Filter bar ===== */
+.filter-bar{
+  max-width:1200px;
+  margin:14px auto 0;
+  padding:0 14px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.filter-label{
+  font-size:0.72rem;
+  color:var(--muted);
+  font-weight:700;
+  letter-spacing:0.08em;
+  margin-right:4px;
+}
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  padding:5px 12px;
+  background:var(--paper);
+  border:1.5px solid var(--line);
+  border-radius:999px;
+  font-size:0.78rem;
+  font-weight:500;
+  cursor:pointer;
+  transition:transform .15s, background .15s, color .15s;
+  user-select:none;
+}
+.chip:hover{background:var(--bg-2)}
+.chip.active{
+  background:var(--accent);
+  color:var(--paper);
+  font-weight:700;
+}
+.chip.chip-genre.active{background:var(--accent-2)}
+.chip.chip-reset{
+  background:transparent;
+  border-style:dashed;
+  color:var(--muted);
+  font-size:0.72rem;
+}
+.chip.chip-reset:hover{
+  color:var(--ink);
+  border-style:solid;
+  background:var(--paper);
+}
+
+.filter-group{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.filter-divider{
+  width:1px;
+  background:var(--line);
+  opacity:0.2;
+  align-self:stretch;
+  margin:0 6px;
+}
+
+/* ===== Layout (map + list) ===== */
+.layout{
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:16px;
+  max-width:1200px;
+  margin:16px auto;
+  padding:0 14px;
+}
+@media(max-width:900px){
+  .layout{
+    grid-template-columns:1fr;
+  }
+}
+
+/* ===== Map panel ===== */
+.map-panel{
+  background:var(--paper);
+  border:1.5px solid var(--line);
+  position:relative;
+  height:70vh;
+  min-height:480px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+#map{width:100%;height:100%;background:#dedfd9}
+.leaflet-container{font-family:inherit}
+
+/* Custom marker */
+.marker-pin{
+  position:relative;
+  width:32px;
+  height:40px;
+  cursor:pointer;
+}
+.marker-pin::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:50%;
+  width:28px;
+  height:28px;
+  background:var(--accent);
+  border:2px solid var(--line);
+  border-radius:50% 50% 50% 0;
+  transform:translateX(-50%) rotate(-45deg);
+  box-shadow:1.5px 1.5px 0 var(--line);
+}
+.marker-pin .marker-label{
+  position:absolute;
+  top:6px;
+  left:50%;
+  transform:translateX(-50%);
+  color:var(--paper);
+  font-weight:900;
+  font-size:0.72rem;
+  z-index:2;
+  text-shadow:0 1px 0 rgba(0,0,0,0.25);
+  pointer-events:none;
+}
+.marker-pin.genre-bar::before{background:var(--accent)}
+.marker-pin.genre-wa::before{background:var(--accent-3)}
+.marker-pin.genre-food::before{background:var(--accent-2)}
+.marker-pin.genre-hair::before{background:var(--gold)}
+.marker-pin.genre-beach::before{background:#4a7a9b}
+
+.marker-pin.is-active::before{
+  transform:translateX(-50%) rotate(-45deg) scale(1.25);
+  box-shadow:2px 2px 0 var(--line), 0 0 0 4px rgba(197,64,42,0.2);
+}
+
+/* ===== List panel ===== */
+.list-panel{
+  background:var(--paper);
+  border:1.5px solid var(--line);
+  height:70vh;
+  min-height:480px;
+  display:flex;
+  flex-direction:column;
+  box-shadow:var(--shadow);
+}
+@media(max-width:900px){
+  .list-panel{height:auto;max-height:60vh;min-height:300px}
+  .map-panel{height:55vh;min-height:380px}
+}
+.list-head{
+  padding:10px 14px;
+  border-bottom:1px solid var(--line);
+  background:var(--bg-2);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:0.78rem;
+  font-weight:700;
+  letter-spacing:0.05em;
+}
+.list-head .count{
+  color:var(--muted);
+  font-weight:500;
+}
+.list-body{
+  flex:1;
+  overflow-y:auto;
+  padding:4px 0;
+}
+.shop-item{
+  padding:12px 14px;
+  border-bottom:1px dashed rgba(35,30,23,0.15);
+  cursor:pointer;
+  transition:background .15s;
+}
+.shop-item:last-child{border-bottom:none}
+.shop-item:hover{background:var(--bg-2)}
+.shop-item.is-active{background:rgba(197,64,42,0.07);border-left:3px solid var(--accent);padding-left:11px}
+.shop-item-top{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  align-items:baseline;
+  margin-bottom:4px;
+}
+.shop-item-name{
+  font-family:"Shippori Mincho",serif;
+  font-weight:700;
+  font-size:1rem;
+  line-height:1.3;
+}
+.shop-item-area{
+  font-size:0.68rem;
+  color:var(--muted);
+  padding:2px 8px;
+  border:1px solid var(--muted);
+  border-radius:999px;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.shop-item-tags{
+  display:flex;
+  gap:4px;
+  flex-wrap:wrap;
+  margin-top:4px;
+}
+.tag-pill{
+  font-size:0.65rem;
+  color:var(--ink-2);
+  background:var(--bg-2);
+  padding:1px 7px;
+  border-radius:999px;
+  border:1px solid rgba(35,30,23,0.15);
+}
+.tag-pill.genre{background:rgba(216,122,44,0.15);border-color:rgba(216,122,44,0.35)}
+
+/* ===== Detail overlay ===== */
+.detail-backdrop{
+  position:fixed;
+  inset:0;
+  background:rgba(30,26,20,0.55);
+  z-index:900;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s;
+}
+.detail-backdrop.is-open{opacity:1;pointer-events:auto}
+
+.detail{
+  position:fixed;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%) scale(0.94);
+  width:min(560px,94vw);
+  max-height:88vh;
+  background:var(--paper);
+  border:2px solid var(--line);
+  box-shadow:6px 6px 0 var(--line);
+  z-index:1000;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s, transform .25s;
+  display:flex;
+  flex-direction:column;
+}
+.detail.is-open{
+  opacity:1;
+  pointer-events:auto;
+  transform:translate(-50%,-50%) scale(1);
+}
+.detail-header{
+  padding:14px 18px 10px;
+  background:var(--accent);
+  color:var(--paper);
+  border-bottom:2px solid var(--line);
+  position:relative;
+}
+.detail-close{
+  position:absolute;
+  top:8px;
+  right:10px;
+  width:30px;height:30px;
+  background:var(--paper);
+  color:var(--ink);
+  border:1.5px solid var(--line);
+  border-radius:50%;
+  font-size:1rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+.detail-area{
+  font-size:0.7rem;
+  letter-spacing:0.15em;
+  opacity:0.9;
+  margin-bottom:2px;
+}
+.detail-name{
+  font-family:"Shippori Mincho",serif;
+  font-weight:800;
+  font-size:1.35rem;
+  line-height:1.3;
+  letter-spacing:0.03em;
+  padding-right:30px;
+}
+.detail-body{
+  padding:16px 18px;
+  overflow-y:auto;
+  flex:1;
+}
+.detail-reason{
+  background:var(--bg-2);
+  border-left:3px solid var(--accent);
+  padding:10px 12px;
+  font-size:0.86rem;
+  line-height:1.7;
+  color:var(--ink-2);
+  margin-bottom:14px;
+}
+.detail-meta{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:14px;
+}
+.meta-row{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-size:0.85rem;
+  line-height:1.55;
+}
+.meta-icon{
+  flex-shrink:0;
+  width:22px;
+  font-size:0.85rem;
+  color:var(--accent);
+  font-weight:700;
+  padding-top:1px;
+}
+.meta-row a{color:var(--accent);text-decoration:underline;word-break:break-all}
+.meta-row a:hover{color:var(--accent-2)}
+
+.detail-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-bottom:12px;
+}
+.detail-tags .tag-pill{font-size:0.72rem;padding:2px 10px}
+
+.hours-box{
+  background:#fff;
+  border:1px solid rgba(35,30,23,0.15);
+  padding:8px 12px;
+  font-size:0.78rem;
+  margin-bottom:14px;
+  line-height:1.6;
+}
+.hours-row{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:2px 0;
+  border-bottom:1px dashed rgba(35,30,23,0.1);
+}
+.hours-row:last-child{border-bottom:none}
+.hours-row .day{font-weight:700;color:var(--ink-2);flex-shrink:0;width:3em}
+.hours-row .time{color:var(--ink-2)}
+.hours-row.is-today{background:rgba(197,64,42,0.06);padding-left:6px;padding-right:6px;margin-left:-6px;margin-right:-6px}
+.hours-row.is-today .day{color:var(--accent)}
+.hours-note{
+  font-size:0.72rem;
+  color:var(--muted);
+  margin-top:4px;
+  padding-top:4px;
+  border-top:1px dashed rgba(35,30,23,0.15);
+}
+
+.detail-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:14px;
+}
+.action-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:10px;
+  background:var(--paper);
+  border:1.5px solid var(--line);
+  font-size:0.8rem;
+  font-weight:700;
+  text-decoration:none;
+  color:var(--ink);
+  cursor:pointer;
+  transition:transform .1s;
+}
+.action-btn:hover{background:var(--bg-2)}
+.action-btn:active{transform:translate(1px,1px)}
+.action-btn.primary{background:var(--accent);color:var(--paper);border-color:var(--line)}
+
+.related-title{
+  font-family:"Shippori Mincho",serif;
+  font-weight:700;
+  font-size:0.86rem;
+  margin-bottom:8px;
+  padding-bottom:4px;
+  border-bottom:1.5px solid var(--line);
+}
+.related-grid{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+.related-chip{
+  padding:4px 10px;
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:0.75rem;
+  cursor:pointer;
+  transition:background .15s;
+}
+.related-chip:hover{background:var(--accent-2);color:var(--paper)}
+
+/* ===== Footer ===== */
+.footer{
+  max-width:1200px;
+  margin:40px auto 0;
+  padding:22px 18px 30px;
+  border-top:1px solid rgba(35,30,23,0.15);
+  font-size:0.72rem;
+  color:var(--muted);
+  text-align:center;
+  line-height:1.7;
+}
+.footer a{color:var(--muted);text-decoration:underline}
+.footer a:hover{color:var(--accent)}
+.footer .brand-credit{
+  font-family:"Shippori Mincho",serif;
+  font-weight:700;
+  color:var(--accent);
+  font-size:0.8rem;
+  letter-spacing:0.05em;
+  margin-bottom:4px;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <div class="brand">
+      <span class="brand-logo">DAIMYOU CONNECT</span>
+      <span class="brand-sub">RECOMMEND MAP</span>
+    </div>
+    <span class="header-count" id="headerCount">0 shops</span>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="hero-tag">DAIMYOU CONNECT RECOMMEND MAP</span>
+  <h1 class="hero-title">
+    <span class="ink-accent">縁のある店</span>を、<br>地図で辿る福岡。
+  </h1>
+  <p class="hero-lead">
+    ラジオ番組「DAIMYOU CONNECT」と縁のある飲食店・バー・ショップ。<br>
+    店主同士、エリア、ジャンル ─ 有機的につながる福岡のレコメンドMAP。
+  </p>
+</section>
+
+<div class="filter-bar">
+  <div class="filter-group" id="areaFilter">
+    <span class="filter-label">エリア</span>
+  </div>
+  <div class="filter-divider"></div>
+  <div class="filter-group" id="genreFilter">
+    <span class="filter-label">ジャンル</span>
+  </div>
+  <div class="filter-divider"></div>
+  <button class="chip chip-reset" id="resetFilter">すべて表示</button>
+</div>
+
+<div class="layout">
+  <div class="map-panel">
+    <div id="map"></div>
+  </div>
+  <aside class="list-panel">
+    <div class="list-head">
+      <span>SHOPS</span>
+      <span class="count" id="listCount">0 件</span>
+    </div>
+    <div class="list-body" id="listBody"></div>
+  </aside>
+</div>
+
+<!-- Detail Overlay -->
+<div class="detail-backdrop" id="detailBackdrop"></div>
+<aside class="detail" id="detail" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="detail-header">
+    <button class="detail-close" id="detailClose" aria-label="閉じる">×</button>
+    <div class="detail-area" id="detailArea"></div>
+    <div class="detail-name" id="detailName"></div>
+  </div>
+  <div class="detail-body" id="detailBody"></div>
+</aside>
+
+<footer class="footer">
+  <div class="brand-credit">DAIMYOU CONNECT RECOMMEND MAP</div>
+  Powered by <a href="https://fukuoka-connect.github.io/">Fukuoka Connect</a>
+  ｜ チケット取扱店MAP: <a href="https://daimyo-connect.vercel.app/">DAIMYOU CONNECT 2026</a>
+  <br>
+  掲載情報は<span id="updated"></span>時点。変更がある場合は各店舗SNSをご確認ください。
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+/* ============================================
+   DAIMYOU CONNECT RECOMMEND MAP  — main.js
+   ============================================ */
+
+const STATE = {
+  data: null,
+  filteredIds: new Set(),
+  activeId: null,
+  activeAreaFilter: null,
+  activeGenreFilter: null,
+  markers: {},
+  map: null
+};
+
+const GENRE_CLASS = {
+  "バー": "genre-bar",
+  "BAR": "genre-bar",
+  "居酒屋": "genre-bar",
+  "和食": "genre-wa",
+  "定食": "genre-wa",
+  "海鮮": "genre-wa",
+  "焼きそば": "genre-food",
+  "洋食": "genre-food",
+  "ダイニング": "genre-food",
+  "立ち飲み": "genre-bar",
+  "BEACH HOUSE": "genre-beach",
+  "理美容": "genre-hair"
+};
+
+const DAY_LABELS = { mon:"月", tue:"火", wed:"水", thu:"木", fri:"金", sat:"土", sun:"日" };
+const DAY_ORDER = ["mon","tue","wed","thu","fri","sat","sun"];
+const TODAY_KEY = DAY_ORDER[(new Date().getDay()+6)%7]; // convert Sun=0 → index
+
+/* ---- load ---- */
+async function init(){
+  const res = await fetch("./data.json?v=" + Date.now());
+  const data = await res.json();
+  STATE.data = data;
+  document.getElementById("updated").textContent = data.meta.updated;
+
+  buildFilters();
+  initMap();
+  applyFilter();
+}
+
+/* ---- filters ---- */
+function buildFilters(){
+  const { shops } = STATE.data;
+  const areas = [...new Set(shops.map(s=>s.area))];
+  const genres = [...new Set(shops.flatMap(s=>s.genre))].sort();
+
+  const areaFilter = document.getElementById("areaFilter");
+  areas.forEach(a=>{
+    const c = document.createElement("button");
+    c.className="chip chip-area";
+    c.textContent = a;
+    c.dataset.area = a;
+    c.onclick = ()=> toggleAreaFilter(a, c);
+    areaFilter.appendChild(c);
+  });
+
+  const genreFilter = document.getElementById("genreFilter");
+  genres.forEach(g=>{
+    const c = document.createElement("button");
+    c.className="chip chip-genre";
+    c.textContent = g;
+    c.dataset.genre = g;
+    c.onclick = ()=> toggleGenreFilter(g, c);
+    genreFilter.appendChild(c);
+  });
+
+  document.getElementById("resetFilter").onclick = ()=>{
+    STATE.activeAreaFilter = null;
+    STATE.activeGenreFilter = null;
+    document.querySelectorAll(".chip.chip-area, .chip.chip-genre").forEach(c=>c.classList.remove("active"));
+    applyFilter();
+  };
+}
+
+function toggleAreaFilter(area, el){
+  if(STATE.activeAreaFilter === area){
+    STATE.activeAreaFilter = null;
+    el.classList.remove("active");
+  }else{
+    document.querySelectorAll(".chip.chip-area").forEach(c=>c.classList.remove("active"));
+    STATE.activeAreaFilter = area;
+    el.classList.add("active");
+  }
+  applyFilter();
+}
+
+function toggleGenreFilter(genre, el){
+  if(STATE.activeGenreFilter === genre){
+    STATE.activeGenreFilter = null;
+    el.classList.remove("active");
+  }else{
+    document.querySelectorAll(".chip.chip-genre").forEach(c=>c.classList.remove("active"));
+    STATE.activeGenreFilter = genre;
+    el.classList.add("active");
+  }
+  applyFilter();
+}
+
+function applyFilter(){
+  const { shops } = STATE.data;
+  const ids = new Set();
+  shops.forEach(s=>{
+    if(STATE.activeAreaFilter && s.area !== STATE.activeAreaFilter) return;
+    if(STATE.activeGenreFilter && !s.genre.includes(STATE.activeGenreFilter)) return;
+    ids.add(s.id);
+  });
+  STATE.filteredIds = ids;
+
+  renderList();
+  updateMarkers();
+}
+
+/* ---- map ---- */
+function initMap(){
+  const { shops } = STATE.data;
+  const bounds = L.latLngBounds(shops.map(s=>[s.lat, s.lng]));
+
+  const map = L.map("map", {
+    zoomControl: true,
+    scrollWheelZoom: true,
+    attributionControl: true
+  }).fitBounds(bounds, { padding:[30,30] });
+
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/voyager_labels_under/{z}/{x}/{y}{r}.png", {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    subdomains: "abcd",
+    maxZoom: 20
+  }).addTo(map);
+
+  STATE.map = map;
+
+  shops.forEach(s=>{
+    const cls = getPinGenreClass(s.genre);
+    const label = getPinLabel(s.genre);
+    const icon = L.divIcon({
+      className:"",
+      html:`<div class="marker-pin ${cls}" data-id="${s.id}"><span class="marker-label">${label}</span></div>`,
+      iconSize:[32,40],
+      iconAnchor:[16,38]
+    });
+    const marker = L.marker([s.lat, s.lng], { icon })
+      .addTo(map)
+      .on("click", ()=> openDetail(s.id));
+    STATE.markers[s.id] = marker;
+  });
+}
+
+function getPinGenreClass(genres){
+  if(!Array.isArray(genres) || !genres.length) return "genre-bar";
+  for(const g of genres){
+    if(GENRE_CLASS[g]) return GENRE_CLASS[g];
+  }
+  return "genre-bar";
+}
+function getPinLabel(genres){
+  if(!Array.isArray(genres) || !genres.length) return "?";
+  const first = genres[0];
+  if(first.includes("バー")||first.includes("BAR")) return "B";
+  if(first.includes("居酒屋")) return "酒";
+  if(first.includes("和食")||first.includes("定食")) return "和";
+  if(first.includes("焼きそば")) return "焼";
+  if(first.includes("海鮮")) return "海";
+  if(first.includes("BEACH")) return "🏖";
+  if(first.includes("理美容")) return "髪";
+  return "★";
+}
+
+function updateMarkers(){
+  Object.entries(STATE.markers).forEach(([id, marker])=>{
+    const el = marker.getElement();
+    if(!el) return;
+    if(STATE.filteredIds.has(id)){
+      el.style.display = "";
+    }else{
+      el.style.display = "none";
+    }
+  });
+}
+
+/* ---- list ---- */
+function renderList(){
+  const body = document.getElementById("listBody");
+  const count = document.getElementById("listCount");
+  const headerCount = document.getElementById("headerCount");
+  const { shops } = STATE.data;
+
+  const shown = shops.filter(s=>STATE.filteredIds.has(s.id));
+  count.textContent = `${shown.length} 件`;
+  headerCount.textContent = `${shown.length} / ${shops.length} shops`;
+
+  body.innerHTML = shown.map(s=>{
+    const tagsHtml = [
+      ...(s.genre || []).slice(0,2).map(g=>`<span class="tag-pill genre">${g}</span>`),
+      ...(s.tags || []).slice(0,2).map(t=>`<span class="tag-pill">${t}</span>`)
+    ].join("");
+    return `
+      <div class="shop-item ${STATE.activeId===s.id?'is-active':''}" data-id="${s.id}">
+        <div class="shop-item-top">
+          <span class="shop-item-name">${s.name}</span>
+          <span class="shop-item-area">${s.area}</span>
+        </div>
+        <div class="shop-item-tags">${tagsHtml}</div>
+      </div>
+    `;
+  }).join("") || '<div style="padding:20px;text-align:center;color:var(--muted);font-size:0.85rem;">条件に合う店舗がありません</div>';
+
+  body.querySelectorAll(".shop-item").forEach(el=>{
+    el.onclick = ()=>{
+      const id = el.dataset.id;
+      openDetail(id);
+      const shop = STATE.data.shops.find(s=>s.id===id);
+      if(shop && STATE.map){
+        STATE.map.flyTo([shop.lat, shop.lng], 15, { duration: 0.6 });
+      }
+    };
+  });
+}
+
+/* ---- detail overlay ---- */
+function openDetail(id){
+  const shop = STATE.data.shops.find(s=>s.id===id);
+  if(!shop) return;
+
+  STATE.activeId = id;
+  renderList(); // to refresh active highlight
+
+  document.getElementById("detailArea").textContent = shop.area;
+  document.getElementById("detailName").textContent = shop.name;
+
+  const genreTags = (shop.genre || []).map(g=>`<span class="tag-pill genre">${g}</span>`).join("");
+  const normalTags = (shop.tags || []).map(t=>`<span class="tag-pill">${t}</span>`).join("");
+
+  const snsLinks = Object.entries(shop.sns || {}).filter(([,v])=>v).map(([k,v])=>{
+    const label = { instagram:"Instagram", x:"X", tiktok:"TikTok", facebook:"Facebook", line:"LINE", youtube:"YouTube" }[k] || k;
+    return `<a href="${v}" target="_blank" rel="noopener">${label}</a>`;
+  }).join(" / ");
+
+  const gmap = shop.google_place_id
+    ? `https://www.google.com/maps/place/?q=place_id:${shop.google_place_id}`
+    : `https://www.google.com/maps/search/?api=1&query=${shop.lat},${shop.lng}`;
+  const gmapDir = `https://www.google.com/maps/dir/?api=1&destination=${shop.lat},${shop.lng}`;
+
+  const metaRows = [
+    shop.addr && `<div class="meta-row"><span class="meta-icon">📍</span><span>${shop.addr}</span></div>`,
+    shop.tel && `<div class="meta-row"><span class="meta-icon">☎</span><a href="tel:${shop.tel}">${shop.tel}</a></div>`,
+    shop.hours_summary && `<div class="meta-row"><span class="meta-icon">🕒</span><span>${shop.hours_summary}</span></div>`,
+    shop.web && `<div class="meta-row"><span class="meta-icon">🌐</span><a href="${shop.web}" target="_blank" rel="noopener">${shop.web}</a></div>`,
+    snsLinks && `<div class="meta-row"><span class="meta-icon">📱</span><span>${snsLinks}</span></div>`,
+    shop.owner && `<div class="meta-row"><span class="meta-icon">👤</span><span>${shop.owner}</span></div>`
+  ].filter(Boolean).join("");
+
+  // Hours box
+  let hoursHtml = "";
+  const hd = shop.hours_detail || {};
+  const hasDay = DAY_ORDER.some(d=>hd[d]);
+  if(hasDay){
+    const rows = DAY_ORDER.map(d=>{
+      const time = hd[d] || "—";
+      const isToday = d === TODAY_KEY;
+      return `<div class="hours-row ${isToday?'is-today':''}">
+        <span class="day">${DAY_LABELS[d]}</span>
+        <span class="time">${time}</span>
+      </div>`;
+    }).join("");
+    const note = hd.note ? `<div class="hours-note">※ ${hd.note}</div>` : "";
+    hoursHtml = `<div class="hours-box">${rows}${note}</div>`;
+  }
+
+  // Related
+  const related = (shop.related || [])
+    .map(rid => STATE.data.shops.find(s=>s.id===rid))
+    .filter(Boolean);
+  const relatedHtml = related.length
+    ? `<div class="related-title">つながり</div>
+       <div class="related-grid">${
+         related.map(r=>`<span class="related-chip" data-id="${r.id}">${r.name} <small style="color:var(--muted);font-size:0.7em">/ ${r.area}</small></span>`).join("")
+       }</div>`
+    : "";
+
+  document.getElementById("detailBody").innerHTML = `
+    ${shop.recommend_reason ? `<div class="detail-reason">${shop.recommend_reason}</div>` : ""}
+    <div class="detail-tags">${genreTags}${normalTags}</div>
+    <div class="detail-meta">${metaRows}</div>
+    ${hoursHtml}
+    <div class="detail-actions">
+      <a class="action-btn primary" href="${gmapDir}" target="_blank" rel="noopener">🧭 ルート案内</a>
+      <a class="action-btn" href="${gmap}" target="_blank" rel="noopener">📍 Googleマップ</a>
+    </div>
+    ${relatedHtml}
+  `;
+
+  // Related click handlers
+  document.querySelectorAll("#detailBody .related-chip").forEach(el=>{
+    el.onclick = ()=>{
+      const rid = el.dataset.id;
+      openDetail(rid);
+      const r = STATE.data.shops.find(s=>s.id===rid);
+      if(r && STATE.map) STATE.map.flyTo([r.lat, r.lng], 15, { duration: 0.6 });
+    };
+  });
+
+  const detail = document.getElementById("detail");
+  const backdrop = document.getElementById("detailBackdrop");
+  detail.classList.add("is-open");
+  detail.setAttribute("aria-hidden","false");
+  backdrop.classList.add("is-open");
+
+  // Highlight active marker
+  document.querySelectorAll(".marker-pin").forEach(el=>el.classList.remove("is-active"));
+  const mEl = document.querySelector(`.marker-pin[data-id="${id}"]`);
+  if(mEl) mEl.classList.add("is-active");
+}
+
+function closeDetail(){
+  STATE.activeId = null;
+  document.getElementById("detail").classList.remove("is-open");
+  document.getElementById("detail").setAttribute("aria-hidden","true");
+  document.getElementById("detailBackdrop").classList.remove("is-open");
+  document.querySelectorAll(".marker-pin").forEach(el=>el.classList.remove("is-active"));
+  renderList();
+}
+
+document.getElementById("detailClose").addEventListener("click", closeDetail);
+document.getElementById("detailBackdrop").addEventListener("click", closeDetail);
+document.addEventListener("keydown", (e)=>{
+  if(e.key === "Escape") closeDetail();
+});
+
+init();
+</script>
+</body>
+</html>

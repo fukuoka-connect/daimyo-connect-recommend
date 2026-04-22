@@ -1,0 +1,502 @@
+{
+  "meta": {
+    "title": "DAIMYOU CONNECT RECOMMEND MAP",
+    "subtitle": "DAIMYOU CONNECT に縁のある店・人・場所",
+    "description": "ラジオ番組「DAIMYOU CONNECT」と縁のある飲食店・バー・ショップを地図と有機的なつながりで辿る観光レコメンドMAP",
+    "updated": "2026-04-22"
+  },
+  "categories": {
+    "genre": [
+      "居酒屋",
+      "バー",
+      "BAR",
+      "ダイニング",
+      "和食",
+      "洋食",
+      "焼きそば",
+      "定食",
+      "海鮮",
+      "立ち飲み",
+      "BEACH HOUSE",
+      "理美容"
+    ],
+    "tags": [
+      "ひとり歓迎",
+      "深夜営業",
+      "朝から営業",
+      "ランチあり",
+      "個室あり",
+      "テラスあり",
+      "駐車場あり",
+      "ペット可",
+      "キッズ歓迎",
+      "禁煙",
+      "予約推奨",
+      "カード可",
+      "現金のみ",
+      "英語対応",
+      "オーナー交流好き"
+    ]
+  },
+  "owners": [],
+  "shops": [
+    {
+      "id": "oneday",
+      "name": "晩酌bar ONEDAY",
+      "area": "大名",
+      "addr": "〒810-0041 福岡県福岡市中央区大名1-10-6 日宝サンセーヌ舞鶴 202",
+      "lat": 33.5867924,
+      "lng": 130.3934889,
+      "genre": ["バー", "居酒屋"],
+      "tags": ["深夜営業", "ひとり歓迎"],
+      "hours_detail": {
+        "mon": "21:00-翌3:00",
+        "tue": "21:00-翌3:00",
+        "wed": "21:00-翌3:00",
+        "thu": "21:00-翌3:00",
+        "fri": "21:00-翌3:00",
+        "sat": "21:00-翌3:00",
+        "sun": "21:00-翌3:00",
+        "note": "毎日営業"
+      },
+      "hours_summary": "毎日 21:00〜翌3:00",
+      "tel": "",
+      "web": "",
+      "sns": {
+        "instagram": "https://www.instagram.com/oneday_banshakubar/"
+      },
+      "owner": "",
+      "related": ["koji", "mintbar", "komatakao", "comstand", "pinonbar"],
+      "recommend_reason": "DAIMYOU CONNECT の震源地的な大名のバー。遅い時間にふらっと立ち寄れる店主の顔が見える一軒。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "koji",
+      "name": "酒場コージ",
+      "area": "大名",
+      "addr": "〒810-0041 福岡県福岡市中央区大名1-9-18 大名Fビル 102",
+      "lat": 33.5870928,
+      "lng": 130.3920722,
+      "genre": ["居酒屋"],
+      "tags": ["深夜営業", "ひとり歓迎"],
+      "hours_detail": { "note": "営業時間要確認" },
+      "hours_summary": "",
+      "tel": "092-762-2662",
+      "web": "",
+      "sns": {
+        "instagram": "https://www.instagram.com/skb_ko_zi/"
+      },
+      "owner": "",
+      "related": ["oneday", "mintbar", "komatakao", "comstand", "pinonbar"],
+      "recommend_reason": "大名エリアで店主同士の結びつきが強いコアな酒場。ロゴの『K』マークが目印。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "mintbar",
+      "name": "MINT BAR HACCA",
+      "area": "大名",
+      "addr": "〒810-0041 福岡県福岡市中央区大名1-4-28",
+      "lat": 33.5860145,
+      "lng": 130.3927255,
+      "genre": ["バー", "BAR"],
+      "tags": ["深夜営業"],
+      "hours_detail": {
+        "mon": "19:00-24:00",
+        "tue": "19:00-24:00",
+        "wed": "19:00-24:00",
+        "thu": "19:00-24:00",
+        "fri": "19:00-24:00",
+        "sat": "19:00-24:00",
+        "sun": "定休日",
+        "note": "日曜定休"
+      },
+      "hours_summary": "月〜土 19:00〜24:00 / 日曜定休",
+      "tel": "092-401-2885",
+      "web": "https://hacca.menu/",
+      "sns": {
+        "instagram": "https://www.instagram.com/mintbarhacca/"
+      },
+      "owner": "",
+      "related": ["oneday", "koji", "comstand"],
+      "recommend_reason": "HACCAブランドの都会的なバー。メニューはWebで事前確認できる。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "comstand",
+      "name": ".comSTAND",
+      "area": "大名",
+      "addr": "〒810-0041 福岡県福岡市中央区大名1-7-10 1階",
+      "lat": 33.5860138,
+      "lng": 130.3914882,
+      "genre": ["海鮮", "居酒屋"],
+      "tags": ["深夜営業"],
+      "hours_detail": {
+        "mon": "18:00-24:00",
+        "tue": "18:00-24:00",
+        "wed": "18:00-24:00",
+        "thu": "18:00-24:00",
+        "fri": "18:00-24:00",
+        "sat": "18:00-24:00",
+        "sun": "18:00-24:00",
+        "note": "毎日営業"
+      },
+      "hours_summary": "毎日 18:00〜24:00",
+      "tel": "092-733-8037",
+      "web": "https://www.hotpepper.jp/strJ003625226/",
+      "sns": {
+        "instagram": "https://www.instagram.com/_comstand/"
+      },
+      "owner": "",
+      "related": ["oneday", "koji", "mintbar", "komatakao"],
+      "recommend_reason": "海鮮×立ち飲みの気軽さ。大名のハシゴ酒ルートの定番。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "komatakao",
+      "name": "大名酒場 駒たか男",
+      "area": "大名",
+      "addr": "〒810-0041 福岡県福岡市中央区大名1-12-27 パシオン大名 B101",
+      "lat": 33.5874249,
+      "lng": 130.3940975,
+      "genre": ["居酒屋"],
+      "tags": ["深夜営業"],
+      "hours_detail": {
+        "mon": "17:00-翌2:00",
+        "tue": "17:00-翌2:00",
+        "wed": "17:00-翌2:00",
+        "thu": "17:00-翌2:00",
+        "fri": "17:00-翌2:00",
+        "sat": "17:00-翌2:00",
+        "sun": "17:00-翌2:00",
+        "note": "毎日営業"
+      },
+      "hours_summary": "毎日 17:00〜翌2:00",
+      "tel": "092-739-8123",
+      "web": "",
+      "sns": {
+        "instagram": "https://www.instagram.com/komatakaman/"
+      },
+      "owner": "",
+      "related": ["oneday", "koji", "comstand", "pinonbar"],
+      "recommend_reason": "早い時間から遅い時間まで幅広くカバー。大名ハシゴ酒の起点にしやすい。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "pinonbar",
+      "name": "PiNON BAR",
+      "area": "大名",
+      "addr": "〒810-0041 福岡県福岡市中央区大名1-8-5 養巴コープ 1F",
+      "lat": 33.5865989,
+      "lng": 130.3924595,
+      "genre": ["バー", "BAR"],
+      "tags": [],
+      "hours_detail": { "note": "営業時間要確認" },
+      "hours_summary": "",
+      "tel": "",
+      "web": "",
+      "sns": {
+        "instagram": "https://www.instagram.com/pinonbar_daimyo/"
+      },
+      "owner": "",
+      "related": ["oneday", "koji", "komatakao"],
+      "recommend_reason": "大名の隠れ家系BAR。Googleマップ未登録のローカル店。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "allrush",
+      "name": "Place of all RUSH",
+      "area": "薬院",
+      "addr": "〒810-0022 福岡県福岡市中央区薬院4-1-9 堤ビル 3階",
+      "lat": 33.5800798,
+      "lng": 130.3977156,
+      "genre": ["バー", "BAR"],
+      "tags": ["深夜営業"],
+      "hours_detail": {
+        "mon": "21:00-翌5:00",
+        "tue": "21:00-翌5:00",
+        "wed": "21:00-翌5:00",
+        "thu": "21:00-翌5:00",
+        "fri": "21:00-翌5:00",
+        "sat": "21:00-翌5:00",
+        "sun": "21:00-翌5:00",
+        "note": "毎日営業"
+      },
+      "hours_summary": "毎日 21:00〜翌5:00",
+      "tel": "",
+      "web": "",
+      "sns": {
+        "instagram": "https://www.instagram.com/place_of_all_rush/"
+      },
+      "owner": "",
+      "related": ["oneday"],
+      "recommend_reason": "薬院の朝5時まで営業するオールナイトBAR。夜明けまで通える。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "koubashiya",
+      "name": "香家（こうばしや）",
+      "area": "博多",
+      "addr": "〒812-0039 福岡県福岡市博多区冷泉町8-19",
+      "lat": 33.5950039,
+      "lng": 130.4106244,
+      "genre": ["和食", "定食"],
+      "tags": ["朝から営業", "ランチあり", "予約推奨"],
+      "hours_detail": {
+        "mon": "8:00-10:00 / 11:00-15:00 / 17:00-24:00",
+        "tue": "8:00-10:00 / 11:00-15:00 / 17:00-24:00",
+        "wed": "8:00-10:00 / 11:00-15:00 / 17:00-24:00",
+        "thu": "8:00-10:00 / 11:00-15:00 / 17:00-24:00",
+        "fri": "8:00-10:00 / 11:00-15:00 / 17:00-24:00",
+        "sat": "8:00-10:00 / 11:00-15:00 / 17:00-24:00",
+        "sun": "8:00-10:00 / 11:00-15:00 / 17:00-24:00",
+        "note": "毎日営業・朝食から通し"
+      },
+      "hours_summary": "毎日 8:00〜10:00 / 11:00〜15:00 / 17:00〜24:00",
+      "tel": "092-260-8756",
+      "web": "https://www.tablecheck.com/ja/koubashiya/reserve/message",
+      "sns": {
+        "instagram": "https://www.instagram.com/koubashiya_light/"
+      },
+      "owner": "",
+      "related": ["owan"],
+      "recommend_reason": "冷泉町の朝・昼・夜を通しで支える和食店。旅行者の朝食にも使える貴重な一軒。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "owan",
+      "name": "食堂おわん",
+      "area": "博多",
+      "addr": "〒812-0039 福岡県福岡市博多区冷泉町9-20 1F",
+      "lat": 33.5955202,
+      "lng": 130.4112255,
+      "genre": ["和食", "定食"],
+      "tags": ["朝から営業", "ランチあり", "予約推奨"],
+      "hours_detail": {
+        "mon": "7:30-10:30 / 12:00-13:30 / 17:00-22:30",
+        "tue": "7:30-10:30 / 12:00-13:30 / 17:00-22:30",
+        "wed": "7:30-10:30 / 12:00-13:30 / 17:00-22:30",
+        "thu": "7:30-10:30 / 12:00-13:30 / 17:00-22:30",
+        "fri": "7:30-10:30 / 12:00-13:30 / 17:00-22:30",
+        "sat": "7:30-10:30 / 12:00-13:30 / 17:00-22:30",
+        "sun": "7:30-10:30 / 12:00-13:30 / 17:00-22:30",
+        "note": "毎日営業"
+      },
+      "hours_summary": "毎日 7:30〜10:30 / 12:00〜13:30 / 17:00〜22:30",
+      "tel": "092-292-0409",
+      "web": "https://www.tablecheck.com/shops/shokudou-owan/reserve",
+      "sns": {
+        "instagram": "https://www.instagram.com/shokudou_owan/"
+      },
+      "owner": "",
+      "related": ["koubashiya"],
+      "recommend_reason": "冷泉町の定食屋。朝7時半からのごはんが旅行者にも地元客にも愛される。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "bruntjet",
+      "name": "BRUNTJET💈",
+      "area": "野間",
+      "addr": "〒815-0073 福岡県福岡市南区大池1-25-16",
+      "lat": 33.5572059,
+      "lng": 130.4060413,
+      "genre": ["理美容"],
+      "tags": ["予約推奨"],
+      "hours_detail": {
+        "mon": "定休日",
+        "tue": "11:00-19:00",
+        "wed": "11:00-19:00",
+        "thu": "11:00-19:00",
+        "fri": "11:00-19:00",
+        "sat": "11:00-19:00",
+        "sun": "11:00-19:00",
+        "note": "月曜定休"
+      },
+      "hours_summary": "火〜日 11:00〜19:00 / 月曜定休",
+      "tel": "092-406-7257",
+      "web": "https://bruntjet.jp/",
+      "sns": {
+        "instagram": "https://www.instagram.com/bruntjet_hair/"
+      },
+      "owner": "",
+      "related": ["ponta", "loulou"],
+      "recommend_reason": "野間大池のバーバー。DAIMYO CONNECT圏内で唯一の理美容系、男性の身だしなみはここ。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "ponta",
+      "name": "野間四角ぽん太",
+      "area": "野間",
+      "addr": "〒815-0041 福岡県福岡市南区野間1-5-3",
+      "lat": 33.5647519,
+      "lng": 130.4158123,
+      "genre": ["居酒屋"],
+      "tags": ["深夜営業"],
+      "hours_detail": {
+        "mon": "定休日",
+        "tue": "18:00-23:00",
+        "wed": "18:00-23:00",
+        "thu": "18:00-23:00",
+        "fri": "18:00-23:00",
+        "sat": "18:00-23:00",
+        "sun": "定休日",
+        "note": "月・日定休"
+      },
+      "hours_summary": "火〜土 18:00〜23:00 / 月・日定休",
+      "tel": "092-541-1081",
+      "web": "",
+      "sns": {
+        "instagram": "https://www.instagram.com/nomayotsukado.ponta.nyp/"
+      },
+      "owner": "",
+      "related": ["loulou", "bruntjet"],
+      "recommend_reason": "野間四角の角打ち的居酒屋。地元密着の顔なじみ空間。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "loulou",
+      "name": "朗々（lou.lou）",
+      "area": "野間",
+      "addr": "〒815-0041 福岡県福岡市南区野間1-1-2",
+      "lat": 33.5653684,
+      "lng": 130.4162248,
+      "genre": ["バー", "BAR"],
+      "tags": ["深夜営業"],
+      "hours_detail": {
+        "mon": "21:00-翌1:00",
+        "tue": "21:00-翌1:00",
+        "wed": "21:00-翌1:00",
+        "thu": "21:00-翌1:00",
+        "fri": "21:00-翌1:00",
+        "sat": "21:00-翌2:00",
+        "sun": "定休日",
+        "note": "日曜定休"
+      },
+      "hours_summary": "月〜金 21:00〜翌1:00 / 土 21:00〜翌2:00 / 日曜定休",
+      "tel": "",
+      "web": "",
+      "sns": {
+        "instagram": "https://www.instagram.com/loulou_fukuoka/"
+      },
+      "owner": "",
+      "related": ["ponta", "bruntjet"],
+      "recommend_reason": "野間四角の深夜BAR。ぽん太とハシゴできる距離感。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "sofuren-umi",
+      "name": "想夫恋 宇美店",
+      "area": "宇美町",
+      "addr": "〒811-2128 福岡県糟屋郡宇美町宇美中央2-24-7",
+      "lat": 33.5690653,
+      "lng": 130.5252323,
+      "genre": ["焼きそば", "定食"],
+      "tags": ["ランチあり", "駐車場あり"],
+      "hours_detail": {
+        "mon": "11:00-15:00 / 17:30-19:30",
+        "tue": "11:00-15:00 / 17:30-19:30",
+        "wed": "11:00-15:00 / 17:30-19:30",
+        "thu": "定休日",
+        "fri": "11:00-15:00 / 17:30-19:30",
+        "sat": "11:00-15:00 / 17:30-19:30",
+        "sun": "11:00-15:00 / 17:30-19:30",
+        "note": "木曜定休"
+      },
+      "hours_summary": "月〜水・金〜日 11:00〜15:00 / 17:30〜19:30 / 木曜定休",
+      "tel": "092-933-3991",
+      "web": "https://fukuoka-connect.github.io/sofuren-umi/",
+      "sns": {
+        "instagram": "https://www.instagram.com/goto.yakisoba/"
+      },
+      "owner": "後藤堅太郎（Fukuoka Connect代表）",
+      "related": ["mine"],
+      "recommend_reason": "日田やきそば専門店。FUKUOKA CONNECT 代表・後藤堅太郎が毎日運営。宇美町の地元愛。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "mine",
+      "name": "峰",
+      "area": "志免町",
+      "addr": "〒811-2205 福岡県糟屋郡志免町別府3-11-18",
+      "lat": 33.6025688,
+      "lng": 130.455775,
+      "genre": ["バー", "BAR"],
+      "tags": [],
+      "hours_detail": { "note": "営業時間要確認" },
+      "hours_summary": "",
+      "tel": "",
+      "web": "",
+      "sns": {
+        "instagram": "https://www.instagram.com/yasuo9223/"
+      },
+      "owner": "",
+      "related": ["sofuren-umi"],
+      "recommend_reason": "志免町のスナック。想夫恋 宇美店と近く、糟屋エリアの夜の拠点。",
+      "photos": [],
+      "google_place_id": ""
+    },
+    {
+      "id": "gbh",
+      "name": "Green Beach House",
+      "area": "唐津",
+      "addr": "〒849-5131 佐賀県唐津市浜玉町浜崎 浜崎海岸",
+      "lat": 33.4482811,
+      "lng": 130.0303448,
+      "genre": ["BEACH HOUSE", "洋食"],
+      "tags": ["テラスあり", "駐車場あり", "ペット可"],
+      "hours_detail": {
+        "mon": "定休日",
+        "tue": "定休日",
+        "wed": "定休日",
+        "thu": "定休日",
+        "fri": "定休日",
+        "sat": "10:00-17:00",
+        "sun": "10:00-17:00",
+        "note": "平日定休・土日のみ"
+      },
+      "hours_summary": "土・日 10:00〜17:00 / 平日定休",
+      "tel": "080-7010-6213",
+      "web": "https://www.greenbeachhouse.jp/",
+      "sns": {
+        "instagram": "https://www.instagram.com/gbh.2010/"
+      },
+      "owner": "",
+      "related": [],
+      "recommend_reason": "唐津・浜崎海岸のビーチハウス。DAIMYO CONNECT 圏外だがイベント関係者に愛される夏の聖地。",
+      "photos": [],
+      "google_place_id": ""
+    }
+  ],
+  "connections": [
+    { "from": "oneday", "to": "koji", "type": "area", "label": "大名エリア" },
+    { "from": "oneday", "to": "mintbar", "type": "area", "label": "大名エリア" },
+    { "from": "oneday", "to": "comstand", "type": "area", "label": "大名エリア" },
+    { "from": "oneday", "to": "komatakao", "type": "area", "label": "大名エリア" },
+    { "from": "oneday", "to": "pinonbar", "type": "area", "label": "大名エリア" },
+    { "from": "koji", "to": "mintbar", "type": "area", "label": "大名エリア" },
+    { "from": "koji", "to": "comstand", "type": "area", "label": "大名エリア" },
+    { "from": "koji", "to": "komatakao", "type": "area", "label": "大名エリア" },
+    { "from": "koji", "to": "pinonbar", "type": "area", "label": "大名エリア" },
+    { "from": "mintbar", "to": "comstand", "type": "area", "label": "大名エリア" },
+    { "from": "mintbar", "to": "komatakao", "type": "area", "label": "大名エリア" },
+    { "from": "comstand", "to": "komatakao", "type": "area", "label": "大名エリア" },
+    { "from": "komatakao", "to": "pinonbar", "type": "area", "label": "大名エリア" },
+    { "from": "koubashiya", "to": "owan", "type": "area", "label": "博多冷泉町エリア" },
+    { "from": "ponta", "to": "loulou", "type": "area", "label": "野間四角エリア" },
+    { "from": "ponta", "to": "bruntjet", "type": "nearby", "label": "野間エリア" },
+    { "from": "loulou", "to": "bruntjet", "type": "nearby", "label": "野間エリア" },
+    { "from": "sofuren-umi", "to": "mine", "type": "nearby", "label": "糟屋郡エリア" }
+  ]
+}
