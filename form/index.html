@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAIMYOU CONNECT RECOMMEND MAP｜店舗情報フォーム</title>
+<meta name="description" content="DAIMYOU CONNECT RECOMMEND MAPに掲載する店舗情報をお聞かせください。所要5〜10分。">
+<meta property="og:title" content="お店のこと、教えてください｜DAIMYOU CONNECT RECOMMEND MAP">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f1e8;
+  --bg-2:#ece3d0;
+  --paper:#fffdf8;
+  --ink:#1e1a14;
+  --ink-2:#3a3226;
+  --muted:#7a6e5a;
+  --line:#231e17;
+  --accent:#c5402a;
+  --accent-2:#d87a2c;
+  --gold:#b8944a;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;min-height:100%}
+body{
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.8;
+  background-image:
+    radial-gradient(circle at 10% 0%, rgba(197,64,42,0.05) 0, transparent 40%),
+    radial-gradient(circle at 90% 100%, rgba(216,122,44,0.06) 0, transparent 40%),
+    repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(35,30,23,0.012) 3px, rgba(35,30,23,0.012) 4px);
+}
+
+.wrap{
+  max-width:680px;
+  margin:0 auto;
+  padding:28px 20px 60px;
+}
+
+/* ===== Header ===== */
+.brand{
+  text-align:center;
+  margin-bottom:30px;
+}
+.brand-main{
+  font-family:"Shippori Mincho",serif;
+  font-weight:800;
+  font-size:0.95rem;
+  color:var(--accent);
+  letter-spacing:0.08em;
+  margin-bottom:2px;
+}
+.brand-sub{
+  font-size:0.7rem;
+  color:var(--muted);
+  letter-spacing:0.15em;
+}
+
+/* ===== Hero ===== */
+.hero{
+  text-align:center;
+  padding:20px 0 30px;
+  border-bottom:1px solid rgba(35,30,23,0.15);
+  margin-bottom:32px;
+}
+.hero-eyebrow{
+  display:inline-block;
+  font-family:"Shippori Mincho",serif;
+  font-size:0.78rem;
+  color:var(--accent);
+  letter-spacing:0.25em;
+  padding:5px 16px;
+  border-top:1px solid var(--accent);
+  border-bottom:1px solid var(--accent);
+  margin-bottom:18px;
+}
+.hero-title{
+  font-family:"Shippori Mincho",serif;
+  font-weight:800;
+  font-size:clamp(1.5rem, 5.5vw, 2.2rem);
+  line-height:1.45;
+  margin:0 0 18px;
+  letter-spacing:0.03em;
+}
+.hero-title .ink-accent{color:var(--accent)}
+.hero-sub{
+  font-size:0.9rem;
+  color:var(--ink-2);
+  line-height:1.9;
+  margin:0 auto;
+  max-width:520px;
+}
+
+/* ===== Letter (お手紙風) ===== */
+.letter{
+  background:var(--paper);
+  border:1.5px solid var(--line);
+  padding:28px 24px;
+  margin-bottom:30px;
+  box-shadow:4px 4px 0 var(--line);
+  font-size:0.92rem;
+  line-height:2;
+}
+.letter p{margin:0 0 16px}
+.letter p:last-of-type{margin-bottom:0}
+.letter .highlight{
+  background:linear-gradient(transparent 55%, rgba(216,122,44,0.35) 55%);
+  padding:0 2px;
+  font-weight:700;
+}
+.letter .signature{
+  text-align:right;
+  margin-top:24px;
+  padding-top:16px;
+  border-top:1px dashed rgba(35,30,23,0.2);
+  font-family:"Shippori Mincho",serif;
+  font-size:0.88rem;
+  color:var(--ink-2);
+}
+
+/* ===== Points ===== */
+.points{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:30px;
+}
+@media(max-width:560px){
+  .points{grid-template-columns:1fr}
+}
+.point-card{
+  background:var(--paper);
+  border:1.5px solid var(--line);
+  padding:16px 14px;
+  text-align:center;
+}
+.point-icon{
+  font-size:1.8rem;
+  margin-bottom:6px;
+}
+.point-title{
+  font-family:"Shippori Mincho",serif;
+  font-weight:700;
+  font-size:0.92rem;
+  color:var(--accent);
+  margin-bottom:4px;
+}
+.point-desc{
+  font-size:0.76rem;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* ===== What we ask ===== */
+.section-title{
+  font-family:"Shippori Mincho",serif;
+  font-weight:800;
+  font-size:1.1rem;
+  letter-spacing:0.05em;
+  margin:32px 0 14px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--line);
+}
+.section-title .num{
+  color:var(--accent);
+  font-size:1.3em;
+  margin-right:6px;
+}
+
+.ask-list{
+  background:var(--paper);
+  border:1.5px solid var(--line);
+  padding:16px 22px;
+  margin-bottom:24px;
+}
+.ask-list ul{
+  margin:0;
+  padding-left:20px;
+  font-size:0.88rem;
+  line-height:2.1;
+  color:var(--ink-2);
+}
+.ask-list li{margin-bottom:2px}
+.ask-list li strong{color:var(--ink);font-weight:700}
+
+.note{
+  font-size:0.78rem;
+  color:var(--muted);
+  background:var(--bg-2);
+  padding:12px 16px;
+  border-left:3px solid var(--gold);
+  margin-bottom:24px;
+  line-height:1.8;
+}
+
+/* ===== CTA ===== */
+.cta-wrap{
+  text-align:center;
+  padding:30px 0 24px;
+  margin:40px 0 30px;
+  background:linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  border:2px solid var(--line);
+  box-shadow:5px 5px 0 var(--line);
+  position:relative;
+}
+.cta-wrap::before,
+.cta-wrap::after{
+  content:"";
+  position:absolute;
+  top:-10px;
+  width:3px;
+  height:12px;
+  background:var(--line);
+}
+.cta-wrap::before{left:30px}
+.cta-wrap::after{right:30px}
+.cta-eyebrow{
+  display:block;
+  font-family:"Shippori Mincho",serif;
+  font-size:0.78rem;
+  color:var(--accent);
+  letter-spacing:0.2em;
+  margin-bottom:10px;
+}
+.cta-btn{
+  display:inline-block;
+  padding:16px 42px;
+  background:var(--accent);
+  color:var(--paper);
+  border:2px solid var(--line);
+  font-family:"Shippori Mincho",serif;
+  font-weight:800;
+  font-size:1.1rem;
+  text-decoration:none;
+  letter-spacing:0.1em;
+  box-shadow:4px 4px 0 var(--line);
+  transition:transform .1s, box-shadow .1s;
+  margin-bottom:10px;
+}
+.cta-btn:hover{
+  transform:translate(-2px,-2px);
+  box-shadow:6px 6px 0 var(--line);
+}
+.cta-btn:active{
+  transform:translate(2px,2px);
+  box-shadow:2px 2px 0 var(--line);
+}
+.cta-arrow{
+  display:inline-block;
+  margin-left:8px;
+  transition:transform .2s;
+}
+.cta-btn:hover .cta-arrow{transform:translateX(4px)}
+.cta-time{
+  display:block;
+  font-size:0.78rem;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+/* ===== FAQ / Privacy ===== */
+.faq{
+  margin-top:36px;
+}
+.faq-item{
+  border-bottom:1px dashed rgba(35,30,23,0.2);
+  padding:14px 0;
+}
+.faq-q{
+  font-weight:700;
+  font-size:0.9rem;
+  margin-bottom:6px;
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+}
+.faq-q::before{
+  content:"Q.";
+  color:var(--accent);
+  flex-shrink:0;
+  font-family:"Shippori Mincho",serif;
+  font-weight:800;
+}
+.faq-a{
+  font-size:0.85rem;
+  color:var(--ink-2);
+  line-height:1.85;
+  padding-left:22px;
+}
+
+/* ===== Footer ===== */
+.footer{
+  margin-top:40px;
+  padding-top:22px;
+  border-top:1px solid rgba(35,30,23,0.15);
+  text-align:center;
+  font-size:0.72rem;
+  color:var(--muted);
+  line-height:1.7;
+}
+.footer a{color:var(--muted);text-decoration:underline}
+.footer a:hover{color:var(--accent)}
+.footer .brand-credit{
+  font-family:"Shippori Mincho",serif;
+  font-weight:700;
+  color:var(--accent);
+  font-size:0.82rem;
+  letter-spacing:0.05em;
+  margin-bottom:4px;
+}
+.back-link{
+  display:inline-block;
+  margin-top:12px;
+  font-size:0.8rem;
+  color:var(--muted);
+}
+
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="brand">
+    <div class="brand-main">DAIMYOU CONNECT</div>
+    <div class="brand-sub">RECOMMEND MAP</div>
+  </div>
+
+  <section class="hero">
+    <span class="hero-eyebrow">店舗情報フォーム</span>
+    <h1 class="hero-title">
+      あなたのお店のこと、<br>
+      <span class="ink-accent">教えてください。</span>
+    </h1>
+    <p class="hero-sub">
+      DAIMYOU CONNECT に縁のある店を、地図と有機的なつながりで辿る<br>
+      福岡の観光レコメンドMAPを一緒に作ります。
+    </p>
+  </section>
+
+  <section class="letter">
+    <p>
+      いつもありがとうございます。<br>
+      Fukuoka Connect の後藤堅太郎です。
+    </p>
+    <p>
+      ラジオ「DAIMYOU CONNECT」に縁のあるお店を、<br>
+      地図と <span class="highlight">有機的なつながり</span> で辿るレコメンドMAPを作っています。
+    </p>
+    <p>
+      単なる「店舗の一覧」ではなく、<span class="highlight">店主同士のつながり</span>や <span class="highlight">ハシゴ定番ルート</span> まで可視化する、福岡ならではの観光・夜遊び地図にしたい。
+    </p>
+    <p>
+      そのために、お店の詳細と<br>
+      <span class="highlight">あなたの言葉</span>を、直接お聞かせください。
+    </p>
+    <p>
+      書き方の正解はありません。気軽に、<br>
+      5〜10分ほどお時間をいただけると嬉しいです。
+    </p>
+    <div class="signature">
+      Fukuoka Connect<br>
+      後藤 堅太郎
+    </div>
+  </section>
+
+  <div class="points">
+    <div class="point-card">
+      <div class="point-icon">📍</div>
+      <div class="point-title">地図に掲載</div>
+      <div class="point-desc">福岡観光MAPで<br>お店を世界に紹介</div>
+    </div>
+    <div class="point-card">
+      <div class="point-icon">🔗</div>
+      <div class="point-title">つながりで見つかる</div>
+      <div class="point-desc">お客様が気になる店を<br>芋づる式に発見</div>
+    </div>
+    <div class="point-card">
+      <div class="point-icon">🎁</div>
+      <div class="point-title">完全無料</div>
+      <div class="point-desc">掲載料・手数料<br>一切いただきません</div>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="num">01</span>お聞きすること</h2>
+  <div class="ask-list">
+    <ul>
+      <li><strong>お店の基本情報</strong>（営業時間・定休日・席数など）</li>
+      <li><strong>店主のプロフィール</strong>（お名前・ニックネーム・前職・開業年）</li>
+      <li><strong>客単価・予約ルール・決済方法</strong></li>
+      <li><strong>おすすめメニュー</strong>（3つまで）</li>
+      <li><strong>仲の良い同業者・ハシゴ定番</strong>（つながり可視化用）</li>
+      <li><strong>お客様へのメッセージ</strong>（RECOMMEND文として掲載）</li>
+      <li><strong>お店の写真</strong>（外観・内観・看板メニューなど）</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    💡 全項目の記入は必須ではありません。<br>
+    わかる範囲、今書ける範囲で構いません。後日追記も可能です。
+  </div>
+
+  <h2 class="section-title"><span class="num">02</span>情報の取り扱いについて</h2>
+  <div class="ask-list">
+    <ul>
+      <li>ご記入いただいた情報は <strong>RECOMMEND MAP の掲載内容</strong> として使用します</li>
+      <li>掲載前に <strong>必ず文面をご確認いただきます</strong>（確認後の掲載）</li>
+      <li>お名前・個人SNSの公開可否は <strong>お選びいただけます</strong></li>
+      <li>いつでも <strong>修正・削除依頼</strong> を承ります</li>
+      <li>Fukuoka Connect 以外への第三者提供はいたしません</li>
+    </ul>
+  </div>
+
+  <div class="cta-wrap">
+    <span class="cta-eyebrow">YOUR STORY MATTERS</span>
+    <a class="cta-btn" href="https://www.notion.so/70d54ad2f25f4550aa5de3acbd6d86f7" target="_blank" rel="noopener">
+      フォームへ進む<span class="cta-arrow">→</span>
+    </a>
+    <span class="cta-time">所要時間 約5〜10分</span>
+  </div>
+
+  <h2 class="section-title"><span class="num">03</span>よくあるご質問</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">掲載に費用はかかりますか？</div>
+      <div class="faq-a">いいえ、完全無料です。Fukuoka Connect が地域の魅力を発信するための企画として運用しています。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">お店の情報が変わったら？</div>
+      <div class="faq-a">LINEやInstagram DMで後藤までご連絡ください。掲載内容は随時更新可能です。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">掲載をやめたい時は？</div>
+      <div class="faq-a">ご連絡いただければ即座に非公開に対応します。気軽にお申し付けください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">途中で保存して後で続きを書けますか？</div>
+      <div class="faq-a">Notionフォームは一度に送信が必要です。お時間のある時にまとめて記入いただけると助かります。（5〜10分）</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">相談・質問したい時は？</div>
+      <div class="faq-a">Fukuoka Connect 後藤まで、LINEやInstagram DM でお気軽にご連絡ください。</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="brand-credit">DAIMYOU CONNECT RECOMMEND MAP</div>
+    Powered by <a href="https://fukuoka-connect.github.io/">Fukuoka Connect</a><br>
+    <a href="../" class="back-link">← RECOMMEND MAP トップへ戻る</a>
+  </div>
+
+</div>
+
+</body>
+</html>
