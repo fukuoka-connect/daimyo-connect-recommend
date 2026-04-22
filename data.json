@@ -479,24 +479,35 @@
       "google_place_id": ""
     }
   ],
+  "connection_types": {
+    "area": { "label": "同エリア", "color": "#b8944a", "weight": 1, "dashes": false },
+    "nearby": { "label": "近接", "color": "#7a6e5a", "weight": 1, "dashes": true },
+    "owner_friend": { "label": "店主同士", "color": "#c5402a", "weight": 3, "dashes": false },
+    "sister": { "label": "姉妹店", "color": "#8a4d9e", "weight": 3, "dashes": false },
+    "collab": { "label": "コラボ実績", "color": "#d87a2c", "weight": 2, "dashes": false },
+    "hashigo": { "label": "ハシゴ定番", "color": "#4a6b3a", "weight": 2, "dashes": false },
+    "influence": { "label": "影響関係", "color": "#4a7a9b", "weight": 2, "dashes": true }
+  },
   "connections": [
-    { "from": "oneday", "to": "koji", "type": "area", "label": "大名エリア" },
-    { "from": "oneday", "to": "mintbar", "type": "area", "label": "大名エリア" },
-    { "from": "oneday", "to": "comstand", "type": "area", "label": "大名エリア" },
-    { "from": "oneday", "to": "komatakao", "type": "area", "label": "大名エリア" },
-    { "from": "oneday", "to": "pinonbar", "type": "area", "label": "大名エリア" },
-    { "from": "koji", "to": "mintbar", "type": "area", "label": "大名エリア" },
-    { "from": "koji", "to": "comstand", "type": "area", "label": "大名エリア" },
-    { "from": "koji", "to": "komatakao", "type": "area", "label": "大名エリア" },
-    { "from": "koji", "to": "pinonbar", "type": "area", "label": "大名エリア" },
-    { "from": "mintbar", "to": "comstand", "type": "area", "label": "大名エリア" },
-    { "from": "mintbar", "to": "komatakao", "type": "area", "label": "大名エリア" },
-    { "from": "comstand", "to": "komatakao", "type": "area", "label": "大名エリア" },
-    { "from": "komatakao", "to": "pinonbar", "type": "area", "label": "大名エリア" },
-    { "from": "koubashiya", "to": "owan", "type": "area", "label": "博多冷泉町エリア" },
-    { "from": "ponta", "to": "loulou", "type": "area", "label": "野間四角エリア" },
-    { "from": "ponta", "to": "bruntjet", "type": "nearby", "label": "野間エリア" },
-    { "from": "loulou", "to": "bruntjet", "type": "nearby", "label": "野間エリア" },
-    { "from": "sofuren-umi", "to": "mine", "type": "nearby", "label": "糟屋郡エリア" }
+    { "from": "oneday", "to": "koji", "type": "area" },
+    { "from": "oneday", "to": "mintbar", "type": "area" },
+    { "from": "oneday", "to": "comstand", "type": "area" },
+    { "from": "oneday", "to": "komatakao", "type": "area" },
+    { "from": "oneday", "to": "pinonbar", "type": "area" },
+    { "from": "koji", "to": "mintbar", "type": "area" },
+    { "from": "koji", "to": "comstand", "type": "area" },
+    { "from": "koji", "to": "komatakao", "type": "area" },
+    { "from": "koji", "to": "pinonbar", "type": "area" },
+    { "from": "mintbar", "to": "comstand", "type": "area" },
+    { "from": "mintbar", "to": "komatakao", "type": "area" },
+    { "from": "comstand", "to": "komatakao", "type": "area" },
+    { "from": "komatakao", "to": "pinonbar", "type": "area" },
+    { "from": "koubashiya", "to": "owan", "type": "area" },
+    { "from": "ponta", "to": "loulou", "type": "area" },
+    { "from": "ponta", "to": "bruntjet", "type": "nearby" },
+    { "from": "loulou", "to": "bruntjet", "type": "nearby" },
+    { "from": "sofuren-umi", "to": "mine", "type": "nearby" },
+    { "from": "oneday", "to": "allrush", "type": "hashigo", "note": "大名→薬院の深夜ハシゴ" },
+    { "from": "oneday", "to": "loulou", "type": "hashigo", "note": "深夜BAR仲間" }
   ]
 }
