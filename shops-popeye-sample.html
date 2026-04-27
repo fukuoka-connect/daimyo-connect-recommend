@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUTS PICKS Vol.01 — 福岡偏愛十四店 | CURATOR'S PICK</title>
+  <meta name="description" content="ナッツが本気でおすすめする福岡の14店。雑誌的編集視点で再編集したサンプル。">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Magazine palette — POPEYE inspired */
+      --paper:    #FBFAF6;     /* オフホワイト紙風 */
+      --ink:      #0E0E0E;     /* 漆黒 */
+      --ink-mid:  #4A4A4A;     /* 灰墨 */
+      --ink-dim:  #8A8A8A;     /* 薄墨（キャプション）*/
+      --rule:     #1A1A1A;     /* 罫線 */
+      --rule-fine:#D8D5CC;     /* 細罫 */
+      --accent:   #C8312E;     /* 朱赤（差し色1色のみ）*/
+      --accent-dim: #F2D9D8;   /* 差し色の薄版 */
+
+      --serif-jp: 'Shippori Mincho', serif;
+      --sans-jp:  'Noto Sans JP', sans-serif;
+      --sans-en:  'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans-jp);
+      font-weight: 400;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ── 共通: 雑誌的ユーティリティ ── */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 22px; }
+    }
+
+    .rule        { height: 1px; background: var(--rule); border: 0; margin: 0; }
+    .rule-fine   { height: 1px; background: var(--rule-fine); border: 0; margin: 0; }
+    .rule-thick  { height: 4px; background: var(--ink); border: 0; margin: 0; }
+
+    .en          { font-family: var(--sans-en); letter-spacing: 0.04em; }
+    .en-italic   { font-family: var(--sans-en); font-style: italic; letter-spacing: 0.02em; }
+    .smallcaps   { text-transform: uppercase; letter-spacing: 0.18em; font-weight: 600; }
+
+    /* ── インディシア（誌名・号数）：紙の天 ── */
+    .indicia {
+      border-bottom: 1px solid var(--rule);
+    }
+    .indicia-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 11px 0;
+      font-family: var(--sans-en);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .indicia-inner > * { display: flex; align-items: center; gap: 14px; }
+    .indicia-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+    /* ── マストヘッド（誌名）── */
+    .masthead {
+      padding: 28px 0 22px;
+      border-bottom: 4px solid var(--ink);
+    }
+    .masthead-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .masthead-logo {
+      font-family: var(--serif-jp);
+      font-weight: 800;
+      font-size: clamp(28px, 5vw, 44px);
+      line-height: 1;
+      letter-spacing: 0.04em;
+    }
+    .masthead-logo small {
+      display: block;
+      font-family: var(--sans-en);
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.34em;
+      color: var(--ink-mid);
+      margin-top: 8px;
+    }
+    .masthead-nav {
+      display: flex;
+      gap: 22px;
+      font-family: var(--sans-en);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .masthead-nav a {
+      color: var(--ink);
+      text-decoration: none;
+      padding-bottom: 3px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .masthead-nav a:hover { border-bottom-color: var(--accent); }
+
+    /* ── COVER（雑誌の表紙風ヒーロー）── */
+    .cover {
+      padding: clamp(60px, 10vw, 110px) 0 clamp(56px, 9vw, 100px);
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
+    .cover-issue {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: clamp(36px, 6vw, 56px);
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .cover-issue-left {
+      font-family: var(--sans-en);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+    }
+    .cover-issue-left b { color: var(--ink); font-weight: 600; }
+    .cover-issue-right {
+      font-family: var(--sans-en);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+    }
+
+    .cover-feature-tag {
+      display: inline-block;
+      font-family: var(--sans-en);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      color: var(--accent);
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--accent);
+      margin-bottom: 28px;
+    }
+
+    .cover-title-en {
+      font-family: var(--sans-en);
+      font-weight: 700;
+      font-size: clamp(56px, 13vw, 168px);
+      line-height: 0.9;
+      letter-spacing: -0.025em;
+      margin-bottom: 18px;
+    }
+    .cover-title-en .stroke {
+      -webkit-text-stroke: 2px var(--ink);
+      color: transparent;
+    }
+
+    .cover-title-jp {
+      font-family: var(--serif-jp);
+      font-weight: 700;
+      font-size: clamp(28px, 5.5vw, 56px);
+      line-height: 1.25;
+      letter-spacing: 0.06em;
+      margin-bottom: clamp(28px, 5vw, 44px);
+    }
+    .cover-title-jp .accent { color: var(--accent); }
+
+    .cover-lead {
+      max-width: 640px;
+      font-family: var(--serif-jp);
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 2.0;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+
+    .cover-credits {
+      margin-top: clamp(36px, 6vw, 56px);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 18px 32px;
+      max-width: 720px;
+    }
+    .cover-credit {
+      font-family: var(--sans-en);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+    }
+    .cover-credit b {
+      display: block;
+      color: var(--ink);
+      font-weight: 600;
+      margin-top: 4px;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: none;
+      font-family: var(--serif-jp);
+    }
+
+    /* ── EDITOR'S NOTE（巻頭言）── */
+    .editors-note {
+      padding: clamp(60px, 9vw, 100px) 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .editors-note-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: clamp(32px, 6vw, 64px);
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .editors-note-grid { grid-template-columns: 1fr; }
+    }
+    .section-label {
+      font-family: var(--sans-en);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-top: 4px;
+      position: relative;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 28px; height: 1px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 12px;
+    }
+    .editors-note-body {
+      font-family: var(--serif-jp);
+      font-size: clamp(16px, 1.7vw, 19px);
+      line-height: 2.0;
+      letter-spacing: 0.06em;
+    }
+    .editors-note-body p + p { margin-top: 1.4em; }
+    .editors-note-body .dropcap {
+      float: left;
+      font-family: var(--serif-jp);
+      font-weight: 800;
+      font-size: 4.2em;
+      line-height: 0.85;
+      margin: 0.05em 0.12em -0.05em 0;
+      color: var(--accent);
+    }
+    .editors-note-sig {
+      margin-top: 28px;
+      font-family: var(--sans-en);
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+    }
+    .editors-note-sig b {
+      font-family: var(--serif-jp);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      text-transform: none;
+      font-weight: 700;
+    }
+
+    /* ── CONTENTS（目次）── */
+    .contents {
+      padding: clamp(60px, 9vw, 100px) 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .contents-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: clamp(36px, 6vw, 56px);
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .contents-head-title {
+      font-family: var(--sans-en);
+      font-weight: 700;
+      font-size: clamp(40px, 7vw, 84px);
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+    }
+    .contents-head-meta {
+      font-family: var(--sans-en);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      text-align: right;
+    }
+    .contents-head-meta b { color: var(--ink); font-size: 14px; }
+
+    .contents-list {
+      list-style: none;
+      border-top: 1px solid var(--rule-fine);
+    }
+    .contents-list li {
+      border-bottom: 1px solid var(--rule-fine);
+    }
+    .contents-list a {
+      display: grid;
+      grid-template-columns: 60px 1fr auto auto;
+      align-items: baseline;
+      gap: 16px;
+      padding: 16px 4px;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background 0.15s, padding-left 0.15s;
+    }
+    .contents-list a:hover {
+      background: var(--accent-dim);
+      padding-left: 12px;
+    }
+    .c-num {
+      font-family: var(--sans-en);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+    }
+    .c-name {
+      font-family: var(--serif-jp);
+      font-weight: 700;
+      font-size: clamp(15px, 1.7vw, 18px);
+    }
+    .c-meta {
+      font-family: var(--sans-jp);
+      font-size: 12px;
+      color: var(--ink-mid);
+      letter-spacing: 0.08em;
+    }
+    .c-page {
+      font-family: var(--sans-en);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: var(--ink-mid);
+    }
+    @media (max-width: 640px) {
+      .contents-list a { grid-template-columns: 40px 1fr auto; }
+      .c-meta { display: none; }
+    }
+
+    /* ── FILTER（テキストリンク群＝雑誌の総扉風）── */
+    .filter {
+      padding: clamp(40px, 6vw, 64px) 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .filter-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      padding: 18px 0;
+      align-items: baseline;
+    }
+    .filter-row + .filter-row { border-top: 1px solid var(--rule-fine); }
+    .filter-label {
+      font-family: var(--sans-en);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+    }
+    .filter-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 0;
+      font-family: var(--serif-jp);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .filter-items a {
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0 14px;
+      border-right: 1px solid var(--rule-fine);
+      transition: color 0.15s;
+    }
+    .filter-items a:first-child { padding-left: 0; }
+    .filter-items a:last-child { border-right: 0; }
+    .filter-items a:hover,
+    .filter-items a.is-active { color: var(--accent); font-weight: 600; }
+
+    /* ── ARTICLES（店舗 = 一店一記事）── */
+    .articles {
+      padding: clamp(60px, 9vw, 100px) 0;
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(48px, 6vw, 80px) clamp(32px, 4vw, 56px);
+    }
+    @media (max-width: 720px) {
+      .articles-grid { grid-template-columns: 1fr; }
+    }
+
+    .article {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+    }
+    .article-photo {
+      aspect-ratio: 4 / 5;
+      background: #ECE9E0;
+      background-image:
+        repeating-linear-gradient(45deg, transparent 0 18px, rgba(0,0,0,0.025) 18px 19px),
+        radial-gradient(circle at 30% 35%, #D6D2C5 0%, #ECE9E0 60%);
+      position: relative;
+      overflow: hidden;
+    }
+    .article-photo-num {
+      position: absolute;
+      top: 14px; left: 14px;
+      font-family: var(--sans-en);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      color: var(--ink);
+      background: var(--paper);
+      padding: 5px 9px;
+      z-index: 2;
+    }
+    .article-photo-caption {
+      position: absolute;
+      bottom: 10px; right: 12px;
+      font-family: var(--sans-en);
+      font-style: italic;
+      font-size: 10.5px;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      background: var(--paper);
+      padding: 3px 7px;
+    }
+    .article-photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif-jp);
+      font-weight: 800;
+      font-size: clamp(56px, 8vw, 92px);
+      color: rgba(14,14,14,0.10);
+      letter-spacing: 0.05em;
+    }
+
+    .article-meta {
+      font-family: var(--sans-en);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .article-meta .slash { color: var(--accent); }
+
+    .article-title {
+      font-family: var(--serif-jp);
+      font-weight: 700;
+      font-size: clamp(22px, 2.6vw, 28px);
+      line-height: 1.3;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+    .article-title-en {
+      font-family: var(--sans-en);
+      font-style: italic;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--ink-mid);
+      margin-top: 2px;
+    }
+
+    .article-lead {
+      font-family: var(--serif-jp);
+      font-size: 15.5px;
+      line-height: 1.95;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      border-top: 1px solid var(--rule-fine);
+      padding-top: 14px;
+    }
+
+    .article-info {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 4px 14px;
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: var(--ink-mid);
+      padding-top: 12px;
+      border-top: 1px solid var(--rule-fine);
+    }
+    .article-info dt {
+      font-family: var(--sans-en);
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      padding-top: 5px;
+    }
+    .article-info dd {
+      font-family: var(--sans-jp);
+      color: var(--ink);
+    }
+    .article-info dd a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent);
+    }
+
+    /* ── COLOPHON（奥付）── */
+    .colophon {
+      padding: clamp(50px, 8vw, 80px) 0 clamp(40px, 6vw, 64px);
+      border-top: 4px solid var(--ink);
+      background: var(--paper);
+    }
+    .colophon-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: clamp(24px, 4vw, 48px);
+      margin-bottom: 40px;
+    }
+    @media (max-width: 720px) {
+      .colophon-grid { grid-template-columns: 1fr; }
+    }
+    .colophon h3 {
+      font-family: var(--sans-en);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--rule-fine);
+    }
+    .colophon p {
+      font-family: var(--serif-jp);
+      font-size: 13px;
+      line-height: 1.85;
+      letter-spacing: 0.04em;
+    }
+    .colophon-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--rule-fine);
+      font-family: var(--sans-en);
+      font-size: 10.5px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+    }
+
+    /* ── 「空き地」（POPEYE風の余白セクション）── */
+    .void {
+      padding: clamp(40px, 7vw, 80px) 0;
+      border-bottom: 1px solid var(--rule-fine);
+      text-align: center;
+      font-family: var(--sans-en);
+      font-style: italic;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      color: var(--ink-dim);
+    }
+
+    /* スクロールフェードイン */
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- INDICIA（誌名・号数・発行情報） -->
+  <header class="indicia">
+    <div class="container indicia-inner">
+      <div>
+        <span class="indicia-dot"></span>
+        <span>NUTS PICKS</span>
+        <span>—</span>
+        <span>VOL.01</span>
+      </div>
+      <div>
+        <span>SPRING 2026</span>
+        <span>—</span>
+        <span>FUKUOKA</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MASTHEAD（誌名・ナビ） -->
+  <div class="container">
+    <div class="masthead">
+      <div class="masthead-inner">
+        <a href="/" class="masthead-logo" style="color:inherit;text-decoration:none;">
+          NUTS PICKS<small>CURATED BY DAIMYOU CONNECT</small>
+        </a>
+        <nav class="masthead-nav">
+          <a href="/">Top</a>
+          <a href="/shops.html" class="is-active" style="border-bottom-color:var(--accent);">Shops</a>
+          <a href="https://daimyo-connect.vercel.app/" target="_blank">Event</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- COVER（特集表紙） -->
+  <section class="cover">
+    <div class="container">
+      <div class="cover-issue">
+        <div class="cover-issue-left">
+          <b>VOL.01</b> ／ SPRING ISSUE ／ APRIL 2026
+        </div>
+        <div class="cover-issue-right">
+          A Magazine for Curious Drinkers &amp; Eaters
+        </div>
+      </div>
+
+      <span class="cover-feature-tag">— FEATURE 001 —</span>
+
+      <h1 class="cover-title-en">
+        NUTS<br>PICKS.
+      </h1>
+
+      <h2 class="cover-title-jp">
+        福岡を、<span class="accent">本気で</span>飲み歩く。<br>
+        ナッツが選んだ、十四の店。
+      </h2>
+
+      <p class="cover-lead">
+        食べログの星は見ない。Googleの口コミも信じない。<br>
+        信じるのは、自分の足で通った時間と、そこにいる人たち。<br>
+        福岡を遊び尽くしてきた一人の男が、<br>
+        本当に大切にしている店だけを、ここに。
+      </p>
+
+      <div class="cover-credits">
+        <div class="cover-credit">Curator<b>ナッツ</b></div>
+        <div class="cover-credit">Editor<b>FUKUOKA CONNECT</b></div>
+        <div class="cover-credit">Issued<b>April 26, 2026</b></div>
+        <div class="cover-credit">Total<b>14 Shops / 6 Areas</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITOR'S NOTE -->
+  <section class="editors-note">
+    <div class="container">
+      <div class="editors-note-grid">
+        <div class="section-label">Editor's Note</div>
+        <div>
+          <div class="editors-note-body">
+            <p><span class="dropcap">こ</span>のサイトに載っているのは、ナッツが実際に通い、信頼している店だけです。食べログの評価ではなく、一人の目利きの「本気」でおすすめしています。仕事にも遊びにも全力で、音楽を愛し、仲間を大事にする男の、偏愛十四店。きっとあなたの福岡が、もう一度面白くなる。</p>
+            <p>今号は<b>大名・薬院・博多・野間・宇美・唐津</b>の六エリアから集めた、ナッツの行きつけ。並んでいるのは派手な観光地の名店ではなく、「もう一回行きたい」と本人が言う店ばかり。深夜の一杯から、休日の海まで。読み終わる頃には、行きたい店が三軒は増えているはずです。</p>
+          </div>
+          <div class="editors-note-sig">
+            ／ Curator <b>ナッツ</b> ／ DAIMYOU CONNECT 主宰
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENTS（目次） -->
+  <section class="contents">
+    <div class="container">
+      <div class="contents-head">
+        <div class="contents-head-title">CONTENTS<br><span style="color:var(--accent);">/14</span></div>
+        <div class="contents-head-meta">
+          <div>Total <b>14</b> Shops</div>
+          <div>6 Areas&nbsp;&nbsp;／&nbsp;&nbsp;7 Genres</div>
+        </div>
+      </div>
+
+      <ol class="contents-list" id="contents-list">
+        <!-- JS で挿入 -->
+      </ol>
+    </div>
+  </section>
+
+  <!-- FILTER（雑誌の総扉風テキストリンク） -->
+  <section class="filter">
+    <div class="container">
+      <div class="filter-row">
+        <div class="filter-label">Area</div>
+        <div class="filter-items">
+          <a href="#" class="is-active">すべて</a>
+          <a href="#">大名</a>
+          <a href="#">薬院</a>
+          <a href="#">博多冷泉町</a>
+          <a href="#">野間大池</a>
+          <a href="#">野間四角</a>
+          <a href="#">宇美町</a>
+          <a href="#">唐津</a>
+        </div>
+      </div>
+      <div class="filter-row">
+        <div class="filter-label">Genre</div>
+        <div class="filter-items">
+          <a href="#" class="is-active">すべて</a>
+          <a href="#">バー</a>
+          <a href="#">居酒屋</a>
+          <a href="#">カクテルバー</a>
+          <a href="#">和食・食事処</a>
+          <a href="#">焼きそば</a>
+          <a href="#">海の家・BBQ</a>
+          <a href="#">ヘアサロン</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES（一店一記事） -->
+  <section class="articles">
+    <div class="container">
+      <div class="articles-grid" id="articles-grid">
+        <!-- JS で挿入 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 余白セクション（POPEYE風） -->
+  <div class="container">
+    <div class="void">
+      ＊　　　　＊　　　　＊<br>
+      <span style="opacity:0.6;">— 空き地です。深呼吸して、続きへ。—</span>
+    </div>
+  </div>
+
+  <!-- COLOPHON（奥付） -->
+  <footer class="colophon">
+    <div class="container">
+      <div class="colophon-grid">
+        <div>
+          <h3>About this issue</h3>
+          <p>NUTS PICKS は、福岡で独自の人脈と感性で店を選び続けてきたナッツが、その「本気で通っている店」だけを紹介する偏愛キュレーション誌です。Vol.01 では六エリア・十四店をご紹介します。</p>
+        </div>
+        <div>
+          <h3>Credit</h3>
+          <p>
+            Curated&nbsp;by&nbsp;／&nbsp;ナッツ<br>
+            Edit&nbsp;&amp;&nbsp;Direction&nbsp;／&nbsp;FUKUOKA CONNECT<br>
+            Photo&nbsp;／&nbsp;Coming Soon<br>
+            Special Thanks&nbsp;／&nbsp;14 Shops &amp; their owners
+          </p>
+        </div>
+        <div>
+          <h3>Connect</h3>
+          <p>
+            Event&nbsp;／&nbsp;DAIMYOU CONNECT 2026<br>
+            Web&nbsp;／&nbsp;daimyo-connect.vercel.app<br>
+            Powered&nbsp;by&nbsp;／&nbsp;FUKUOKA CONNECT
+          </p>
+        </div>
+      </div>
+      <div class="colophon-bar">
+        <div>© 2026 NUTS PICKS — Vol.01</div>
+        <div>Printed in Fukuoka, Japan</div>
+        <div>Issue №&nbsp;001</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- データと描画 -->
+  <script>
+    const SHOPS = [
+      { id:'oneday', name:'晩酌bar ONEDAY', nameEn:'Banshaku Bar ONEDAY', area:'大名', genre:'バー',
+        address:'福岡市中央区大名1-10-6 日宝サンセーヌ舞鶴 202', hours:'21:00〜翌3:00',
+        instagram:'oneday_banshakubar',
+        comment:'深夜にだけ会いに行ける、もうひとつの居場所。終電後の大名で、誰かと話したくなったらここ。' },
+      { id:'skb-koji', name:'酒場コージ', nameEn:'Sakaba Koji', area:'大名', genre:'居酒屋',
+        address:'福岡市中央区大名1-9-18 大名Fビル 102', hours:'—',
+        instagram:'skb_ko_zi',
+        comment:'大名の路地裏で、いつ行っても誰かが待っている店。一人で入って常連になれる、稀有な空気。' },
+      { id:'mint-bar-hacca', name:'MINT BAR HACCA', nameEn:'Mint Bar Hacca', area:'大名', genre:'カクテルバー',
+        address:'福岡市中央区大名1-4-28', hours:'19:00〜24:00（日休）',
+        instagram:'mintbarhacca',
+        comment:'グラスの中の一杯が、その日の自分を肯定してくれるカクテル。技と気配りに、毎回背筋が伸びる。' },
+      { id:'com-stand', name:'.comSTAND', nameEn:'dot com STAND', area:'大名', genre:'居酒屋',
+        address:'福岡市中央区大名1-7-10 1階', hours:'18:00〜24:00',
+        instagram:'_comstand',
+        comment:'立ち呑みの軽さと、座って語れる懐の深さ。仕事帰りに「ちょっと一杯」が三杯になる店。' },
+      { id:'komatakaman', name:'大名酒場 駒たか男', nameEn:'Daimyo Sakaba Komatakaman', area:'大名', genre:'居酒屋',
+        address:'福岡市中央区大名1-12-27 パシオン大名 B101', hours:'17:00〜翌2:00',
+        instagram:'komatakaman',
+        comment:'居酒屋の正解はここにある。料理も酒も人も、すべてが「ちゃんとしている」夜の安心地帯。' },
+      { id:'pinon-bar', name:'PiNON BAR', nameEn:'PiNON Bar', area:'大名', genre:'バー',
+        address:'福岡市中央区大名1-8-5 養巴コープ 1F', hours:'—',
+        instagram:'pinonbar_daimyo',
+        comment:'隠れ家、という言葉がこれほど似合う店はない。階段を降りた先で、夜が静かに深まっていく。' },
+      { id:'place-of-all-rush', name:'Place of all RUSH', nameEn:'Place of all RUSH', area:'薬院', genre:'バー',
+        address:'福岡市中央区薬院4-1-9 堤ビル 3階', hours:'21:00〜翌5:00',
+        instagram:'place_of_all_rush',
+        comment:'夜が長くなる店。音楽と酒と仲間、その三つが揃ったら朝までいける。薬院の夜のラスト・ストップ。' },
+      { id:'koubashiya', name:'香家', nameEn:'Koubashiya', area:'博多冷泉町', genre:'居酒屋・食事処',
+        address:'福岡市博多区冷泉町8-19', hours:'8:00〜10:00 / 11:00〜15:00 / 17:00〜24:00',
+        instagram:'koubashiya_light',
+        comment:'朝も昼も夜も、いつ行っても「正解」の店。冷泉町の落ち着いた空気と料理の確かさに、深く息を吐ける。' },
+      { id:'shokudou-owan', name:'食堂おわん', nameEn:'Shokudou Owan', area:'博多冷泉町', genre:'和食・食事処',
+        address:'福岡市博多区冷泉町9-20 1F', hours:'7:30〜10:30 / 12:00〜13:30 / 17:00〜22:30',
+        instagram:'shokudou_owan',
+        comment:'おわん一杯から、丁寧な日本の食卓が始まる。出汁の透明さに、また通いたくなる理由が全部ある。' },
+      { id:'bruntjet', name:'BRUNTJET', nameEn:'BRUNTJET', area:'野間大池', genre:'ヘアサロン',
+        address:'福岡市南区大池1-25-16', hours:'11:00〜19:00（月休）',
+        instagram:'bruntjet_hair',
+        comment:'髪を切る、という行為がもう一つの会話になる場所。野間で唯一、椅子に座るのが楽しみな店。' },
+      { id:'ponta', name:'野間四角ぽん太', nameEn:'Nomayotsukado Ponta', area:'野間四角', genre:'居酒屋',
+        address:'福岡市南区野間1-5-3', hours:'18:00〜23:00（月・日休）',
+        instagram:'nomayotsukado.ponta.nyp',
+        comment:'地元の常連と旅人が、同じカウンターで盃を交わす夜。野間四角の灯りの中でいちばんあたたかい。' },
+      { id:'loulou', name:'朗々（lou.lou）', nameEn:'lou.lou', area:'野間四角', genre:'バー',
+        address:'福岡市南区野間1-1-2', hours:'21:00〜翌1:00（土〜2:00／日休）',
+        instagram:'loulou_fukuoka',
+        comment:'明るすぎず、暗すぎず。会話の温度がちょうどいいバー。野間で「もう一軒」と言いたくなる相棒。' },
+      { id:'sofuren-umi', name:'想夫恋 宇美店', nameEn:'Sofuren Umi', area:'宇美町', genre:'焼きそば',
+        address:'福岡県糟屋郡宇美町宇美中央2-24-7', hours:'11:00〜15:00 / 17:30〜19:30（木休）',
+        instagram:'goto.yakisoba',
+        comment:'日田焼きそばの、噛むほどに広がる旨さ。家族で営む店だからこそ宿る「ちゃんと美味い」が並ぶ。' },
+      { id:'green-beach-house', name:'Green Beach House', nameEn:'Green Beach House', area:'唐津', genre:'BBQ・海の家',
+        address:'佐賀県唐津市浜玉町浜崎 浜崎海岸', hours:'10:00〜17:00（土日のみ）',
+        instagram:'gbh.2010',
+        comment:'夏の正解はここにある。海風と肉の煙、笑い声。唐津の波音を聴きながら、人生をちょっと豊かにする店。' },
+    ];
+
+    const escHtml = (s) => String(s ?? '')
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    const pad2 = (n) => String(n).padStart(2,'0');
+
+    // CONTENTS（目次）
+    const contentsList = document.getElementById('contents-list');
+    contentsList.innerHTML = SHOPS.map((s, i) => `
+      <li>
+        <a href="#shop-${escHtml(s.id)}">
+          <span class="c-num">№ ${pad2(i+1)}</span>
+          <span class="c-name">${escHtml(s.name)}</span>
+          <span class="c-meta">／ ${escHtml(s.area)} ／ ${escHtml(s.genre)}</span>
+          <span class="c-page">p.${pad2((i+1)*2 + 6)}</span>
+        </a>
+      </li>
+    `).join('');
+
+    // ARTICLES（記事グリッド）
+    const grid = document.getElementById('articles-grid');
+    grid.innerHTML = SHOPS.map((s, i) => {
+      const initial = s.nameEn ? s.nameEn.charAt(0).toUpperCase() : s.name.charAt(0);
+      return `
+        <article class="article reveal" id="shop-${escHtml(s.id)}">
+          <div class="article-photo">
+            <span class="article-photo-num">№ ${pad2(i+1)}</span>
+            <span class="article-photo-placeholder">${escHtml(initial)}</span>
+            <span class="article-photo-caption">photo : coming soon</span>
+          </div>
+
+          <div>
+            <div class="article-meta">
+              <span>№ ${pad2(i+1)}</span>
+              <span class="slash">／</span>
+              <span>${escHtml(s.area)}</span>
+              <span class="slash">／</span>
+              <span>${escHtml(s.genre)}</span>
+            </div>
+            <h3 class="article-title">${escHtml(s.name)}</h3>
+            <div class="article-title-en">${escHtml(s.nameEn)}</div>
+          </div>
+
+          <p class="article-lead">${escHtml(s.comment)}</p>
+
+          <dl class="article-info">
+            <dt>Address</dt><dd>${escHtml(s.address)}</dd>
+            <dt>Hours</dt><dd>${escHtml(s.hours)}</dd>
+            <dt>Insta</dt><dd><a href="https://instagram.com/${escHtml(s.instagram)}" target="_blank" rel="noopener">@${escHtml(s.instagram)}</a></dd>
+          </dl>
+        </article>
+      `;
+    }).join('');
+
+    // フェードイン
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }});
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
