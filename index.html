@@ -1,721 +1,967 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ナッツのおすすめ — CURATOR'S PICK | DAIMYOU CONNECT</title>
-  <meta name="description" content="ラジオパーソナリティ・ナッツが実際に通い、信頼している14の店。食べログの評価ではなく、一人の目利きの本気でおすすめする福岡・大名エリアのバー・居酒屋・食事処。">
-  <link rel="canonical" href="https://daimyo-connect-recommend.vercel.app/">
-  <meta property="og:title" content="ナッツのおすすめ — CURATOR'S PICK">
-  <meta property="og:description" content="ラジオパーソナリティ・ナッツが実際に通い、信頼している14の店。一人の目利きの本気でおすすめします。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://daimyo-connect-recommend.vercel.app/">
-  <meta property="og:site_name" content="CURATOR'S PICK by NUTS">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:          #0c0a10;
-      --bg-2:        #13101b;
-      --surface:     #1a1626;
-      --surface-2:   #221d30;
-      --border:      rgba(200,150,60,0.15);
-      --border-dim:  rgba(255,255,255,0.06);
-      --text:        #f0ebe0;
-      --text-mid:    #a08a6e;
-      --text-dim:    #5a4e42;
-      --accent:      #c8963c;
-      --accent-warm: #dfa83c;
-      --red:         #7d2030;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Noto Sans JP', sans-serif;
-      font-weight: 400;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    .sm { font-size: 0.78em; }
-
-    /* ========= HEADER ========= */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(12,10,16,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-dim);
-      padding: 0 20px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .site-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: 0.08em;
-      text-decoration: none;
-    }
-
-    .site-logo span {
-      font-size: 0.68em;
-      color: var(--text-mid);
-      font-style: italic;
-      margin-left: 6px;
-    }
-
-    .site-nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .site-nav a {
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--text-mid);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: color 0.22s cubic-bezier(.25,.46,.45,.94);
-    }
-
-    .site-nav a:hover { color: var(--accent); }
-
-    .site-nav .nav-cta {
-      color: var(--accent);
-      border: 1px solid var(--border);
-      padding: 6px 14px;
-      border-radius: 2px;
-    }
-
-    .site-nav .nav-cta:hover { background: rgba(200,150,60,0.08); }
-
-    /* ========= HERO ========= */
-    .hero {
-      min-height: 100svh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 24px 60px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 50% at 80% 20%, rgba(200,150,60,0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(125,32,48,0.08) 0%, transparent 50%);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      max-width: 640px;
-      margin: 0 auto;
-      width: 100%;
-      position: relative;
-    }
-
-    .curator-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    .curator-label::before {
-      content: '';
-      display: block;
-      width: 32px;
-      height: 1px;
-      background: var(--accent);
-    }
-
-    .curator-label-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      text-transform: uppercase;
-    }
-
-    .hero-title {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(2.2rem, 8vw, 3.8rem);
-      font-weight: 800;
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-      margin-bottom: 32px;
-    }
-
-    .hero-title .accent { color: var(--accent); }
-
-    .hero-curator {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 40px;
-    }
-
-    .avatar {
-      border-radius: 50%;
-      background: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      color: var(--bg);
-      flex-shrink: 0;
-      border: 2px solid rgba(200,150,60,0.3);
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .avatar-64 { width: 64px; height: 64px; font-size: 1.5rem; }
-    .avatar-80 { width: 80px; height: 80px; font-size: 1.8rem; }
-    .avatar-40 { width: 40px; height: 40px; font-size: 1rem; }
-
-    .curator-meta { flex: 1; }
-
-    .curator-name {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-
-    .curator-role {
-      font-size: 0.75rem;
-      color: var(--text-mid);
-      letter-spacing: 0.04em;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--accent);
-      color: var(--bg);
-      font-family: 'Noto Sans JP', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 16px 28px;
-      border-radius: 2px;
-      letter-spacing: 0.04em;
-      transition: background 0.22s cubic-bezier(.25,.46,.45,.94), transform 0.22s cubic-bezier(.25,.46,.45,.94);
-    }
-
-    .hero-cta:hover {
-      background: var(--accent-warm);
-      transform: translateY(-2px);
-    }
-
-    /* ========= PHILOSOPHY ========= */
-    .section-philosophy {
-      background: var(--surface);
-      padding: 80px 24px;
-      position: relative;
-    }
-
-    .section-philosophy::before {
-      content: '\201C';
-      position: absolute;
-      top: 10px;
-      left: 16px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 8rem;
-      color: rgba(200,150,60,0.12);
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    .philosophy-inner {
-      max-width: 560px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .philosophy-text {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(1rem, 3vw, 1.2rem);
-      font-weight: 400;
-      line-height: 1.9;
-      color: var(--text);
-      margin-bottom: 24px;
-    }
-
-    .philosophy-byline {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--accent);
-      letter-spacing: 0.06em;
-    }
-
-    /* ========= SECTION COMMON ========= */
-    .section-inner {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .section-eyebrow {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-family: 'Shippori Mincho', serif;
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      font-weight: 700;
-      line-height: 1.4;
-      margin-bottom: 40px;
-      color: var(--text);
-    }
-
-    /* ========= CURATOR SECTION ========= */
-    .section-curator {
-      background: var(--bg);
-      padding: 100px 24px;
-    }
-
-    .curator-card {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-    }
-
-    .curator-card-body { flex: 1; }
-
-    .curator-card-name {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 2px;
-    }
-
-    .curator-card-role {
-      font-size: 0.78rem;
-      color: var(--text-mid);
-      margin-bottom: 14px;
-    }
-
-    .curator-card-bio {
-      font-size: 0.9rem;
-      color: var(--text-mid);
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-
-    .curator-event-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: var(--accent);
-      text-decoration: none;
-      border: 1px solid var(--border);
-      padding: 8px 14px;
-      border-radius: 2px;
-      transition: background 0.22s cubic-bezier(.25,.46,.45,.94);
-    }
-
-    .curator-event-link:hover { background: rgba(200,150,60,0.08); }
-
-    /* ========= PREVIEW SECTION ========= */
-    .section-preview {
-      background: var(--bg-2);
-      padding: 80px 0;
-    }
-
-    .section-preview .section-header {
-      padding: 0 24px;
-      max-width: 640px;
-      margin: 0 auto 32px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-    }
-
-    .preview-see-all {
-      font-size: 0.82rem;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-      white-space: nowrap;
-      transition: opacity 0.22s cubic-bezier(.25,.46,.45,.94);
-      padding-bottom: 4px;
-    }
-
-    .preview-see-all:hover { opacity: 0.7; }
-
-    .preview-scroll {
-      display: flex;
-      gap: 16px;
-      overflow-x: auto;
-      padding: 4px 24px 12px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      scroll-snap-type: x mandatory;
-    }
-
-    .preview-scroll::-webkit-scrollbar { display: none; }
-
-    .preview-card {
-      flex-shrink: 0;
-      width: 200px;
-      background: var(--surface);
-      border: 1px solid var(--border-dim);
-      border-radius: 4px;
-      overflow: hidden;
-      text-decoration: none;
-      scroll-snap-align: start;
-      transition: border-color 0.22s cubic-bezier(.25,.46,.45,.94), transform 0.22s cubic-bezier(.25,.46,.45,.94);
-    }
-
-    .preview-card:hover {
-      border-color: var(--border);
-      transform: translateY(-3px);
-    }
-
-    .preview-card-photo {
-      width: 100%;
-      aspect-ratio: 4/3;
-      background: var(--surface-2);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .preview-card-photo::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 6px,
-        rgba(255,255,255,0.02) 6px,
-        rgba(255,255,255,0.02) 7px
-      );
-    }
-
-    .preview-card-photo-emoji {
-      font-size: 1.8rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .preview-card-photo-label {
-      font-size: 0.62rem;
-      color: var(--text-dim);
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 0 8px;
-    }
-
-    .preview-card-area-bar { height: 3px; width: 100%; }
-
-    .preview-card-body { padding: 12px; }
-
-    .preview-card-name {
-      font-family: 'Shippori Mincho', serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 6px;
-      line-height: 1.4;
-    }
-
-    .preview-card-tags {
-      display: flex;
-      gap: 4px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      font-size: 0.65rem;
-      color: var(--text-mid);
-      background: var(--surface-2);
-      border: 1px solid var(--border-dim);
-      padding: 2px 7px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-
-    /* ========= FOOTER ========= */
-    .site-footer {
-      background: var(--bg);
-      border-top: 1px solid var(--border-dim);
-      padding: 40px 24px;
-      text-align: center;
-    }
-
-    .footer-powered {
-      font-size: 0.75rem;
-      color: var(--text-dim);
-      margin-bottom: 12px;
-    }
-
-    .footer-powered a {
-      color: var(--text-mid);
-      text-decoration: none;
-      transition: color 0.22s cubic-bezier(.25,.46,.45,.94);
-    }
-
-    .footer-powered a:hover { color: var(--accent); }
-
-    .footer-event-link {
-      display: inline-block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.9rem;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      opacity: 0.8;
-      transition: opacity 0.22s cubic-bezier(.25,.46,.45,.94);
-    }
-
-    .footer-event-link:hover { opacity: 1; }
-
-    /* ========= FADE IN ========= */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s cubic-bezier(.25,.46,.45,.94), transform 0.6s cubic-bezier(.25,.46,.45,.94);
-    }
-
-    .fade-in.visible { opacity: 1; transform: none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>NUTS PICKS | ナッツが本気でおすすめする福岡の店MAP</title>
+<meta name="description" content="DAIMYOU CONNECT 主宰ナッツが、本気で通っている福岡の店だけを地図で紹介。バー・居酒屋・カクテルバー・食事処をエリア・ジャンルから探せます。">
+<meta property="og:title" content="NUTS PICKS | ナッツが本気でおすすめする福岡の店MAP">
+<meta property="og:description" content="食べログの星じゃなく、自分の足で通った店。ナッツの偏愛キュレーション。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://daimyo-connect-recommend.vercel.app/">
+<meta property="og:site_name" content="NUTS PICKS">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://daimyo-connect-recommend.vercel.app/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --bg: #1a0e1e;
+  --bg-card: rgba(255,255,255,0.08);
+  --bg-card-hover: rgba(255,255,255,0.14);
+  --surface: rgba(255,255,255,0.06);
+  --border: rgba(255,255,255,0.1);
+  --border-hover: rgba(255,255,255,0.22);
+  --text: #fff;
+  --text-mid: rgba(255,255,255,0.75);
+  --text-dim: rgba(255,255,255,0.45);
+  --accent: #ffd475;
+  --accent-warm: #ffaa40;
+  --accent-glow: rgba(255,212,117,0.2);
+  --pin: #d4400a;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  background-image:
+    linear-gradient(
+      180deg,
+      #1a0e1e 0%,
+      #2e1228 8%,
+      #4a1a2a 18%,
+      #6b2a1e 30%,
+      #8a4a18 42%,
+      #b87828 52%,
+      #d49a30 60%,
+      #e8b840 68%,
+      #d49a30 76%,
+      #8a4a18 88%,
+      #3a1622 100%
+    );
+  background-attachment: fixed;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ===== HEADER ===== */
+.header {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(26,14,30,0.85);
+  backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 20px;
+}
+.header-inner {
+  max-width: 520px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+  font-size: 0.7rem; font-weight: 900; letter-spacing: 0.25em;
+  color: var(--accent); text-transform: uppercase;
+}
+.logo span { color: var(--text-mid); font-weight: 400; letter-spacing: 0.1em; margin-left: 8px; font-size: 0.55rem; }
+.header-badge {
+  font-size: 0.52rem; font-weight: 700; letter-spacing: 0.15em;
+  padding: 4px 10px; border-radius: 20px;
+  background: rgba(255,170,64,0.15); color: #ffaa40;
+  border: 1px solid rgba(255,170,64,0.25);
+}
+
+/* ===== HERO (キュレーター紹介) ===== */
+.hero {
+  max-width: 520px; margin: 0 auto;
+  padding: 24px 20px 4px;
+}
+.hero-card {
+  position: relative;
+  padding: 26px 22px 24px;
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at top, rgba(255,170,64,0.16), transparent 60%),
+    linear-gradient(180deg, rgba(20,10,24,0.6), rgba(40,18,30,0.6));
+  border: 1px solid rgba(255,170,64,0.25);
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.03) inset,
+    0 8px 32px rgba(0,0,0,0.4),
+    0 0 60px rgba(255,170,64,0.08);
+  overflow: hidden;
+}
+.hero-card::before {
+  content: ''; position: absolute; top: -1px; left: 10%; right: 10%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,212,117,0.6), transparent);
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 0.52rem; font-weight: 700; letter-spacing: 0.28em;
+  color: var(--accent); text-transform: uppercase;
+  padding: 4px 10px; border-radius: 20px;
+  background: rgba(255,170,64,0.1);
+  border: 1px solid rgba(255,170,64,0.25);
+  margin-bottom: 14px;
+}
+.hero-title {
+  font-size: 1.85rem; font-weight: 900; line-height: 1.15;
+  background: linear-gradient(135deg, #fff 0%, #ffd475 50%, #ffaa40 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+  font-family: 'Noto Serif JP', serif;
+}
+.hero-subtitle {
+  font-size: 0.78rem; color: var(--text-mid); letter-spacing: 0.06em;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.hero-curator {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 0 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.hero-avatar {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-warm));
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800; font-size: 1.4rem;
+  color: var(--bg);
+  border: 2px solid rgba(255,212,117,0.4);
+  flex-shrink: 0;
+}
+.hero-curator-info { flex: 1; min-width: 0; }
+.hero-curator-name {
+  font-size: 0.92rem; font-weight: 800; letter-spacing: 0.04em;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+.hero-curator-name .en {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.18em;
+  color: var(--accent); margin-left: 8px;
+}
+.hero-curator-role {
+  font-size: 0.62rem; color: var(--text-dim); letter-spacing: 0.06em;
+  line-height: 1.5;
+}
+
+/* ===== PHILOSOPHY ===== */
+.philosophy {
+  max-width: 520px; margin: 0 auto;
+  padding: 18px 20px 14px;
+  text-align: center;
+}
+.philosophy-text {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.86rem; font-weight: 400; line-height: 1.85;
+  color: var(--text-mid); letter-spacing: 0.06em;
+}
+.philosophy-text strong {
+  color: var(--accent); font-weight: 700;
+}
+
+/* ===== TABS ===== */
+.tab-bar {
+  max-width: 520px; margin: 0 auto;
+  display: flex; gap: 6px;
+  padding: 12px 12px;
+  background: rgba(0,0,0,0.28);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+}
+.tab-btn {
+  flex: 1;
+  min-height: 52px;
+  padding: 10px 8px;
+  font-family: inherit; font-size: 0.78rem; font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--text-mid);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.18s, background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+.tab-btn .tab-icon { font-size: 1.05rem; line-height: 1; transition: transform 0.2s; }
+.tab-btn:hover:not(.active) {
+  color: var(--text);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+}
+.tab-btn:active { transform: scale(0.97); }
+.tab-btn.active {
+  color: #1a0e1e;
+  background: linear-gradient(135deg, #ffe09a 0%, #ffd475 40%, #ffaa40 100%);
+  border-color: transparent;
+  box-shadow:
+    0 6px 20px rgba(255,170,64,0.38),
+    0 0 0 1px rgba(255,212,117,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+}
+.tab-btn.active .tab-icon { transform: scale(1.08); }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.tab-bar-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: none;
+  background: rgba(0,0,0,0.32);
+  margin-top: 20px;
+}
+
+/* ===== FILTER ===== */
+.filter-section {
+  max-width: 520px; margin: 0 auto;
+  border-bottom: 1px solid var(--border);
+}
+.filter-row {
+  display: flex; gap: 8px;
+  padding: 10px 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  align-items: center;
+}
+.filter-row::-webkit-scrollbar { display: none; }
+.filter-row + .filter-row { border-top: 1px solid rgba(255,255,255,0.04); }
+.filter-label {
+  flex-shrink: 0;
+  font-size: 0.5rem; font-weight: 700; letter-spacing: 0.22em;
+  color: var(--text-dim); text-transform: uppercase;
+  width: 44px;
+}
+.filter-btn {
+  flex-shrink: 0;
+  font-family: inherit; font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 6px 14px; border-radius: 18px;
+  border: 1px solid var(--border);
+  background: transparent; color: var(--text-mid);
+  cursor: pointer; transition: all 0.2s;
+  white-space: nowrap;
+}
+.filter-btn:hover { border-color: var(--border-hover); color: var(--text); }
+.filter-btn.active {
+  background: linear-gradient(135deg, #ffd475, #ffaa40);
+  color: #1a0e1e; font-weight: 700;
+  border-color: transparent;
+  box-shadow: 0 2px 12px rgba(255,170,64,0.3);
+}
+
+/* ===== MAP ===== */
+.map-wrap {
+  max-width: 520px; margin: 0 auto;
+  height: 360px; position: relative;
+  border-bottom: 1px solid var(--border);
+}
+#map { width: 100%; height: 100%; background: #e8e0d8; }
+.leaflet-control-attribution { font-size: 9px !important; opacity: 0.5; }
+.leaflet-control-zoom a {
+  background: rgba(26,14,30,0.9) !important; color: #fff !important;
+  border-color: rgba(255,255,255,0.15) !important;
+}
+.map-pin {
+  width: 32px; height: 32px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 900; color: #fff;
+  background: var(--pin);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 0 6px rgba(212,64,10,0.4);
+  transition: transform 0.2s;
+  position: relative;
+}
+.map-pin::after {
+  content: ''; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-top: 6px solid var(--pin);
+}
+.map-pin:hover { transform: scale(1.2); }
+.leaflet-popup-content-wrapper {
+  background: rgba(30,16,34,0.95) !important;
+  backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35) !important;
+}
+.leaflet-popup-tip { background: rgba(26,14,30,0.92) !important; }
+.popup-name { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; color: var(--accent); }
+.popup-tags { font-size: 0.62rem; color: var(--text-dim); margin-bottom: 6px; letter-spacing: 0.04em; }
+.popup-comment { font-size: 0.72rem; color: var(--text-mid); line-height: 1.55; font-family: 'Noto Serif JP', serif; }
+
+/* ===== SHOP LIST ===== */
+.shop-section {
+  max-width: 520px; margin: 0 auto;
+  padding: 16px 20px 100px;
+}
+.section-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 14px;
+}
+.section-title {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.25em;
+  color: var(--text-dim); text-transform: uppercase;
+}
+.shop-count { font-size: 0.6rem; color: var(--text-dim); }
+.shop-count strong { color: var(--accent); }
+
+.shop-card {
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.25s;
+  animation: fadeUp 0.4s ease both;
+}
+.shop-card:hover {
+  background: rgba(0,0,0,0.35);
+  border-color: rgba(255,212,117,0.25);
+  transform: translateY(-1px);
+}
+.shop-card-top {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.shop-name {
+  font-size: 1rem; font-weight: 700; letter-spacing: 0.02em;
+  line-height: 1.3; flex: 1;
+}
+.shop-tags {
+  display: flex; gap: 6px; flex-shrink: 0;
+  flex-wrap: wrap; justify-content: flex-end;
+  max-width: 50%;
+}
+.shop-tag {
+  font-size: 0.5rem; font-weight: 600; letter-spacing: 0.12em;
+  padding: 3px 8px; border-radius: 4px;
+  background: rgba(255,255,255,0.04); color: var(--text-dim);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+.shop-tag.area {
+  color: var(--accent);
+  border-color: rgba(255,212,117,0.3);
+  background: rgba(255,212,117,0.06);
+}
+.nuts-comment {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.85rem; line-height: 1.7;
+  color: var(--text); letter-spacing: 0.04em;
+  padding: 14px 14px 14px 22px;
+  margin-bottom: 14px;
+  background: rgba(255,170,64,0.06);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  position: relative;
+}
+.nuts-comment::before {
+  content: '〝';
+  position: absolute;
+  top: 4px; left: 8px;
+  font-size: 1.4rem; color: var(--accent);
+  font-family: 'Noto Serif JP', serif;
+  opacity: 0.45;
+  line-height: 1;
+}
+.nuts-comment-sig {
+  display: block;
+  margin-top: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.55rem; font-weight: 600; letter-spacing: 0.2em;
+  color: var(--accent); text-transform: uppercase;
+  text-align: right;
+}
+.shop-info-row {
+  font-size: 0.68rem; color: var(--text-dim); line-height: 1.9;
+}
+.shop-info-row span { color: var(--text-mid); }
+.shop-bottom {
+  display: flex; justify-content: flex-end; align-items: center;
+  margin-top: 14px; padding-top: 14px;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+}
+.shop-btn {
+  display: flex; align-items: center; gap: 5px;
+  font-family: inherit; font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 7px 14px; border-radius: 6px;
+  border: 1px solid var(--border); background: transparent;
+  color: var(--text-mid); cursor: pointer; transition: all 0.2s;
+  text-decoration: none;
+}
+.shop-btn:hover { border-color: var(--border-hover); color: var(--text); }
+.shop-btn.ig { border-color: rgba(255,170,64,0.25); color: #ffd475; }
+.shop-btn.ig:hover { background: rgba(255,170,64,0.12); }
+.shop-btn.route { border-color: rgba(94,234,160,0.25); color: #5eeaa0; }
+.shop-btn.route:hover { background: rgba(94,234,160,0.12); }
+
+.empty-state {
+  text-align: center; padding: 40px 20px;
+  font-size: 0.8rem; color: var(--text-dim); letter-spacing: 0.06em;
+}
+
+/* ===== ABOUT TAB ===== */
+.about-section {
+  max-width: 520px; margin: 0 auto;
+  padding: 22px 20px 100px;
+}
+.about-block {
+  background: rgba(0,0,0,0.25);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 14px;
+}
+.about-block-title {
+  font-size: 0.55rem; font-weight: 700; letter-spacing: 0.25em;
+  color: var(--text-dim); text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.about-curator {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.about-curator .hero-avatar {
+  width: 64px; height: 64px; font-size: 1.7rem;
+}
+.about-curator-name {
+  font-size: 1.05rem; font-weight: 800;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.about-curator-name .en {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.18em;
+  color: var(--accent); margin-left: 8px;
+}
+.about-curator-role {
+  font-size: 0.7rem; color: var(--text-dim); letter-spacing: 0.04em;
+  line-height: 1.6;
+}
+.about-bio {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.86rem; line-height: 1.95;
+  color: var(--text-mid); letter-spacing: 0.04em;
+}
+.about-philosophy {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 0.92rem; line-height: 2.0;
+  color: var(--text); letter-spacing: 0.06em;
+  padding: 16px;
+  background: rgba(255,170,64,0.06);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+}
+.event-promo {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px;
+  background: rgba(255,170,64,0.08);
+  border: 1px solid rgba(255,170,64,0.25);
+  border-radius: 10px;
+  margin-top: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.event-promo:hover {
+  background: rgba(255,170,64,0.14);
+  border-color: rgba(255,170,64,0.4);
+  transform: translateY(-1px);
+}
+.event-promo-text { flex: 1; }
+.event-promo-label {
+  font-size: 0.55rem; font-weight: 700; letter-spacing: 0.2em;
+  color: var(--accent); text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.event-promo-name {
+  font-size: 0.92rem; font-weight: 800;
+  color: var(--text);
+  letter-spacing: 0.04em;
+}
+.event-promo-arrow { font-size: 1.2rem; color: var(--accent); }
+
+/* ===== FOOTER ===== */
+.footer {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  z-index: 900;
+  background: rgba(26,14,30,0.9);
+  backdrop-filter: blur(24px) saturate(1.4);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 20px;
+}
+.footer-inner {
+  max-width: 520px; margin: 0 auto;
+  display: flex; gap: 10px;
+}
+.footer-btn {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+  font-family: inherit; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 12px; border-radius: 8px;
+  border: none; cursor: pointer; transition: all 0.2s;
+  text-decoration: none;
+}
+.footer-btn.primary {
+  background: linear-gradient(135deg, #ffd475, #ffaa40);
+  color: #1a0e1e;
+}
+.footer-btn.primary:hover { background: linear-gradient(135deg, #ffe09a, #ffbb55); }
+.footer-btn.secondary {
+  background: rgba(255,255,255,0.08); color: var(--text-mid);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.footer-btn.secondary:hover { color: var(--text); border-color: rgba(255,255,255,0.25); }
+
+/* ===== SHARE ===== */
+.share-section {
+  max-width: 520px; margin: 0 auto;
+  padding: 16px 20px;
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 80px;
+}
+.share-label {
+  font-size: 0.52rem; font-weight: 700; letter-spacing: 0.22em;
+  color: var(--text-dim); text-transform: uppercase;
+  white-space: nowrap;
+}
+.share-buttons {
+  display: flex; gap: 8px; flex: 1; justify-content: flex-end;
+}
+.share-btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  cursor: pointer; transition: all 0.2s;
+  color: #fff; text-decoration: none;
+  font-family: inherit; padding: 0;
+}
+.share-btn:hover { transform: translateY(-2px) scale(1.05); }
+.share-btn svg { width: 17px; height: 17px; }
+.share-btn.x:hover { background: #000; border-color: #000; }
+.share-btn.line:hover { background: #06C755; border-color: #06C755; }
+.share-btn.copy:hover { background: rgba(255,170,64,0.2); border-color: #ffaa40; color: #ffaa40; }
+.share-btn.copy.copied { background: #5eeaa0; border-color: #5eeaa0; color: #0a0a0f; }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <a href="/" class="site-logo">NUTS PICKS <span>by DAIMYOU CONNECT</span></a>
-    <nav class="site-nav">
-      <a href="shops.html" class="nav-cta">店を見る</a>
-      <a href="https://daimyo-connect.vercel.app/" target="_blank" rel="noopener">イベント</a>
-    </nav>
-  </header>
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">NUTS PICKS<span>by DAIMYOU CONNECT</span></a>
+    <div class="header-badge">FUKUOKA</div>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="curator-label">
-        <span class="curator-label-text">Curator's Pick</span>
-      </div>
-      <h1 class="hero-title" id="hero-title">
-        ナッツが、<span class="accent">本気でおすすめ</span><span class="sm">する</span>店。
-      </h1>
-      <div class="hero-curator">
-        <div class="avatar avatar-64" id="hero-avatar">N</div>
-        <div class="curator-meta">
-          <div class="curator-name" id="hero-curator-name">ナッツ</div>
-          <div class="curator-role" id="hero-curator-role">DAIMYOU CONNECT 主宰 / ラジオパーソナリティ</div>
-        </div>
-      </div>
-      <a href="shops.html" class="hero-cta">14の店を見る →</a>
-    </div>
-  </section>
-
-  <!-- PHILOSOPHY -->
-  <section class="section-philosophy fade-in">
-    <div class="philosophy-inner">
-      <p class="philosophy-text" id="philosophy-text">
-        このサイトに載っているのは、ナッツが実際に通い、信頼している店だけ。食べログの評価ではなく、一人の目利きの「本気」でおすすめします。
-      </p>
-      <div class="philosophy-byline">— ナッツ</div>
-    </div>
-  </section>
-
-  <!-- CURATOR -->
-  <section class="section-curator fade-in">
-    <div class="section-inner">
-      <p class="section-eyebrow">Curator</p>
-      <h2 class="section-title">目利き<span class="sm">を</span>知<span class="sm">る</span></h2>
-      <div class="curator-card">
-        <div class="avatar avatar-80" id="curator-avatar">N</div>
-        <div class="curator-card-body">
-          <div class="curator-card-name" id="curator-name">ナッツ</div>
-          <div class="curator-card-role" id="curator-role">DAIMYOU CONNECT 主宰 / ラジオパーソナリティ</div>
-          <p class="curator-card-bio" id="curator-bio">仕事にも遊びにも本気。音楽を愛し、仲間を大事にする。全国に顧客を持つダクト屋の経営者でありながら、ラジオ番組のメインパーソナリティも務める。彼のまわりには、いつも人が集まっている。</p>
-          <a href="https://daimyo-connect.vercel.app/" target="_blank" rel="noopener" class="curator-event-link" id="curator-event-link">
-            DAIMYOU CONNECT 2026 →
-          </a>
-        </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-card">
+    <span class="hero-tag">Curator's Pick</span>
+    <h1 class="hero-title">本気で通っている、<br>福岡の店だけ。</h1>
+    <p class="hero-subtitle">
+      食べログの星じゃなく、自分の足で確かめた店。<br>
+      ナッツが信頼するお店をマップで紹介します。
+    </p>
+    <div class="hero-curator">
+      <div class="hero-avatar" id="curatorAvatar">N</div>
+      <div class="hero-curator-info">
+        <div class="hero-curator-name" id="curatorName">ナッツ<span class="en">NUTS</span></div>
+        <div class="hero-curator-role" id="curatorRole">DAIMYOU CONNECT 主宰</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PREVIEW -->
-  <section class="section-preview fade-in">
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <p class="philosophy-text">
+    一人の目利きの「<strong>本気</strong>」で、おすすめします。
+  </p>
+</section>
+
+<!-- TABS -->
+<div class="tab-bar">
+  <button class="tab-btn active" data-tab="map"><span class="tab-icon">📍</span>店をMAPで探す</button>
+  <button class="tab-btn" data-tab="about"><span class="tab-icon">👤</span>ナッツについて</button>
+</div>
+
+<!-- TAB: MAP -->
+<div class="tab-panel active" id="panel-map">
+  <div class="filter-section">
+    <div class="filter-row">
+      <span class="filter-label">エリア</span>
+      <div id="areaFilters" style="display:flex;gap:8px;"></div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">ジャンル</span>
+      <div id="genreFilters" style="display:flex;gap:8px;"></div>
+    </div>
+  </div>
+  <div class="map-wrap"><div id="map"></div></div>
+  <section class="shop-section">
     <div class="section-header">
-      <div>
-        <p class="section-eyebrow">Pick Up</p>
-        <h2 class="section-title" style="margin-bottom:0;">ナッツ<span class="sm">の</span>おすすめ</h2>
-      </div>
-      <a href="shops.html" class="preview-see-all">すべて見る →</a>
+      <span class="section-title">SHOPS</span>
+      <span class="shop-count"><strong id="visibleCount">0</strong> / <span id="totalCount">0</span> 件</span>
     </div>
-    <div class="preview-scroll" id="preview-scroll"></div>
+    <div id="shopList"></div>
   </section>
+</div>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p class="footer-powered">Powered by <a href="https://fukuoka-connect.github.io/" target="_blank" rel="noopener">Fukuoka Connect</a></p>
-    <a href="https://daimyo-connect.vercel.app/" target="_blank" rel="noopener" class="footer-event-link">DAIMYOU CONNECT 2026</a>
-  </footer>
+<!-- TAB: ABOUT -->
+<div class="tab-panel" id="panel-about">
+  <section class="about-section">
+    <div class="about-block">
+      <div class="about-block-title">CURATOR</div>
+      <div class="about-curator">
+        <div class="hero-avatar" id="aboutAvatar">N</div>
+        <div>
+          <div class="about-curator-name" id="aboutName">ナッツ<span class="en">NUTS</span></div>
+          <div class="about-curator-role" id="aboutRole">DAIMYOU CONNECT 主宰 / ラジオパーソナリティ</div>
+        </div>
+      </div>
+      <p class="about-bio" id="aboutBio">
+        仕事にも遊びにも本気。音楽を愛し、仲間を大事にする。
+      </p>
+    </div>
 
-  <script>
-    'use strict';
+    <div class="about-block">
+      <div class="about-block-title">PHILOSOPHY</div>
+      <p class="about-philosophy" id="aboutPhilosophy">
+        このサイトに載っているのは、ナッツが実際に通い、信頼している店だけ。
+      </p>
+    </div>
 
-    function escHtml(s) {
-      if (s == null) return '';
-      return String(s)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-    }
+    <div class="about-block">
+      <div class="about-block-title">EVENT</div>
+      <a href="https://daimyo-connect.vercel.app/" target="_blank" rel="noopener noreferrer" class="event-promo">
+        <div class="event-promo-text">
+          <div class="event-promo-label">2026.6.6 SAT</div>
+          <div class="event-promo-name">DAIMYOU CONNECT 2026</div>
+        </div>
+        <span class="event-promo-arrow">→</span>
+      </a>
+    </div>
+  </section>
+</div>
 
-    const AREA_COLORS = {
-      '大名':      '#c8963c',
-      '薬院':      '#e07850',
-      '博多冷泉町': '#4a96c8',
-      '野間大池':  '#5a9e58',
-      '野間四角':  '#6eb86e',
-      '宇美町':    '#a85ab4',
-      '唐津':      '#46b4a0',
-    };
+<!-- TABS (下層) -->
+<div class="tab-bar tab-bar-bottom">
+  <button class="tab-btn" data-tab="map"><span class="tab-icon">📍</span>店をMAPで探す</button>
+  <button class="tab-btn" data-tab="about"><span class="tab-icon">👤</span>ナッツについて</button>
+</div>
 
-    const GENRE_EMOJI = {
-      'バー':        '🍸',
-      '居酒屋':      '🍺',
-      'カクテルバー': '🍹',
-      'ヘアサロン':   '✂️',
-      'BBQ・海の家':  '🏖️',
-      '焼きそば':    '🍜',
-      '和食・食事処': '🍱',
-      '居酒屋・食事処':'🍽️',
-    };
+<!-- SHARE -->
+<section class="share-section">
+  <span class="share-label">SHARE</span>
+  <div class="share-buttons">
+    <a href="#" class="share-btn x" id="shareX" target="_blank" rel="noopener noreferrer" aria-label="Xでシェア">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+    <a href="#" class="share-btn line" id="shareLine" target="_blank" rel="noopener noreferrer" aria-label="LINEでシェア">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.89c.50 0 .934.44.934.93 0 .5-.434.93-.934.93h-2.93v1.86h2.93c.5 0 .934.44.934.93 0 .5-.434.93-.934.93h-3.86c-.5 0-.934-.44-.934-.93V6.9c0-.5.434-.93.934-.93h3.86c.5 0 .934.43.934.93 0 .5-.434.93-.934.93h-2.93v1.86zM13.5 14.47c0 .5-.434.93-.934.93-.3 0-.557-.13-.73-.36L7.93 9.67v4.8c0 .5-.434.93-.934.93-.5 0-.934-.44-.934-.93V6.9c0-.5.434-.93.934-.93.3 0 .557.13.73.36l3.917 5.38V6.9c0-.5.43-.93.93-.93.5 0 .934.43.934.93zM5.1 14.47c0 .5-.43.93-.93.93-.5 0-.934-.44-.934-.93V6.9c0-.5.434-.93.934-.93.5 0 .93.43.93.93zM12 0C5.37 0 0 4.36 0 9.74c0 4.82 4.27 8.86 10.02 9.62.39.08.92.26 1.06.6.13.3.08.78.04 1.09l-.17 1.03c-.05.3-.24 1.19 1.05.65 1.29-.54 6.97-4.1 9.51-7.03 1.76-1.93 2.6-3.89 2.6-6.05C24.08 4.36 18.71 0 12 0z"/></svg>
+    </a>
+    <button class="share-btn copy" id="shareCopy" aria-label="URLをコピー">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    </button>
+  </div>
+</section>
 
-    async function loadData() {
-      try {
-        const [cRes, sRes] = await Promise.all([
-          fetch('/data/curator.json'),
-          fetch('/data/shops.json'),
-        ]);
-        const curator = await cRes.json();
-        const { shops } = await sRes.json();
-        return { curator, shops };
-      } catch (e) {
-        console.error('データ読み込みエラー', e);
-        return null;
-      }
-    }
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <a href="https://www.instagram.com/daimyo_connect/" target="_blank" rel="noopener noreferrer" class="footer-btn secondary">
+      @daimyo_connect
+    </a>
+    <button class="footer-btn primary" onclick="scrollToMap()">
+      MAP で探す ↑
+    </button>
+  </div>
+</footer>
 
-    function renderCurator(curator) {
-      const heroTitle = document.getElementById('hero-title');
-      if (heroTitle) heroTitle.innerHTML = escHtml(curator.name) + 'が、<span class="accent">本気でおすすめ</span><span class="sm">する</span>店。';
+<script>
+(function() {
+  let CURATOR = null, SHOPS = [];
+  let map, markers = [];
+  let activeArea = 'all', activeGenre = 'all';
 
-      const setTxt = (id, val) => { const el = document.getElementById(id); if (el && val) el.textContent = val; };
-      setTxt('hero-curator-name', curator.name);
-      setTxt('hero-curator-role', curator.role);
-      setTxt('curator-name', curator.name);
-      setTxt('curator-role', curator.role);
-      setTxt('curator-bio', curator.bio);
-      setTxt('philosophy-text', curator.philosophy);
+  function escHtml(s) {
+    if (s == null) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
 
-      if (curator.event && curator.eventUrl) {
-        const evLink = document.getElementById('curator-event-link');
-        if (evLink) { evLink.href = curator.eventUrl; evLink.textContent = curator.event + ' →'; }
-      }
+  Promise.all([
+    fetch('data/curator.json?' + Date.now()).then(r => r.json()),
+    fetch('data/shops.json?' + Date.now()).then(r => r.json())
+  ]).then(([curator, shopsData]) => {
+    CURATOR = curator;
+    SHOPS = shopsData.shops || [];
+    init();
+  }).catch(err => console.error('data load failed', err));
 
-      const avatarPlaceholder = curator.photo
-        ? `<img src="${escHtml(curator.photo)}" alt="${escHtml(curator.name)}">`
-        : escHtml(curator.photoPlaceholder || 'N');
-      ['hero-avatar', 'curator-avatar'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.innerHTML = avatarPlaceholder;
+  function init() {
+    renderCurator();
+    buildFilters();
+    initMap();
+    renderShops();
+    bindTabs();
+    bindShare();
+  }
+
+  function renderCurator() {
+    if (!CURATOR) return;
+    const initial = CURATOR.photoPlaceholder || (CURATOR.nameEn || CURATOR.name || 'N').charAt(0).toUpperCase();
+    document.getElementById('curatorAvatar').textContent = initial;
+    document.getElementById('aboutAvatar').textContent = initial;
+
+    const nameHtml = escHtml(CURATOR.name) + '<span class="en">' + escHtml(CURATOR.nameEn || '') + '</span>';
+    document.getElementById('curatorName').innerHTML = nameHtml;
+    document.getElementById('aboutName').innerHTML = nameHtml;
+
+    document.getElementById('curatorRole').textContent = CURATOR.role || '';
+    document.getElementById('aboutRole').textContent = CURATOR.role || '';
+    if (CURATOR.bio) document.getElementById('aboutBio').textContent = CURATOR.bio;
+    if (CURATOR.philosophy) document.getElementById('aboutPhilosophy').textContent = CURATOR.philosophy;
+  }
+
+  function buildFilters() {
+    const areas = Array.from(new Set(SHOPS.map(s => s.area).filter(Boolean)));
+    const genres = Array.from(new Set(
+      SHOPS.flatMap(s => (s.genre || '').split(/[・、,/]/).map(x => x.trim()).filter(Boolean))
+    ));
+
+    const areaWrap = document.getElementById('areaFilters');
+    const genreWrap = document.getElementById('genreFilters');
+
+    areaWrap.innerHTML = '<button class="filter-btn active" data-area="all">すべて</button>' +
+      areas.map(a => '<button class="filter-btn" data-area="' + escHtml(a) + '">' + escHtml(a) + '</button>').join('');
+
+    genreWrap.innerHTML = '<button class="filter-btn active" data-genre="all">すべて</button>' +
+      genres.map(g => '<button class="filter-btn" data-genre="' + escHtml(g) + '">' + escHtml(g) + '</button>').join('');
+
+    areaWrap.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        areaWrap.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        activeArea = this.dataset.area;
+        addMarkers(); renderShops();
       });
-    }
+    });
 
-    function buildPreviewCard(shop) {
-      const color = AREA_COLORS[shop.area] || '#c8963c';
-      const emoji = GENRE_EMOJI[shop.genre] || '🏪';
-      const card = document.createElement('a');
-      card.href = 'shop.html?id=' + encodeURIComponent(shop.id);
-      card.className = 'preview-card';
-      card.setAttribute('aria-label', shop.name);
-      card.innerHTML =
-        '<div class="preview-card-photo">' +
-          '<span class="preview-card-photo-emoji">' + emoji + '</span>' +
-          '<span class="preview-card-photo-label">photo coming soon</span>' +
-        '</div>' +
-        '<div class="preview-card-area-bar" style="background:' + color + ';"></div>' +
-        '<div class="preview-card-body">' +
-          '<div class="preview-card-name">' + escHtml(shop.name) + '</div>' +
-          '<div class="preview-card-tags">' +
-            '<span class="tag">' + escHtml(shop.area) + '</span>' +
-            '<span class="tag">' + escHtml(shop.genre) + '</span>' +
-          '</div>' +
-        '</div>';
-      return card;
-    }
+    genreWrap.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        genreWrap.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        activeGenre = this.dataset.genre;
+        addMarkers(); renderShops();
+      });
+    });
+  }
 
-    function initFadeIn() {
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-    }
-
-    (async () => {
-      const data = await loadData();
-      if (data) {
-        renderCurator(data.curator);
-        const container = document.getElementById('preview-scroll');
-        data.shops.slice(0, 5).forEach(shop => container.appendChild(buildPreviewCard(shop)));
+  function getFilteredShops() {
+    return SHOPS.filter(s => {
+      if (activeArea !== 'all' && s.area !== activeArea) return false;
+      if (activeGenre !== 'all') {
+        const genres = (s.genre || '').split(/[・、,/]/).map(x => x.trim());
+        if (!genres.includes(activeGenre)) return false;
       }
-      initFadeIn();
-    })();
-  </script>
+      return true;
+    });
+  }
+
+  function initMap() {
+    map = L.map('map', { zoomControl: true, attributionControl: true })
+      .setView([33.588, 130.395], 12);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      maxZoom: 19
+    }).addTo(map);
+    addMarkers();
+  }
+
+  function addMarkers() {
+    markers.forEach(m => map.removeLayer(m.layer));
+    markers = [];
+
+    const shops = getFilteredShops();
+    shops.forEach(s => {
+      const lat = s.coordinates && s.coordinates.lat;
+      const lng = s.coordinates && s.coordinates.lng;
+      if (!lat || !lng) return;
+
+      const initial = (s.name || '').charAt(0);
+      const icon = L.divIcon({
+        className: '',
+        html: '<div class="map-pin">' + escHtml(initial) + '</div>',
+        iconSize: [32, 37], iconAnchor: [16, 37], popupAnchor: [0, -40]
+      });
+
+      const layer = L.marker([lat, lng], { icon: icon }).addTo(map);
+      const comment = (s.nutsComment && (s.nutsComment.short || s.nutsComment.long)) || '';
+
+      layer.bindPopup(
+        '<div class="popup-name">' + escHtml(s.name) + '</div>' +
+        '<div class="popup-tags">' + escHtml(s.area) + ' ／ ' + escHtml(s.genre) + '</div>' +
+        (comment ? '<div class="popup-comment">' + escHtml(comment) + '</div>' : ''),
+        { closeButton: false, maxWidth: 240 }
+      );
+      layer.on('mouseover', function() { this.openPopup(); });
+      layer.on('click', function() { scrollToCard(s.id); });
+
+      markers.push({ id: s.id, layer: layer });
+    });
+
+    if (markers.length > 0) {
+      const group = L.featureGroup(markers.map(m => m.layer));
+      map.fitBounds(group.getBounds().pad(0.18));
+    }
+  }
+
+  function renderShops() {
+    const shops = getFilteredShops();
+    const list = document.getElementById('shopList');
+    document.getElementById('visibleCount').textContent = shops.length;
+    document.getElementById('totalCount').textContent = SHOPS.length;
+
+    if (shops.length === 0) {
+      list.innerHTML = '<div class="empty-state">該当する店舗がありません。</div>';
+      return;
+    }
+
+    list.innerHTML = shops.map((s, i) => {
+      const lat = s.coordinates && s.coordinates.lat;
+      const lng = s.coordinates && s.coordinates.lng;
+      const comment = (s.nutsComment && (s.nutsComment.short || s.nutsComment.long)) || '';
+
+      let infoHtml = '';
+      if (s.address)    infoHtml += '<div class="shop-info-row">📍 <span>' + escHtml(s.address) + '</span></div>';
+      if (s.hours)      infoHtml += '<div class="shop-info-row">🕐 <span>' + escHtml(s.hours) + '</span></div>';
+      if (s.closedDays) infoHtml += '<div class="shop-info-row">休 <span>' + escHtml(s.closedDays) + '</span></div>';
+
+      const igUrl = s.instagramUrl || (s.instagram ? 'https://instagram.com/' + s.instagram : '');
+      const routeUrl = (lat && lng) ? 'https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lng : '';
+
+      return '<div class="shop-card" id="shop-' + escHtml(s.id) + '" style="animation-delay:' + (i * 0.04) + 's">' +
+        '<div class="shop-card-top">' +
+          '<div class="shop-name">' + escHtml(s.name) + '</div>' +
+          '<div class="shop-tags">' +
+            '<span class="shop-tag area">' + escHtml(s.area) + '</span>' +
+            '<span class="shop-tag">' + escHtml(s.genre) + '</span>' +
+          '</div>' +
+        '</div>' +
+        (comment ? '<div class="nuts-comment">' + escHtml(comment) + '<span class="nuts-comment-sig">— Nuts</span></div>' : '') +
+        infoHtml +
+        '<div class="shop-bottom">' +
+          (igUrl ? '<a href="' + escHtml(igUrl) + '" target="_blank" rel="noopener noreferrer" class="shop-btn ig" onclick="event.stopPropagation()">Instagram →</a>' : '') +
+          (routeUrl ? '<a href="' + escHtml(routeUrl) + '" target="_blank" rel="noopener noreferrer" class="shop-btn route" onclick="event.stopPropagation()">経路 ↗</a>' : '') +
+          ((lat && lng) ? '<button class="shop-btn" onclick="event.stopPropagation();flyToShop(\'' + escHtml(s.id) + '\')">MAP</button>' : '') +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
+  function bindTabs() {
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const tab = this.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          if (b.dataset.tab === tab) b.classList.add('active');
+          else b.classList.remove('active');
+        });
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        const panel = document.getElementById('panel-' + tab);
+        if (panel) panel.classList.add('active');
+        if (tab === 'map') setTimeout(() => map && map.invalidateSize(), 100);
+        if (this.closest('.tab-bar-bottom')) {
+          document.querySelector('.tab-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
+
+  function bindShare() {
+    const url = 'https://daimyo-connect-recommend.vercel.app/';
+    const text = 'NUTS PICKS — ナッツが本気でおすすめする福岡の店\n食べログの星じゃなく、自分の足で確かめた店だけ。';
+    document.getElementById('shareX').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+    document.getElementById('shareLine').href = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text);
+    document.getElementById('shareCopy').addEventListener('click', function() {
+      const btn = this;
+      navigator.clipboard.writeText(url).then(() => {
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+        }, 1800);
+      });
+    });
+  }
+
+  window.flyToShop = function(id) {
+    const s = SHOPS.find(x => x.id === id);
+    if (!s) return;
+    const lat = s.coordinates && s.coordinates.lat;
+    const lng = s.coordinates && s.coordinates.lng;
+    if (lat && lng) {
+      map.flyTo([lat, lng], 16, { duration: 0.8 });
+      const m = markers.find(x => x.id === id);
+      if (m) setTimeout(() => m.layer.openPopup(), 800);
+    }
+    document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+  window.scrollToMap = function() {
+    const mapTabBtn = document.querySelector('.tab-btn[data-tab="map"]');
+    if (mapTabBtn && !mapTabBtn.classList.contains('active')) mapTabBtn.click();
+    setTimeout(() => document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
+  };
+
+  function scrollToCard(id) {
+    const el = document.getElementById('shop-' + id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      el.style.borderColor = 'var(--accent)';
+      setTimeout(() => { el.style.borderColor = ''; }, 2000);
+    }
+  }
+})();
+</script>
 </body>
 </html>

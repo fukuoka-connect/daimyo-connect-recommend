@@ -12,13 +12,21 @@
       "phone": null,
       "hours": "21:00〜翌3:00",
       "closedDays": null,
-      "coordinates": { "lat": 33.5867924, "lng": 130.3934889 },
+      "coordinates": {
+        "lat": 33.5867924,
+        "lng": 130.3934889
+      },
       "photos": [],
       "nutsComment": {
-        "short": "【要入稿：30字ショート】",
+        "short": "（仮）深夜にだけ会いに行ける、もうひとつの居場所。",
         "long": "【要入稿：100〜200字ロング。ナッツさんの声で、この店を選ぶ理由を。音楽、空気、人、時間。何でもいい。】"
       },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "O", "bio": null }
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "O",
+        "bio": null
+      }
     },
     {
       "id": "skb-koji",
@@ -32,10 +40,21 @@
       "phone": "092-762-2662",
       "hours": null,
       "closedDays": null,
-      "coordinates": { "lat": 33.5870928, "lng": 130.3920722 },
+      "coordinates": {
+        "lat": 33.5870928,
+        "lng": 130.3920722
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "K", "bio": null }
+      "nutsComment": {
+        "short": "（仮）大名の路地裏で、誰かが待っている。一人でも常連になれる店。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "K",
+        "bio": null
+      }
     },
     {
       "id": "mint-bar-hacca",
@@ -50,10 +69,21 @@
       "hours": "19:00〜24:00",
       "closedDays": "日曜",
       "website": "https://hacca.menu/",
-      "coordinates": { "lat": 33.5860145, "lng": 130.3927255 },
+      "coordinates": {
+        "lat": 33.5860145,
+        "lng": 130.3927255
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "H", "bio": null }
+      "nutsComment": {
+        "short": "（仮）一杯のカクテルが、その日の自分を肯定してくれる。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "H",
+        "bio": null
+      }
     },
     {
       "id": "com-stand",
@@ -67,10 +97,21 @@
       "phone": "092-733-8037",
       "hours": "18:00〜24:00",
       "closedDays": null,
-      "coordinates": { "lat": 33.5860138, "lng": 130.3914882 },
+      "coordinates": {
+        "lat": 33.5860138,
+        "lng": 130.3914882
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "C", "bio": null }
+      "nutsComment": {
+        "short": "（仮）立ち呑みの軽さと、座って語れる懐の深さ。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "C",
+        "bio": null
+      }
     },
     {
       "id": "komatakaman",
@@ -84,10 +125,21 @@
       "phone": "092-739-8123",
       "hours": "17:00〜翌2:00",
       "closedDays": null,
-      "coordinates": { "lat": 33.5874249, "lng": 130.3940975 },
+      "coordinates": {
+        "lat": 33.5874249,
+        "lng": 130.3940975
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "K", "bio": null }
+      "nutsComment": {
+        "short": "（仮）料理も酒も人も、すべてが「ちゃんとしている」夜の安心地帯。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "K",
+        "bio": null
+      }
     },
     {
       "id": "pinon-bar",
@@ -101,10 +153,21 @@
       "phone": null,
       "hours": null,
       "closedDays": null,
-      "coordinates": { "lat": 33.5865989, "lng": 130.3924595 },
+      "coordinates": {
+        "lat": 33.5865989,
+        "lng": 130.3924595
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "P", "bio": null }
+      "nutsComment": {
+        "short": "（仮）階段を降りた先で、夜が静かに深まっていく隠れ家。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "P",
+        "bio": null
+      }
     },
     {
       "id": "place-of-all-rush",
@@ -118,10 +181,21 @@
       "phone": null,
       "hours": "21:00〜翌5:00",
       "closedDays": null,
-      "coordinates": { "lat": 33.5800798, "lng": 130.3977156 },
+      "coordinates": {
+        "lat": 33.5800798,
+        "lng": 130.3977156
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "R", "bio": null }
+      "nutsComment": {
+        "short": "（仮）薬院の夜のラスト・ストップ。音楽と仲間と、朝まで。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "R",
+        "bio": null
+      }
     },
     {
       "id": "koubashiya",
@@ -136,10 +210,21 @@
       "hours": "8:00〜10:00 / 11:00〜15:00 / 17:00〜24:00",
       "closedDays": null,
       "website": "https://www.tablecheck.com/ja/koubashiya/reserve/message",
-      "coordinates": { "lat": 33.5950039, "lng": 130.4106244 },
+      "coordinates": {
+        "lat": 33.5950039,
+        "lng": 130.4106244
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "K", "bio": null }
+      "nutsComment": {
+        "short": "（仮）朝も昼も夜も、いつ行っても「正解」がある冷泉町の名店。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "K",
+        "bio": null
+      }
     },
     {
       "id": "shokudou-owan",
@@ -154,10 +239,21 @@
       "hours": "7:30〜10:30 / 12:00〜13:30 / 17:00〜22:30",
       "closedDays": null,
       "website": "https://www.tablecheck.com/shops/shokudou-owan/reserve",
-      "coordinates": { "lat": 33.5955202, "lng": 130.4112255 },
+      "coordinates": {
+        "lat": 33.5955202,
+        "lng": 130.4112255
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "O", "bio": null }
+      "nutsComment": {
+        "short": "（仮）出汁の透明さに、また通いたくなる理由が全部ある。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "O",
+        "bio": null
+      }
     },
     {
       "id": "bruntjet",
@@ -172,10 +268,21 @@
       "hours": "11:00〜19:00",
       "closedDays": "月曜",
       "website": "https://bruntjet.jp/",
-      "coordinates": { "lat": 33.5572059, "lng": 130.4060413 },
+      "coordinates": {
+        "lat": 33.5572059,
+        "lng": 130.4060413
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "B", "bio": null }
+      "nutsComment": {
+        "short": "（仮）髪を切る時間が、もう一つの会話になる場所。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "B",
+        "bio": null
+      }
     },
     {
       "id": "ponta",
@@ -189,10 +296,21 @@
       "phone": "092-541-1081",
       "hours": "18:00〜23:00",
       "closedDays": "月・日",
-      "coordinates": { "lat": 33.5647519, "lng": 130.4158123 },
+      "coordinates": {
+        "lat": 33.5647519,
+        "lng": 130.4158123
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "P", "bio": null }
+      "nutsComment": {
+        "short": "（仮）地元の常連と旅人が、同じカウンターで盃を交わす夜。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "P",
+        "bio": null
+      }
     },
     {
       "id": "loulou",
@@ -206,10 +324,21 @@
       "phone": null,
       "hours": "21:00〜翌1:00（土のみ〜翌2:00）",
       "closedDays": "日曜",
-      "coordinates": { "lat": 33.5653684, "lng": 130.4162248 },
+      "coordinates": {
+        "lat": 33.5653684,
+        "lng": 130.4162248
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "L", "bio": null }
+      "nutsComment": {
+        "short": "（仮）会話の温度がちょうどいい、野間の「もう一軒」相棒。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "L",
+        "bio": null
+      }
     },
     {
       "id": "sofuren-umi",
@@ -224,10 +353,21 @@
       "hours": "11:00〜15:00 / 17:30〜19:30",
       "closedDays": "木曜",
       "website": "https://fukuoka-connect.github.io/sofuren-umi/",
-      "coordinates": { "lat": 33.5690653, "lng": 130.5252323 },
+      "coordinates": {
+        "lat": 33.5690653,
+        "lng": 130.5252323
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": "後藤堅太郎", "photo": null, "photoPlaceholder": "G", "bio": "想夫恋宇美店 二代目。日田やきそば一筋、家族経営で地域に根ざす。" }
+      "nutsComment": {
+        "short": "（仮）日田焼きそば、噛むほどに広がる旨さ。家族で営む宇美町の味。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": "後藤堅太郎",
+        "photo": null,
+        "photoPlaceholder": "G",
+        "bio": "想夫恋宇美店 二代目。日田やきそば一筋、家族経営で地域に根ざす。"
+      }
     },
     {
       "id": "green-beach-house",
@@ -242,10 +382,21 @@
       "hours": "10:00〜17:00",
       "closedDays": "平日（土日のみ営業）",
       "website": "https://www.greenbeachhouse.jp/",
-      "coordinates": { "lat": 33.4482811, "lng": 130.0303448 },
+      "coordinates": {
+        "lat": 33.4482811,
+        "lng": 130.0303448
+      },
       "photos": [],
-      "nutsComment": { "short": "【要入稿：30字ショート】", "long": "【要入稿：100〜200字ロング】" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "G", "bio": null }
+      "nutsComment": {
+        "short": "（仮）海風と肉の煙、唐津の波音。夏の正解はここにある。",
+        "long": "【要入稿：100〜200字ロング】"
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "G",
+        "bio": null
+      }
     }
   ]
 }
