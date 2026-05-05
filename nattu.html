@@ -213,7 +213,7 @@ body{
 
   <div class="help">
     <strong>使い方（3ステップ）</strong><br>
-    ① 必須項目（赤★）だけ埋める／② 緯度経度はGoogleマップURLを貼ればOK／③ 「JSON生成→コピー」で後藤さんにLINE
+    ① 必須4項目（店名・エリア・ジャンル・住所）を埋める／② 任意項目は分かるだけでOK／③ 「JSON生成→コピー」で後藤さんにLINE
   </div>
 
   <!-- STEP 1: 基本情報 -->
@@ -256,27 +256,12 @@ body{
     <div class="field">
       <label>住所 <span class="req">★</span></label>
       <input type="text" id="f-address" placeholder="例：福岡市中央区大名1-10-6 日宝サンセーヌ舞鶴 202">
+      <div class="hint">マップ上の場所は後藤さん側で住所から自動で引きます。住所だけ入れてもらえばOK。</div>
     </div>
 
-    <div class="field">
-      <label>GoogleマップURL <span class="opt">（推奨／緯度経度を自動抽出）</span></label>
-      <input type="text" id="f-mapurl" placeholder="https://maps.google.com/?... を貼り付け">
-      <div class="hint">
-        スマホのGoogleマップで店を表示 → 共有 → 「リンクをコピー」をここに貼る。<br>
-        貼ると下の緯度経度が自動で埋まります。
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="field">
-        <label>緯度（lat）<span class="opt">自動</span></label>
-        <input type="text" id="f-lat" placeholder="33.5867924">
-      </div>
-      <div class="field">
-        <label>経度（lng）<span class="opt">自動</span></label>
-        <input type="text" id="f-lng" placeholder="130.3934889">
-      </div>
-    </div>
+    <input type="hidden" id="f-mapurl" value="">
+    <input type="hidden" id="f-lat" value="">
+    <input type="hidden" id="f-lng" value="">
   </div>
 
   <!-- STEP 3: 営業情報 -->
@@ -392,8 +377,9 @@ function buildShopObject(){
   const area = $('f-area').value.trim();
   const genre = $('f-genre').value.trim();
   const short = $('f-comment-short').value.trim();
-  if(!name || !area || !genre){
-    alert('★必須項目（店名・エリア・ジャンル）が未入力です。');
+  const addr = $('f-address').value.trim();
+  if(!name || !area || !genre || !addr){
+    alert('★必須項目（店名・エリア・ジャンル・住所）が未入力です。');
     return null;
   }
   const ig = $('f-ig').value.trim().replace(/^@/,'');
@@ -405,7 +391,6 @@ function buildShopObject(){
   const phone = $('f-phone').value.trim();
   const hours = $('f-hours').value.trim();
   const closed = $('f-closed').value.trim();
-  const addr = $('f-address').value.trim();
 
   const obj = {
     id: slugify(name),
