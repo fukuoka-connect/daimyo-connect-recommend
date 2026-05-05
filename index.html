@@ -222,6 +222,100 @@ a { color: inherit; text-decoration: none; }
     inset 0 1px 0 rgba(255,255,255,0.5);
 }
 .tab-btn.active .tab-icon { transform: scale(1.08); }
+
+/* AFTERタブを強調（非アクティブ時も目立たせる） */
+.tab-btn.tab-after {
+  position: relative;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(212,64,10,0.55), rgba(212,64,10,0.3));
+  border-color: rgba(255,170,64,0.6);
+  box-shadow: 0 0 0 1px rgba(255,170,64,0.25), 0 4px 14px rgba(212,64,10,0.25);
+  overflow: visible;
+}
+.tab-btn.tab-after::before {
+  content: '6/6';
+  position: absolute;
+  top: -7px; right: -6px;
+  font-size: 0.46rem; font-weight: 900; letter-spacing: 0.05em;
+  padding: 2px 6px; border-radius: 8px;
+  background: #fff;
+  color: #d4400a;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  z-index: 2;
+}
+.tab-btn.tab-after::after {
+  content: ''; position: absolute;
+  top: -3px; right: 4px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #ff5a3a;
+  box-shadow: 0 0 0 4px rgba(255,90,58,0.35);
+  animation: pulseDot 1.6s ease-in-out infinite;
+}
+.tab-btn.tab-after:hover {
+  background: linear-gradient(135deg, rgba(212,64,10,0.7), rgba(212,64,10,0.45));
+  border-color: rgba(255,170,64,0.85);
+}
+.tab-btn.tab-after.active {
+  background: linear-gradient(135deg, #ff7a3a 0%, #d4400a 100%);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 22px rgba(212,64,10,0.55), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+/* AFTER誘導CTA帯（ヒーロー直下） */
+.after-cta {
+  max-width: 520px; margin: 6px auto 0;
+  padding: 0 20px;
+}
+.after-cta-btn {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(212,64,10,0.95), rgba(255,122,58,0.85));
+  border: 1px solid rgba(255,170,64,0.5);
+  box-shadow: 0 8px 22px rgba(212,64,10,0.35), 0 0 0 1px rgba(255,255,255,0.05) inset;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s, box-shadow 0.2s;
+}
+.after-cta-btn::before {
+  content: ''; position: absolute;
+  top: 0; left: -60%; width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  animation: shimmer 3.2s ease-in-out infinite;
+}
+.after-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(212,64,10,0.5); }
+.after-cta-icon {
+  width: 38px; height: 38px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.18);
+  flex-shrink: 0;
+}
+.after-cta-text { flex: 1; min-width: 0; }
+.after-cta-label {
+  font-size: 0.5rem; font-weight: 800; letter-spacing: 0.22em;
+  opacity: 0.9;
+}
+.after-cta-title {
+  font-size: 0.88rem; font-weight: 800; letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+.after-cta-arrow { font-size: 1.1rem; opacity: 0.95; }
+@keyframes shimmer {
+  0% { left: -60%; }
+  60%, 100% { left: 120%; }
+}
+
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 .tab-bar-bottom {
@@ -717,6 +811,18 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<!-- AFTER CTA（イベント告知） -->
+<div class="after-cta">
+  <button type="button" class="after-cta-btn" onclick="goToAfter()">
+    <span class="after-cta-icon">🍻</span>
+    <span class="after-cta-text">
+      <span class="after-cta-label">2026.6.6 SAT — AFTER</span>
+      <span class="after-cta-title">DAIMYOU CONNECT 2026 終演後の飲み歩きMAP</span>
+    </span>
+    <span class="after-cta-arrow">→</span>
+  </button>
+</div>
+
 <!-- PHILOSOPHY -->
 <section class="philosophy">
   <p class="philosophy-text">
@@ -727,7 +833,7 @@ a { color: inherit; text-decoration: none; }
 <!-- TABS -->
 <div class="tab-bar">
   <button class="tab-btn active" data-tab="map"><span class="tab-icon">📍</span>店MAP</button>
-  <button class="tab-btn" data-tab="after"><span class="tab-icon">🍻</span>アフター飲み歩き</button>
+  <button class="tab-btn tab-after" data-tab="after"><span class="tab-icon">🍻</span>アフター飲み歩き</button>
   <button class="tab-btn" data-tab="about"><span class="tab-icon">👤</span>NATTU</button>
 </div>
 
@@ -844,7 +950,7 @@ a { color: inherit; text-decoration: none; }
 <!-- TABS (下層) -->
 <div class="tab-bar tab-bar-bottom">
   <button class="tab-btn" data-tab="map"><span class="tab-icon">📍</span>店MAP</button>
-  <button class="tab-btn" data-tab="after"><span class="tab-icon">🍻</span>アフター飲み歩き</button>
+  <button class="tab-btn tab-after" data-tab="after"><span class="tab-icon">🍻</span>アフター飲み歩き</button>
   <button class="tab-btn" data-tab="about"><span class="tab-icon">👤</span>NATTU</button>
 </div>
 
@@ -1154,6 +1260,14 @@ a { color: inherit; text-decoration: none; }
       if (m) setTimeout(() => m.layer.openPopup(), 800);
     }
     document.getElementById('map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+
+  window.goToAfter = function() {
+    const btn = document.querySelector('.tab-bar .tab-btn[data-tab="after"]');
+    if (btn) btn.click();
+    setTimeout(() => {
+      document.querySelector('.tab-bar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 80);
   };
 
   window.scrollToMap = function() {
