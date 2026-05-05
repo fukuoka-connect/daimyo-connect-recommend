@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>NATTU 店舗入稿ツール | NATTU PICKS</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#1a0e1e;
+  --panel:rgba(0,0,0,0.28);
+  --border:rgba(255,255,255,0.12);
+  --text:#fff;
+  --text-mid:rgba(255,255,255,0.78);
+  --text-dim:rgba(255,255,255,0.5);
+  --accent:#ffd475;
+  --accent-warm:#ffaa40;
+  --ok:#5eeaa0;
+  --warn:#ff7a3a;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter','Noto Sans JP',sans-serif;
+  background:var(--bg);
+  background-image:
+    radial-gradient(ellipse at top, rgba(255,170,64,0.15), transparent 60%),
+    linear-gradient(180deg,#1a0e1e 0%,#3a1622 100%);
+  background-attachment:fixed;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  padding:20px;
+}
+.wrap{max-width:560px;margin:0 auto}
+
+.head{
+  text-align:center;
+  margin-bottom:24px;
+  padding-bottom:20px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.head-tag{
+  display:inline-block;
+  font-size:0.55rem;font-weight:800;letter-spacing:0.28em;
+  color:var(--accent);text-transform:uppercase;
+  padding:4px 12px;border-radius:20px;
+  background:rgba(255,170,64,0.1);
+  border:1px solid rgba(255,170,64,0.3);
+  margin-bottom:14px;
+}
+.head-title{
+  font-size:1.55rem;font-weight:900;letter-spacing:0.04em;
+  background:linear-gradient(135deg,#fff,#ffd475 60%,#ffaa40);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:6px;
+}
+.head-sub{
+  font-size:0.78rem;color:var(--text-mid);line-height:1.7;
+}
+
+.card{
+  background:var(--panel);
+  backdrop-filter:blur(14px);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:18px 18px 22px;
+  margin-bottom:14px;
+}
+.card-title{
+  font-size:0.6rem;font-weight:800;letter-spacing:0.25em;
+  color:var(--text-dim);text-transform:uppercase;
+  margin-bottom:14px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.card-title .step{
+  font-size:0.7rem;color:var(--accent);font-weight:900;
+}
+
+.field{margin-bottom:14px}
+.field:last-child{margin-bottom:0}
+.field label{
+  display:block;
+  font-size:0.72rem;font-weight:700;letter-spacing:0.04em;
+  color:var(--text);
+  margin-bottom:6px;
+}
+.field label .req{color:var(--warn);font-size:0.6rem;margin-left:4px}
+.field label .opt{color:var(--text-dim);font-size:0.6rem;margin-left:4px;font-weight:500}
+.field .hint{
+  font-size:0.66rem;color:var(--text-dim);line-height:1.5;
+  margin-top:4px;
+}
+.field input,.field textarea,.field select{
+  width:100%;
+  font-family:inherit;font-size:0.92rem;
+  padding:11px 13px;
+  border-radius:9px;
+  border:1px solid var(--border);
+  background:rgba(0,0,0,0.4);
+  color:var(--text);
+  transition:border-color .15s,background .15s;
+}
+.field textarea{min-height:84px;resize:vertical;line-height:1.6}
+.field input:focus,.field textarea:focus,.field select:focus{
+  outline:none;
+  border-color:var(--accent);
+  background:rgba(0,0,0,0.55);
+}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,0.28)}
+
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  font-family:inherit;font-size:0.78rem;font-weight:800;letter-spacing:0.06em;
+  padding:11px 18px;border-radius:10px;
+  border:none;cursor:pointer;
+  transition:transform .15s,box-shadow .2s,background .2s;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn:active{transform:scale(0.98)}
+.btn-primary{
+  background:linear-gradient(135deg,#ffe09a,#ffd475 40%,#ffaa40);
+  color:#1a0e1e;
+  box-shadow:0 6px 18px rgba(255,170,64,0.35);
+}
+.btn-primary:hover{box-shadow:0 8px 22px rgba(255,170,64,0.5)}
+.btn-secondary{
+  background:rgba(255,255,255,0.08);color:var(--text);
+  border:1px solid var(--border);
+}
+.btn-secondary:hover{background:rgba(255,255,255,0.14)}
+.btn-ghost{
+  background:transparent;color:var(--text-dim);
+  border:1px solid var(--border);
+}
+.btn-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btn-block{width:100%;padding:14px}
+
+.output{
+  font-family:'SF Mono',Menlo,monospace;
+  font-size:0.72rem;line-height:1.65;
+  background:#0c0710;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:14px;
+  color:#ffd475;
+  white-space:pre-wrap;word-break:break-all;
+  max-height:340px;overflow:auto;
+}
+.copied{
+  background:#5eeaa0!important;color:#0a0a0f!important;
+}
+.help{
+  font-size:0.7rem;color:var(--text-mid);
+  background:rgba(255,170,64,0.06);
+  border-left:3px solid var(--accent);
+  padding:10px 14px;border-radius:0 8px 8px 0;
+  line-height:1.7;
+  margin-bottom:14px;
+}
+.help strong{color:var(--accent)}
+
+.toast{
+  position:fixed;left:50%;bottom:30px;transform:translateX(-50%);
+  background:#5eeaa0;color:#0a0a0f;
+  padding:12px 22px;border-radius:24px;
+  font-size:0.8rem;font-weight:800;letter-spacing:0.06em;
+  box-shadow:0 8px 24px rgba(94,234,160,0.45);
+  opacity:0;pointer-events:none;
+  transition:opacity .2s, transform .2s;
+  z-index:100;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(-4px)}
+
+.queue-count{
+  font-size:0.7rem;font-weight:700;color:var(--accent);
+  background:rgba(255,170,64,0.1);
+  padding:3px 10px;border-radius:12px;
+  border:1px solid rgba(255,170,64,0.3);
+}
+
+.share-tip{
+  margin-top:14px;font-size:0.72rem;color:var(--text-mid);
+  line-height:1.7;text-align:center;
+}
+.share-tip a{color:var(--accent);text-decoration:underline}
+
+.bottom-nav{
+  text-align:center;margin-top:24px;padding-top:18px;
+  border-top:1px solid rgba(255,255,255,0.06);
+  font-size:0.7rem;color:var(--text-dim);
+}
+.bottom-nav a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="head">
+    <span class="head-tag">NATTU INPUT TOOL</span>
+    <h1 class="head-title">店舗入稿ツール</h1>
+    <p class="head-sub">
+      お店の情報を埋めて「JSON生成」を押すだけ。<br>
+      生成されたコードを後藤さんに送ればサイトに追加されます。
+    </p>
+  </div>
+
+  <div class="help">
+    <strong>使い方（3ステップ）</strong><br>
+    ① 必須項目（赤★）だけ埋める／② 緯度経度はGoogleマップURLを貼ればOK／③ 「JSON生成→コピー」で後藤さんにLINE
+  </div>
+
+  <!-- STEP 1: 基本情報 -->
+  <div class="card">
+    <div class="card-title"><span>STEP 1 / 基本情報</span><span class="step">必須</span></div>
+
+    <div class="field">
+      <label>店名 <span class="req">★</span></label>
+      <input type="text" id="f-name" placeholder="例：晩酌bar ONEDAY">
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>エリア <span class="req">★</span></label>
+        <input type="text" id="f-area" list="area-list" placeholder="例：大名">
+        <datalist id="area-list">
+          <option value="大名"><option value="薬院"><option value="天神"><option value="博多"><option value="博多冷泉町"><option value="今泉"><option value="警固"><option value="赤坂"><option value="春吉"><option value="平尾"><option value="野間大池"><option value="野間四角"><option value="宇美町"><option value="唐津">
+        </datalist>
+      </div>
+      <div class="field">
+        <label>ジャンル <span class="req">★</span></label>
+        <input type="text" id="f-genre" list="genre-list" placeholder="例：バー">
+        <datalist id="genre-list">
+          <option value="バー"><option value="居酒屋"><option value="カクテルバー"><option value="和食"><option value="食事処"><option value="居酒屋・食事処"><option value="焼鳥"><option value="焼肉"><option value="ラーメン"><option value="うどん"><option value="そば"><option value="寿司"><option value="中華"><option value="イタリアン"><option value="フレンチ"><option value="カフェ"><option value="スイーツ"><option value="ヘアサロン"><option value="BBQ・海の家">
+        </datalist>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>ひと言コメント <span class="req">★</span></label>
+      <textarea id="f-comment-short" placeholder="30〜50字。なぜこの店をすすめるのか、ひと言で。&#10;例：深夜にだけ会いに行ける、もうひとつの居場所。"></textarea>
+      <div class="hint">サイトのカードに大きく載るキャッチコピー。NATTUの言葉そのままでOK。</div>
+    </div>
+  </div>
+
+  <!-- STEP 2: 場所 -->
+  <div class="card">
+    <div class="card-title"><span>STEP 2 / 場所</span><span class="step">必須</span></div>
+
+    <div class="field">
+      <label>住所 <span class="req">★</span></label>
+      <input type="text" id="f-address" placeholder="例：福岡市中央区大名1-10-6 日宝サンセーヌ舞鶴 202">
+    </div>
+
+    <div class="field">
+      <label>GoogleマップURL <span class="opt">（推奨／緯度経度を自動抽出）</span></label>
+      <input type="text" id="f-mapurl" placeholder="https://maps.google.com/?... を貼り付け">
+      <div class="hint">
+        スマホのGoogleマップで店を表示 → 共有 → 「リンクをコピー」をここに貼る。<br>
+        貼ると下の緯度経度が自動で埋まります。
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>緯度（lat）<span class="opt">自動</span></label>
+        <input type="text" id="f-lat" placeholder="33.5867924">
+      </div>
+      <div class="field">
+        <label>経度（lng）<span class="opt">自動</span></label>
+        <input type="text" id="f-lng" placeholder="130.3934889">
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: 営業情報 -->
+  <div class="card">
+    <div class="card-title"><span>STEP 3 / 営業情報</span><span class="step">任意</span></div>
+
+    <div class="field">
+      <label>営業時間 <span class="opt">任意</span></label>
+      <input type="text" id="f-hours" placeholder="例：21:00〜翌3:00">
+    </div>
+    <div class="row">
+      <div class="field">
+        <label>定休日 <span class="opt">任意</span></label>
+        <input type="text" id="f-closed" placeholder="例：日曜">
+      </div>
+      <div class="field">
+        <label>電話 <span class="opt">任意</span></label>
+        <input type="text" id="f-phone" placeholder="例：092-000-0000">
+      </div>
+    </div>
+    <div class="field">
+      <label>Instagram ID <span class="opt">任意</span></label>
+      <input type="text" id="f-ig" placeholder="@なしで入力。例：oneday_banshakubar">
+    </div>
+    <div class="field">
+      <label>公式サイト <span class="opt">任意</span></label>
+      <input type="text" id="f-website" placeholder="https://...">
+    </div>
+  </div>
+
+  <!-- STEP 4: 詳細コメント -->
+  <div class="card">
+    <div class="card-title"><span>STEP 4 / 詳細コメント</span><span class="step">任意</span></div>
+
+    <div class="field">
+      <label>詳細コメント <span class="opt">任意・100〜200字</span></label>
+      <textarea id="f-comment-long" placeholder="ここはNATTUの本音で。音楽、空気、人、時間、何でもいい。&#10;空欄でもOK（後で埋めてもOK）。" style="min-height:140px"></textarea>
+    </div>
+  </div>
+
+  <!-- 出力 -->
+  <div class="card">
+    <div class="card-title">
+      <span>JSON出力</span>
+      <span class="queue-count" id="queueCount">0件</span>
+    </div>
+
+    <button class="btn btn-primary btn-block" type="button" onclick="addShop()">
+      ＋ この店を追加してJSON生成
+    </button>
+
+    <div class="btn-row" style="margin-top:14px">
+      <button class="btn btn-secondary" type="button" onclick="copyJson()" id="btnCopy" style="flex:1">📋 コピー</button>
+      <button class="btn btn-ghost" type="button" onclick="resetAll()">🗑 全リセット</button>
+    </div>
+
+    <div class="output" id="output" style="margin-top:14px">// まだ何も追加されていません。
+// 上のフォームに記入して「＋ この店を追加してJSON生成」を押してください。</div>
+
+    <div class="share-tip">
+      コピーしたら、<strong style="color:var(--accent)">後藤さんにLINEで送信</strong>するだけ。<br>
+      数分でサイトに反映されます。
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <a href="/">← NATTU PICKS トップへ戻る</a>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">コピーしました</div>
+
+<script>
+let shopQueue = [];
+
+function $(id){return document.getElementById(id)}
+
+function slugify(s){
+  return String(s||'')
+    .toLowerCase()
+    .replace(/[\s　]+/g,'-')
+    .replace(/[^a-z0-9\-]/g,'')
+    .replace(/-+/g,'-')
+    .replace(/^-|-$/g,'')
+    .slice(0,40) || ('shop-' + Date.now().toString(36));
+}
+
+function parseLatLng(url){
+  if(!url) return null;
+  // パターン1: @33.58,130.39
+  let m = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+  if(m) return {lat:parseFloat(m[1]),lng:parseFloat(m[2])};
+  // パターン2: ll=33.58,130.39 or q=33.58,130.39
+  m = url.match(/[?&!](?:ll|q|destination)=(-?\d+\.\d+),(-?\d+\.\d+)/);
+  if(m) return {lat:parseFloat(m[1]),lng:parseFloat(m[2])};
+  // パターン3: 3d33.58!4d130.39
+  m = url.match(/3d(-?\d+\.\d+)[^0-9]*4d(-?\d+\.\d+)/);
+  if(m) return {lat:parseFloat(m[1]),lng:parseFloat(m[2])};
+  return null;
+}
+
+$('f-mapurl').addEventListener('input', function(e){
+  const c = parseLatLng(e.target.value);
+  if(c){
+    $('f-lat').value = c.lat;
+    $('f-lng').value = c.lng;
+  }
+});
+
+function buildShopObject(){
+  const name = $('f-name').value.trim();
+  const area = $('f-area').value.trim();
+  const genre = $('f-genre').value.trim();
+  const short = $('f-comment-short').value.trim();
+  if(!name || !area || !genre || !short){
+    alert('★必須項目（店名・エリア・ジャンル・ひと言）が未入力です。');
+    return null;
+  }
+  const ig = $('f-ig').value.trim().replace(/^@/,'');
+  const lat = parseFloat($('f-lat').value);
+  const lng = parseFloat($('f-lng').value);
+  const long = $('f-comment-long').value.trim();
+  const mapurl = $('f-mapurl').value.trim();
+  const website = $('f-website').value.trim();
+  const phone = $('f-phone').value.trim();
+  const hours = $('f-hours').value.trim();
+  const closed = $('f-closed').value.trim();
+  const addr = $('f-address').value.trim();
+
+  const obj = {
+    id: slugify(name),
+    name: name,
+    area: area,
+    genre: genre,
+    address: addr || null,
+    googleMapUrl: mapurl || null,
+    instagram: ig || null,
+    instagramUrl: ig ? ('https://instagram.com/' + ig) : null,
+    phone: phone || null,
+    hours: hours || null,
+    closedDays: closed || null
+  };
+  if(website) obj.website = website;
+  obj.coordinates = (isFinite(lat)&&isFinite(lng)) ? {lat:lat,lng:lng} : null;
+  obj.photos = [];
+  obj.nutsComment = { short: short, long: long || '' };
+  obj.owner = { name:null, photo:null, photoPlaceholder:(name.charAt(0)||'X').toUpperCase(), bio:null };
+  return obj;
+}
+
+function addShop(){
+  const obj = buildShopObject();
+  if(!obj) return;
+  shopQueue.push(obj);
+  renderOutput();
+  toast('追加しました（' + shopQueue.length + '件目）');
+  // フォームクリア（次の店入力に備える）
+  ['f-name','f-area','f-genre','f-comment-short','f-address','f-mapurl','f-lat','f-lng','f-hours','f-closed','f-phone','f-ig','f-website','f-comment-long'].forEach(id=>$(id).value='');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderOutput(){
+  $('queueCount').textContent = shopQueue.length + '件';
+  if(shopQueue.length === 0){
+    $('output').textContent = '// まだ何も追加されていません。';
+    return;
+  }
+  const json = shopQueue.map(s=>JSON.stringify(s,null,2)).join(',\n');
+  $('output').textContent =
+    '// 後藤さんへ：以下を data/shops.json の "shops": [ ... ] 配列に追加してください。\n' +
+    '// 件数：' + shopQueue.length + '件\n\n' +
+    json;
+}
+
+function copyJson(){
+  if(shopQueue.length===0){ alert('まだ追加された店がありません。'); return; }
+  navigator.clipboard.writeText($('output').textContent).then(()=>{
+    const b = $('btnCopy');
+    b.classList.add('copied');
+    b.textContent = '✓ コピー完了';
+    toast('コピーしました（' + shopQueue.length + '件）');
+    setTimeout(()=>{ b.classList.remove('copied'); b.textContent = '📋 コピー'; },2000);
+  });
+}
+
+function resetAll(){
+  if(shopQueue.length>0 && !confirm(shopQueue.length+'件の入力データをすべて消します。よろしいですか？')) return;
+  shopQueue = [];
+  renderOutput();
+  toast('リセットしました');
+}
+
+function toast(msg){
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2000);
+}
+
+// 入力途中でリロードされてもデータが残るよう、簡易autosave
+const SAVE_KEY = 'nattu-input-queue';
+window.addEventListener('beforeunload', ()=>{
+  if(shopQueue.length>0) sessionStorage.setItem(SAVE_KEY, JSON.stringify(shopQueue));
+});
+try{
+  const saved = sessionStorage.getItem(SAVE_KEY);
+  if(saved){
+    shopQueue = JSON.parse(saved);
+    renderOutput();
+  }
+}catch(e){}
+</script>
+
+</body>
+</html>
