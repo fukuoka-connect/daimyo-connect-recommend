@@ -243,9 +243,9 @@ body{
     </div>
 
     <div class="field">
-      <label>ひと言コメント <span class="req">★</span></label>
-      <textarea id="f-comment-short" placeholder="30〜50字。なぜこの店をすすめるのか、ひと言で。&#10;例：深夜にだけ会いに行ける、もうひとつの居場所。"></textarea>
-      <div class="hint">サイトのカードに大きく載るキャッチコピー。NATTUの言葉そのままでOK。</div>
+      <label>ひと言コメント <span class="opt">任意</span></label>
+      <textarea id="f-comment-short" placeholder="空欄でもOK。書きたいことがあれば自由に。&#10;例：深夜にだけ会いに行ける、もうひとつの居場所。"></textarea>
+      <div class="hint">空欄の場合は後藤さん側で生成します。書きたい雰囲気・キーワードだけメモする使い方でも◎</div>
     </div>
   </div>
 
@@ -392,8 +392,8 @@ function buildShopObject(){
   const area = $('f-area').value.trim();
   const genre = $('f-genre').value.trim();
   const short = $('f-comment-short').value.trim();
-  if(!name || !area || !genre || !short){
-    alert('★必須項目（店名・エリア・ジャンル・ひと言）が未入力です。');
+  if(!name || !area || !genre){
+    alert('★必須項目（店名・エリア・ジャンル）が未入力です。');
     return null;
   }
   const ig = $('f-ig').value.trim().replace(/^@/,'');
@@ -423,7 +423,7 @@ function buildShopObject(){
   if(website) obj.website = website;
   obj.coordinates = (isFinite(lat)&&isFinite(lng)) ? {lat:lat,lng:lng} : null;
   obj.photos = [];
-  obj.nutsComment = { short: short, long: long || '' };
+  obj.nutsComment = { short: short || '', long: long || '' };
   obj.owner = { name:null, photo:null, photoPlaceholder:(name.charAt(0)||'X').toUpperCase(), bio:null };
   return obj;
 }
