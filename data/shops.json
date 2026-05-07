@@ -4,14 +4,14 @@
       "id": "oneday",
       "name": "晩酌bar ONEDAY",
       "area": "大名",
-      "genre": "バー",
+      "genre": "酒場",
       "address": "福岡市中央区大名1-10-6 日宝サンセーヌ舞鶴 202",
       "googleMapUrl": "https://maps.google.com/?cid=12614811444005400589",
       "instagram": "oneday_banshakubar",
       "instagramUrl": "https://instagram.com/oneday_banshakubar",
       "phone": null,
       "hours": "21:00〜翌3:00",
-      "closedDays": null,
+      "closedDays": "火曜",
       "coordinates": {
         "lat": 33.5867924,
         "lng": 130.3934889
@@ -32,14 +32,14 @@
       "id": "skb-koji",
       "name": "酒場コージ",
       "area": "大名",
-      "genre": "居酒屋",
+      "genre": "酒場",
       "address": "福岡市中央区大名1-9-18 大名Fビル 102",
       "googleMapUrl": "https://maps.google.com/?cid=15841540613250389862",
       "instagram": "skb_ko_zi",
       "instagramUrl": "https://instagram.com/skb_ko_zi",
       "phone": "092-762-2662",
-      "hours": null,
-      "closedDays": null,
+      "hours": "18:00〜翌2:00",
+      "closedDays": "火曜",
       "coordinates": {
         "lat": 33.5870928,
         "lng": 130.3920722
@@ -87,7 +87,7 @@
     },
     {
       "id": "com-stand",
-      "name": ".comSTAND",
+      "name": "海鮮酒場 .comSTAND",
       "area": "大名",
       "genre": "居酒屋",
       "address": "福岡市中央区大名1-7-10 1階",
@@ -115,7 +115,7 @@
     },
     {
       "id": "komatakaman",
-      "name": "大名酒場 駒たか男",
+      "name": "大名酒場 駒たか男 × ひるとよる",
       "area": "大名",
       "genre": "居酒屋",
       "address": "福岡市中央区大名1-12-27 パシオン大名 B101",
@@ -150,9 +150,9 @@
       "googleMapUrl": "https://maps.google.com/?cid=11202968301735708671",
       "instagram": "pinonbar_daimyo",
       "instagramUrl": "https://instagram.com/pinonbar_daimyo",
-      "phone": null,
-      "hours": null,
-      "closedDays": null,
+      "phone": "092-732-7510",
+      "hours": "20:00〜翌2:00",
+      "closedDays": "日曜",
       "coordinates": {
         "lat": 33.5865989,
         "lng": 130.3924595
@@ -395,6 +395,156 @@
         "name": null,
         "photo": null,
         "photoPlaceholder": "G",
+        "bio": null
+      }
+    },
+    {
+      "id": "hete-3",
+      "name": "本格焼鳥大名 へて 参号店",
+      "area": "大名",
+      "genre": "焼鳥",
+      "address": "福岡県福岡市中央区大名1-3-32 1F",
+      "googleMapUrl": null,
+      "instagram": "daimyo_hete",
+      "instagramUrl": "https://instagram.com/daimyo_hete",
+      "phone": "092-762-6820",
+      "hours": "18:00〜24:00",
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "本",
+        "bio": null
+      }
+    },
+    {
+      "id": "saisai-akasaka",
+      "name": "サイサイ",
+      "area": "赤坂",
+      "genre": "沖縄料理",
+      "address": "福岡市中央区赤坂1-6-22",
+      "googleMapUrl": null,
+      "instagram": "akasaka_saisai",
+      "instagramUrl": "https://instagram.com/akasaka_saisai",
+      "phone": "092-711-7227",
+      "hours": "18:00〜翌2:00",
+      "closedDays": "日曜",
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "サ",
+        "bio": null
+      }
+    },
+    {
+      "id": "orenchi-tenjin-daimyo",
+      "name": "海鮮と焼き鳥居酒屋 俺ん家 天神大名",
+      "area": "大名",
+      "genre": "海鮮・焼鳥",
+      "address": "福岡県福岡市中央区大名1-11-4 どんぱビル 202",
+      "googleMapUrl": null,
+      "instagram": "orenchi0429",
+      "instagramUrl": "https://instagram.com/orenchi0429",
+      "phone": "092-715-5600",
+      "hours": "18:00〜23:30",
+      "closedDays": "月曜",
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "俺",
+        "bio": null
+      }
+    },
+    {
+      "id": "nagori",
+      "name": "日常の酒場 名残",
+      "area": "大名",
+      "genre": "酒場",
+      "address": "福岡県福岡市中央区大名1-10-10 21 2F",
+      "googleMapUrl": null,
+      "instagram": "nagori.daimyo",
+      "instagramUrl": "https://instagram.com/nagori.daimyo",
+      "phone": "092-285-4026",
+      "hours": null,
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "名",
+        "bio": null
+      }
+    },
+    {
+      "id": "hirutoyoru-honten",
+      "name": "ひるとよる 本店",
+      "area": "大名",
+      "genre": "焼鳥・ラーメン",
+      "address": "福岡県福岡市中央区大名2-6-20",
+      "googleMapUrl": null,
+      "instagram": "hirutoyoru092",
+      "instagramUrl": "https://instagram.com/hirutoyoru092",
+      "phone": "092-713-2008",
+      "hours": "11:00〜翌3:00",
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "ひ",
+        "bio": null
+      }
+    },
+    {
+      "id": "tobusoya",
+      "name": "清川飯店 とぶそーや",
+      "area": "清川",
+      "genre": "居酒屋",
+      "address": "福岡県福岡市中央区清川1-11-17 イル・グラッツィア渡辺通Ⅰ",
+      "googleMapUrl": null,
+      "instagram": "tobusoya_1015",
+      "instagramUrl": "https://instagram.com/tobusoya_1015",
+      "phone": "092-521-3335",
+      "hours": "17:00〜24:00",
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "清",
         "bio": null
       }
     }
