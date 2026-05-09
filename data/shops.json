@@ -18,8 +18,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "深夜にだけ会いに行ける、もうひとつの居場所。",
-        "long": "【要入稿：100〜200字ロング。ナッツさんの声で、この店を選ぶ理由を。音楽、空気、人、時間。何でもいい。】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -46,8 +46,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "大名の路地裏で、誰かが待っている。一人でも常連になれる店。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -75,8 +75,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "一杯のカクテルが、その日の自分を肯定してくれる。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -103,8 +103,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "立ち呑みの軽さと、座って語れる懐の深さ。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -131,8 +131,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "料理も酒も人も、すべてが「ちゃんとしている」夜の安心地帯。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -159,8 +159,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "路地を抜けた先で、夜が静かに深まっていく隠れ家。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -187,8 +187,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "薬院の夜のラスト・ストップ。音楽と仲間と、朝まで。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -216,8 +216,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "朝も昼も夜も、いつ行っても「正解」がある冷泉町の名店。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -245,8 +245,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "出汁の透明さに、また通いたくなる理由が全部ある。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -274,8 +274,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "髪を切る時間が、もう一つの会話になる場所。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -302,8 +302,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "地元の常連と旅人が、同じカウンターで盃を交わす夜。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -330,8 +330,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "会話の温度がちょうどいい、野間の「もう一軒」相棒。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -359,8 +359,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "日田焼きそば、噛むほどに広がる旨さ。家族で営む宇美町の味。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": "後藤堅太郎",
@@ -388,8 +388,8 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "海風と肉の煙、唐津の波音。夏の正解はここにある。",
-        "long": "【要入稿：100〜200字ロング】"
+        "short": "",
+        "long": ""
       },
       "owner": {
         "name": null,
@@ -562,8 +562,16 @@
       "closedDays": null,
       "coordinates": null,
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "食", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "食",
+        "bio": null
+      }
     },
     {
       "id": "shop-moxspneq",
@@ -579,8 +587,16 @@
       "closedDays": null,
       "coordinates": null,
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "小", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "小",
+        "bio": null
+      }
     },
     {
       "id": "sushitadao",
@@ -596,8 +612,16 @@
       "closedDays": null,
       "coordinates": null,
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "鮨", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "鮨",
+        "bio": null
+      }
     },
     {
       "id": "fisherman-diner-liber",
@@ -613,8 +637,16 @@
       "closedDays": null,
       "coordinates": null,
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "鮮", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "鮮",
+        "bio": null
+      }
     }
   ]
 }
