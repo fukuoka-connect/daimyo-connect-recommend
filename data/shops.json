@@ -159,7 +159,7 @@
       },
       "photos": [],
       "nutsComment": {
-        "short": "階段を降りた先で、夜が静かに深まっていく隠れ家。",
+        "short": "路地を抜けた先で、夜が静かに深まっていく隠れ家。",
         "long": "【要入稿：100〜200字ロング】"
       },
       "owner": {
@@ -547,6 +547,74 @@
         "photoPlaceholder": "清",
         "bio": null
       }
+    },
+    {
+      "id": "osai",
+      "name": "食堂 お菜 -osai-",
+      "area": "六本松",
+      "genre": "居酒屋",
+      "address": "福岡県福岡市中央区六本松２丁目５−１",
+      "googleMapUrl": null,
+      "instagram": "shokudou_osai",
+      "instagramUrl": "https://instagram.com/shokudou_osai",
+      "phone": "092-707-3735",
+      "hours": null,
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": { "short": "", "long": "" },
+      "owner": { "name": null, "photo": null, "photoPlaceholder": "食", "bio": null }
+    },
+    {
+      "id": "shop-moxspneq",
+      "name": "小料理屋 そのへん",
+      "area": "博多冷泉町",
+      "genre": "居酒屋",
+      "address": "福岡県福岡市博多区冷泉町８−２１ 2F",
+      "googleMapUrl": null,
+      "instagram": "koryouriya_sonohen",
+      "instagramUrl": "https://instagram.com/koryouriya_sonohen",
+      "phone": "092-261-2322",
+      "hours": null,
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": { "short": "", "long": "" },
+      "owner": { "name": null, "photo": null, "photoPlaceholder": "小", "bio": null }
+    },
+    {
+      "id": "sushitadao",
+      "name": "鮨・忠雄 SushiTadao",
+      "area": "住吉",
+      "genre": "寿司",
+      "address": "福岡県福岡市博多区住吉４丁目６−２１ 1階",
+      "googleMapUrl": null,
+      "instagram": "sushitadao",
+      "instagramUrl": "https://instagram.com/sushitadao",
+      "phone": "092-473-8448",
+      "hours": "17:30〜23:00",
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": { "short": "", "long": "" },
+      "owner": { "name": null, "photo": null, "photoPlaceholder": "鮨", "bio": null }
+    },
+    {
+      "id": "fisherman-diner-liber",
+      "name": "鮮魚酒場 FISHERMAN DINER LIBER",
+      "area": "今泉",
+      "genre": "居酒屋",
+      "address": "福岡県福岡市中央区今泉１丁目１８−２８ アペゼｉｍａｉｚｕｍｉ imaizumi４階",
+      "googleMapUrl": null,
+      "instagram": "fishermandiner_liber",
+      "instagramUrl": "https://instagram.com/fishermandiner_liber",
+      "phone": "092-233-4289",
+      "hours": null,
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": { "short": "", "long": "" },
+      "owner": { "name": null, "photo": null, "photoPlaceholder": "鮮", "bio": null }
     }
   ]
 }
