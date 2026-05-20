@@ -647,6 +647,258 @@
         "photoPlaceholder": "鮮",
         "bio": null
       }
+    },
+    {
+      "id": "bar9",
+      "name": "bar.9",
+      "area": "今泉",
+      "genre": "バー",
+      "address": "福岡県福岡市中央区今泉１丁目２３−４ remix天神 208",
+      "googleMapUrl": null,
+      "instagram": "imaizumi_bar9",
+      "instagramUrl": "https://instagram.com/imaizumi_bar9",
+      "phone": null,
+      "hours": "21:00〜1:00",
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "B",
+        "bio": null
+      }
+    },
+    {
+      "id": "toresol",
+      "name": "TORESOL",
+      "area": "警固",
+      "genre": "バー",
+      "address": "福岡県福岡市中央区警固１丁目１３−１ ＡＲＫ警固 3F",
+      "googleMapUrl": null,
+      "instagram": "tresol_jp",
+      "instagramUrl": "https://instagram.com/tresol_jp",
+      "phone": "092-713-8355",
+      "hours": "20:00〜5:00",
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "T",
+        "bio": null
+      }
+    },
+    {
+      "id": "shop-mpe364j4",
+      "name": "再来",
+      "area": "警固",
+      "genre": "酒場",
+      "address": "福岡県福岡市中央区警固１丁目１２−８ 1F",
+      "googleMapUrl": null,
+      "instagram": "saikurufuk",
+      "instagramUrl": "https://instagram.com/saikurufuk",
+      "phone": null,
+      "hours": "17:00〜1:00",
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "再",
+        "bio": null
+      }
+    },
+    {
+      "id": "bar-little-oasis",
+      "name": "Bar LITTLE OASIS",
+      "area": "平尾",
+      "genre": "バー",
+      "address": "福岡県福岡市中央区平尾２丁目１４−１８",
+      "googleMapUrl": null,
+      "instagram": "saikeman",
+      "instagramUrl": "https://instagram.com/saikeman",
+      "phone": null,
+      "hours": "21:00〜3:00",
+      "closedDays": "日曜・月曜",
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "店主のサイケさんは、\n神奈川は葉山の森戸海岸にあるOASISの元店長なんです！\nレゲエ好きな方は是非🍻\nサイケさんのモヒートオススメです😆🙌",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "B",
+        "bio": null
+      }
+    },
+    {
+      "id": "high-five-deli",
+      "name": "High Five Deli",
+      "area": "大名",
+      "genre": "バー",
+      "address": "福岡県福岡市中央区大名1丁目8-5養日コープ 102",
+      "googleMapUrl": null,
+      "instagram": "highfivedeli_fukuoka",
+      "instagramUrl": "https://instagram.com/highfivedeli_fukuoka",
+      "phone": "092-401-1272",
+      "hours": "昼11:00〜15:00   夜18:00〜5:00",
+      "closedDays": null,
+      "website": "high-five-deli.jp",
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "イベント会場徒歩3分😂\nここのチキンオーバーライス絶品です‼︎\n店主も最高なのでイベント終わりに是非🍻",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "H",
+        "bio": null
+      }
+    },
+    {
+      "id": "upsetters",
+      "name": "UPSETTERS",
+      "area": "春吉",
+      "genre": "レゲエバー",
+      "address": "福岡県福岡市中央区春吉３丁目１３−２４−２ レガリータ天神１",
+      "googleMapUrl": null,
+      "instagram": "upsetters.haruyoshi",
+      "instagramUrl": "https://instagram.com/upsetters.haruyoshi",
+      "phone": "092-287-6446",
+      "hours": null,
+      "closedDays": null,
+      "website": "fukuoka-upsetters.com",
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "U",
+        "bio": null
+      }
+    },
+    {
+      "id": "bomes-indee",
+      "name": "BOMES INDEE",
+      "area": "中洲",
+      "genre": "レゲエバー",
+      "address": "福岡県福岡市博多区中洲４丁目５−３−４",
+      "googleMapUrl": null,
+      "instagram": "bomesindee",
+      "instagramUrl": "https://instagram.com/bomesindee",
+      "phone": "092-282-7326",
+      "hours": "20:00〜4:00",
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "B",
+        "bio": null
+      }
+    },
+    {
+      "id": "bar-long",
+      "name": "Bar Long バーロング",
+      "area": "六本松",
+      "genre": "バー",
+      "address": "福岡県福岡市中央区六本松４丁目８−２５ 2F",
+      "googleMapUrl": null,
+      "instagram": "bar_long64",
+      "instagramUrl": "https://instagram.com/bar_long64",
+      "phone": null,
+      "hours": "18:00〜2:00",
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "B",
+        "bio": null
+      }
+    },
+    {
+      "id": "green-room",
+      "name": "GReen Room",
+      "area": "平尾",
+      "genre": "バー",
+      "address": "福岡県福岡市中央区平尾１丁目４−６ グレイスフル平尾 1F",
+      "googleMapUrl": null,
+      "instagram": "greenroom.hirao",
+      "instagramUrl": "https://instagram.com/greenroom.hirao",
+      "phone": "092-525-4173",
+      "hours": "20:00〜4:00",
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "G",
+        "bio": null
+      }
+    },
+    {
+      "id": "hige6cho",
+      "name": "HIGE6CHO",
+      "area": "薬院",
+      "genre": "タコス",
+      "address": "福岡県福岡市中央区薬院３丁目７−１４ 2F",
+      "googleMapUrl": null,
+      "instagram": "hige6cho",
+      "instagramUrl": "https://instagram.com/hige6cho",
+      "phone": "080-9143-4151",
+      "hours": "19:00〜4:00",
+      "closedDays": null,
+      "coordinates": null,
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "H",
+        "bio": null
+      }
     }
   ]
 }
