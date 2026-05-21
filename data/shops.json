@@ -410,7 +410,10 @@
       "phone": "092-762-6820",
       "hours": "18:00〜24:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.586578,
+        "lng": 130.393509
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -435,7 +438,10 @@
       "phone": "092-711-7227",
       "hours": "18:00〜翌2:00",
       "closedDays": "日曜",
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.586964,
+        "lng": 130.391037
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -460,7 +466,10 @@
       "phone": "092-715-5600",
       "hours": "18:00〜23:30",
       "closedDays": "月曜",
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.586884,
+        "lng": 130.394852
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -485,7 +494,10 @@
       "phone": "092-285-4026",
       "hours": null,
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.586559,
+        "lng": 130.393158
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -510,7 +522,10 @@
       "phone": "092-713-2008",
       "hours": "11:00〜翌3:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.588661,
+        "lng": 130.394104
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -535,7 +550,10 @@
       "phone": "092-521-3335",
       "hours": "17:00〜24:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.581738,
+        "lng": 130.407776
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -560,7 +578,10 @@
       "phone": "092-707-3735",
       "hours": "7:30〜15:00 / 17:00〜23:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.578415,
+        "lng": 130.378357
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -585,7 +606,10 @@
       "phone": "092-261-2322",
       "hours": "11:00〜15:00 / 17:00〜翌1:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.595142,
+        "lng": 130.410736
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -610,7 +634,10 @@
       "phone": "092-473-8448",
       "hours": "17:30〜23:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.584591,
+        "lng": 130.414597
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -635,7 +662,10 @@
       "phone": "092-233-4289",
       "hours": null,
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.585438,
+        "lng": 130.397583
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -660,7 +690,10 @@
       "phone": null,
       "hours": "21:00〜1:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.587154,
+        "lng": 130.400604
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -685,7 +718,10 @@
       "phone": "092-713-8355",
       "hours": "20:00〜5:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.585045,
+        "lng": 130.392365
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -710,7 +746,10 @@
       "phone": null,
       "hours": "17:00〜1:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.58493,
+        "lng": 130.392365
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -735,7 +774,10 @@
       "phone": null,
       "hours": "21:00〜3:00",
       "closedDays": "日曜・月曜",
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.573349,
+        "lng": 130.404526
+      },
       "photos": [],
       "nutsComment": {
         "short": "店主のサイケさんは、\n神奈川は葉山の森戸海岸にあるOASISの元店長なんです！\nレゲエ好きな方は是非🍻\nサイケさんのモヒートオススメです😆🙌",
@@ -761,7 +803,10 @@
       "hours": "昼11:00〜15:00   夜18:00〜5:00",
       "closedDays": null,
       "website": "high-five-deli.jp",
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.586437,
+        "lng": 130.392502
+      },
       "photos": [],
       "nutsComment": {
         "short": "イベント会場徒歩3分😂\nここのチキンオーバーライス絶品です‼︎\n店主も最高なのでイベント終わりに是非🍻",
@@ -787,7 +832,10 @@
       "hours": null,
       "closedDays": null,
       "website": "fukuoka-upsetters.com",
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.589283,
+        "lng": 130.406036
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -812,7 +860,10 @@
       "phone": "092-282-7326",
       "hours": "20:00〜4:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.592323,
+        "lng": 130.405914
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -837,7 +888,10 @@
       "phone": null,
       "hours": "18:00〜2:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.574608,
+        "lng": 130.377808
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -862,7 +916,10 @@
       "phone": "092-525-4173",
       "hours": "20:00〜4:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.578938,
+        "lng": 130.40152
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
@@ -887,7 +944,10 @@
       "phone": "080-9143-4151",
       "hours": "19:00〜4:00",
       "closedDays": null,
-      "coordinates": null,
+      "coordinates": {
+        "lat": 33.577457,
+        "lng": 130.400497
+      },
       "photos": [],
       "nutsComment": {
         "short": "",
