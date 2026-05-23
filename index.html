@@ -156,6 +156,12 @@ a { color: inherit; text-decoration: none; }
   color: var(--bg);
   border: 2px solid rgba(255,212,117,0.4);
   flex-shrink: 0;
+  overflow: hidden;
+}
+.hero-avatar img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 25%;
+  display: block;
 }
 .hero-curator-info { flex: 1; min-width: 0; }
 .hero-curator-name {
@@ -819,8 +825,11 @@ a { color: inherit; text-decoration: none; }
   function renderCurator() {
     if (!CURATOR) return;
     const initial = CURATOR.photoPlaceholder || (CURATOR.nameEn || CURATOR.name || 'N').charAt(0).toUpperCase();
-    document.getElementById('curatorAvatar').textContent = initial;
-    document.getElementById('aboutAvatar').textContent = initial;
+    const avatarHtml = CURATOR.photo
+      ? '<img src="' + escHtml(CURATOR.photo) + '" alt="' + escHtml(CURATOR.name || 'NATTU') + '">'
+      : escHtml(initial);
+    document.getElementById('curatorAvatar').innerHTML = avatarHtml;
+    document.getElementById('aboutAvatar').innerHTML = avatarHtml;
 
     const nameHtml = escHtml(CURATOR.name) + '<span class="en">' + escHtml(CURATOR.nameEn || '') + '</span>';
     document.getElementById('curatorName').innerHTML = nameHtml;
