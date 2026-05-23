@@ -379,8 +379,8 @@
       "instagram": "gbh.2010",
       "instagramUrl": "https://instagram.com/gbh.2010",
       "phone": "080-7010-6213",
-      "hours": "10:00〜17:00",
-      "closedDays": "平日（土日のみ営業）",
+      "hours": null,
+      "closedDays": null,
       "website": "https://www.greenbeachhouse.jp/",
       "coordinates": {
         "lat": 33.4482811,
