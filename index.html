@@ -740,13 +740,6 @@ a { color: inherit; text-decoration: none; }
     </div>
 
     <div class="about-block">
-      <div class="about-block-title">PHILOSOPHY</div>
-      <p class="about-philosophy" id="aboutPhilosophy">
-        このサイトに載っているのは、NATTUが実際に通い、信頼している店だけ。
-      </p>
-    </div>
-
-    <div class="about-block">
       <div class="about-block-title">EVENT</div>
       <a href="https://daimyo-connect.vercel.app/" target="_blank" rel="noopener noreferrer" class="event-promo">
         <div class="event-promo-text">
@@ -836,7 +829,6 @@ a { color: inherit; text-decoration: none; }
     document.getElementById('curatorRole').textContent = CURATOR.role || '';
     document.getElementById('aboutRole').textContent = CURATOR.role || '';
     if (CURATOR.bio) document.getElementById('aboutBio').textContent = CURATOR.bio;
-    if (CURATOR.philosophy) document.getElementById('aboutPhilosophy').textContent = CURATOR.philosophy;
   }
 
   function buildFilters() {
