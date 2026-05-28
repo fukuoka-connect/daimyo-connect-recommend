@@ -1,7 +1,10 @@
 .DS_Store
-node_modules/
-*.log
-.vscode/
+.env
+.env.local
 .idea/
-Thumbs.db
 .vercel
+.vscode/
+*.key
+*.log
+node_modules/
+Thumbs.db
