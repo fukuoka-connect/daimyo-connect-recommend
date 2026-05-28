@@ -868,6 +868,12 @@ a { color: inherit; text-decoration: none; }
       const lng = s.coordinates && s.coordinates.lng;
       s.walkMinutes = calcWalkMinutes(lat, lng);
     });
+    // 会場から近い順に並び替え（walkMinutes昇順、未算出は末尾）
+    SHOPS.sort((a, b) => {
+      const av = a.walkMinutes == null ? Infinity : a.walkMinutes;
+      const bv = b.walkMinutes == null ? Infinity : b.walkMinutes;
+      return av - bv;
+    });
     init();
   }).catch(err => console.error('data load failed', err));
 
