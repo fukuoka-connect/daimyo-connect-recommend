@@ -1217,34 +1217,6 @@
       }
     },
     {
-      "id": "bar9-imaizumi",
-      "name": "bar.9",
-      "area": "今泉",
-      "genre": "バー",
-      "address": "福岡県福岡市中央区今泉1丁目23-4 remix天神 208",
-      "googleMapUrl": "https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%BB%8A%E6%B3%891%E4%B8%81%E7%9B%AE23-4%20remix%E5%A4%A9%E7%A5%9E%20208",
-      "instagram": "imaizumi_barg",
-      "instagramUrl": "https://instagram.com/imaizumi_barg",
-      "phone": null,
-      "hours": "21:00〜1:00",
-      "closedDays": null,
-      "coordinates": {
-        "lat": 33.5848098,
-        "lng": 130.3997215
-      },
-      "photos": [],
-      "nutsComment": {
-        "short": "",
-        "long": ""
-      },
-      "owner": {
-        "name": null,
-        "photo": null,
-        "photoPlaceholder": "B",
-        "bio": null
-      }
-    },
-    {
       "id": "torinoya",
       "name": "とり乃屋",
       "area": "大名",
@@ -1765,10 +1737,21 @@
       "phone": null,
       "hours": "9:00〜14:00",
       "closedDays": "水・木＋不定休",
-      "coordinates": { "lat": 33.5732802, "lng": 130.5546854 },
+      "coordinates": {
+        "lat": 33.5732802,
+        "lng": 130.5546854
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "煮", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "煮",
+        "bio": null
+      }
     },
     {
       "id": "daikuu",
@@ -1782,10 +1765,21 @@
       "phone": "092-688-5967",
       "hours": "11:00〜15:00 / 17:00〜21:15",
       "closedDays": "月・火",
-      "coordinates": { "lat": 33.5778580, "lng": 130.4999756 },
+      "coordinates": {
+        "lat": 33.577858,
+        "lng": 130.4999756
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "麺", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "麺",
+        "bio": null
+      }
     },
     {
       "id": "bascula",
@@ -1799,10 +1793,21 @@
       "phone": "092-577-8738",
       "hours": "17:30〜2:00",
       "closedDays": "火曜",
-      "coordinates": { "lat": 33.5953610, "lng": 130.4763400 },
+      "coordinates": {
+        "lat": 33.595361,
+        "lng": 130.47634
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "B", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "B",
+        "bio": null
+      }
     },
     {
       "id": "wing-sue",
@@ -1816,10 +1821,21 @@
       "phone": "092-933-8121",
       "hours": "20:00〜24:00",
       "closedDays": "日曜",
-      "coordinates": { "lat": 33.5872549, "lng": 130.5071358 },
+      "coordinates": {
+        "lat": 33.5872549,
+        "lng": 130.5071358
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "W", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "W",
+        "bio": null
+      }
     },
     {
       "id": "penpengusa",
@@ -1833,10 +1849,21 @@
       "phone": "070-8574-3508",
       "hours": "17:00〜24:00",
       "closedDays": "月曜",
-      "coordinates": { "lat": 33.5872549, "lng": 130.5071358 },
+      "coordinates": {
+        "lat": 33.5872549,
+        "lng": 130.5071358
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "笑", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "笑",
+        "bio": null
+      }
     },
     {
       "id": "sanyoken",
@@ -1850,10 +1877,21 @@
       "phone": "092-935-9970",
       "hours": "11:00〜15:00",
       "closedDays": null,
-      "coordinates": { "lat": 33.5991582, "lng": 130.4912590 },
+      "coordinates": {
+        "lat": 33.5991582,
+        "lng": 130.491259
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "三", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "三",
+        "bio": null
+      }
     },
     {
       "id": "nado-curry",
@@ -1867,10 +1905,21 @@
       "phone": null,
       "hours": null,
       "closedDays": null,
-      "coordinates": { "lat": 33.5732802, "lng": 130.5546854 },
+      "coordinates": {
+        "lat": 33.5732802,
+        "lng": 130.5546854
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "N", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "N",
+        "bio": null
+      }
     },
     {
       "id": "hamburg-hayashi",
@@ -1884,10 +1933,21 @@
       "phone": "092-933-6678",
       "hours": "11:00〜14:30",
       "closedDays": "日曜",
-      "coordinates": { "lat": 33.5549414, "lng": 130.5083840 },
+      "coordinates": {
+        "lat": 33.5549414,
+        "lng": 130.508384
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "H", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "H",
+        "bio": null
+      }
     },
     {
       "id": "juzou-kashii",
@@ -1902,10 +1962,21 @@
       "hours": "18:00〜24:00",
       "closedDays": "日曜",
       "website": "https://yakitorisakaba-jyuzou.com/",
-      "coordinates": { "lat": 33.6556193, "lng": 130.4428369 },
+      "coordinates": {
+        "lat": 33.6556193,
+        "lng": 130.4428369
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "じ", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "じ",
+        "bio": null
+      }
     },
     {
       "id": "juzou-hanare",
@@ -1919,10 +1990,21 @@
       "phone": "092-609-9988",
       "hours": "17:00〜24:00",
       "closedDays": null,
-      "coordinates": { "lat": 33.6556193, "lng": 130.4428369 },
+      "coordinates": {
+        "lat": 33.6556193,
+        "lng": 130.4428369
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "蔵", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "蔵",
+        "bio": null
+      }
     },
     {
       "id": "kusemon",
@@ -1936,10 +2018,21 @@
       "phone": "092-600-1827",
       "hours": "18:00〜3:00",
       "closedDays": "日曜",
-      "coordinates": { "lat": 33.5933821, "lng": 130.4071583 },
+      "coordinates": {
+        "lat": 33.5933821,
+        "lng": 130.4071583
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "炭", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "炭",
+        "bio": null
+      }
     },
     {
       "id": "sushi-shogun",
@@ -1954,10 +2047,21 @@
       "hours": "11:00〜22:00",
       "closedDays": "月曜",
       "website": "https://sushishogun.com/",
-      "coordinates": { "lat": 33.5964627, "lng": 130.3986486 },
+      "coordinates": {
+        "lat": 33.5964627,
+        "lng": 130.3986486
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "す", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "す",
+        "bio": null
+      }
     },
     {
       "id": "manda-udon",
@@ -1972,10 +2076,21 @@
       "hours": "11:30〜15:00 / 17:00〜21:00",
       "closedDays": "火曜",
       "website": "https://japoncompany.business/",
-      "coordinates": { "lat": 33.5769234, "lng": 130.3957295 },
+      "coordinates": {
+        "lat": 33.5769234,
+        "lng": 130.3957295
+      },
       "photos": [],
-      "nutsComment": { "short": "", "long": "" },
-      "owner": { "name": null, "photo": null, "photoPlaceholder": "萬", "bio": null }
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "萬",
+        "bio": null
+      }
     }
   ]
 }
