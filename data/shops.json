@@ -2175,6 +2175,120 @@
         "photoPlaceholder": "い",
         "bio": null
       }
+    },
+    {
+      "id": "whenever",
+      "name": "WHENEVER",
+      "area": "大名",
+      "genre": "ファッション",
+      "address": "福岡県福岡市中央区大名１丁目３−２６ 天神ＳＫビル 1F",
+      "googleMapUrl": null,
+      "instagram": "whenever_fukuoka",
+      "instagramUrl": "https://instagram.com/whenever_fukuoka",
+      "phone": null,
+      "hours": "12:00〜19:00",
+      "closedDays": null,
+      "coordinates": {
+        "lat": 33.586750,
+        "lng": 130.393950
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "W",
+        "bio": null
+      }
+    },
+    {
+      "id": "apple-butter-store",
+      "name": "APPLE BUTTER STORE",
+      "area": "今泉",
+      "genre": "ファッション",
+      "address": "福岡県福岡市中央区今泉１丁目４−２５ 1F-A",
+      "googleMapUrl": null,
+      "instagram": "apple_butter_store",
+      "instagramUrl": "https://instagram.com/apple_butter_store",
+      "phone": "092-791-8837",
+      "hours": "12:00〜20:00",
+      "closedDays": null,
+      "website": "applebutter-storeonline.com",
+      "coordinates": {
+        "lat": 33.585500,
+        "lng": 130.398000
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "A",
+        "bio": null
+      }
+    },
+    {
+      "id": "birth-day",
+      "name": "BIRTH DAY",
+      "area": "大名",
+      "genre": "ファッション",
+      "address": "福岡県福岡市中央区大名１丁目２−３７−１ セルバ西大名 1F Ⅱ",
+      "googleMapUrl": null,
+      "instagram": "birth_day_official",
+      "instagramUrl": "https://instagram.com/birth_day_official",
+      "phone": "092-721-1125",
+      "hours": "11:00〜20:00",
+      "closedDays": null,
+      "website": "birthday-fukuoka.com",
+      "coordinates": {
+        "lat": 33.587200,
+        "lng": 130.394000
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "B",
+        "bio": null
+      }
+    },
+    {
+      "id": "shop-mpqjpvhg",
+      "name": "豚骨ラーメン麺処辰",
+      "area": "須恵町",
+      "genre": "ラーメン",
+      "address": "福岡県糟屋郡須惠町須恵町須恵１０７０−２ 1F",
+      "googleMapUrl": null,
+      "instagram": "mendocoro.tatsu",
+      "instagramUrl": "https://instagram.com/mendocoro.tatsu",
+      "phone": null,
+      "hours": null,
+      "closedDays": null,
+      "coordinates": {
+        "lat": 33.602000,
+        "lng": 130.488000
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "豚",
+        "bio": null
+      }
     }
   ]
 }
