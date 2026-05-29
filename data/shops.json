@@ -1514,8 +1514,8 @@
       "hours": "17:00〜24:00 ※金・土は26:00まで",
       "closedDays": null,
       "coordinates": {
-        "lat": 33.5868534,
-        "lng": 130.3943947
+        "lat": 33.589000,
+        "lng": 130.388000
       },
       "photos": [],
       "nutsComment": {
@@ -2089,6 +2089,90 @@
         "name": null,
         "photo": null,
         "photoPlaceholder": "萬",
+        "bio": null
+      }
+    },
+    {
+      "id": "shop-mppbnb55",
+      "name": "裏路地酒場あんど &",
+      "area": "大名",
+      "genre": "居酒屋",
+      "address": "福岡県福岡市中央区大名１丁目３−２３ 葵ビル",
+      "googleMapUrl": null,
+      "instagram": "uraroji_and",
+      "instagramUrl": "https://instagram.com/uraroji_and",
+      "phone": "090-8179-6778",
+      "hours": "18:00〜25:00",
+      "closedDays": "日曜",
+      "coordinates": {
+        "lat": 33.586710,
+        "lng": 130.393820
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "裏",
+        "bio": null
+      }
+    },
+    {
+      "id": "shop-mppbucv0",
+      "name": "しちみ",
+      "area": "大名",
+      "genre": "居酒屋",
+      "address": "福岡県福岡市中央区大名１丁目３−２８",
+      "googleMapUrl": null,
+      "instagram": "shichimi_2022",
+      "instagramUrl": "https://instagram.com/shichimi_2022",
+      "phone": "092-753-7442",
+      "hours": "17:00〜24:00",
+      "closedDays": "水曜",
+      "coordinates": {
+        "lat": 33.586780,
+        "lng": 130.393950
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "し",
+        "bio": null
+      }
+    },
+    {
+      "id": "shop-mppbx5ho",
+      "name": "いろり焼の店田舎屋",
+      "area": "大名",
+      "genre": "居酒屋",
+      "address": "福岡県福岡市中央区警固１丁目４−２７ ＫＥＧＯエイトビル ２Ｆ",
+      "googleMapUrl": null,
+      "instagram": "iroriyakinomise_inakaya",
+      "instagramUrl": "https://instagram.com/iroriyakinomise_inakaya",
+      "phone": "092-732-3422",
+      "hours": "18:00〜28:00",
+      "closedDays": null,
+      "coordinates": {
+        "lat": 33.585400,
+        "lng": 130.394600
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "い",
         "bio": null
       }
     }

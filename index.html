@@ -995,13 +995,9 @@ a { color: inherit; text-decoration: none; }
 
       const layer = L.marker([lat, lng], { icon: icon }).addTo(map);
 
-      const walkHtml = (s.walkMinutes != null)
-        ? '<div class="popup-walk">会場から徒歩' + s.walkMinutes + '分</div>'
-        : '';
       layer.bindPopup(
         '<div class="popup-name">' + escHtml(s.name) + '</div>' +
-        '<div class="popup-tags">' + escHtml(s.area) + ' ／ ' + escHtml(s.genre) + '</div>' +
-        walkHtml,
+        '<div class="popup-tags">' + escHtml(s.area) + ' ／ ' + escHtml(s.genre) + '</div>',
         { closeButton: false, maxWidth: 240 }
       );
       layer.on('mouseover', function() { this.openPopup(); });
@@ -1034,14 +1030,9 @@ a { color: inherit; text-decoration: none; }
       const igUrl = s.instagramUrl || (s.instagram ? 'https://instagram.com/' + s.instagram : '');
       const routeUrl = (lat && lng) ? 'https://www.google.com/maps/dir/?api=1&destination=' + lat + ',' + lng : '';
 
-      const walkHtml = (s.walkMinutes != null)
-        ? '<div class="shop-walk">会場から徒歩' + s.walkMinutes + '分</div>'
-        : '';
-
       return '<div class="shop-card" id="shop-' + escHtml(s.id) + '" style="animation-delay:' + (i * 0.04) + 's">' +
         '<div class="shop-card-top">' +
           '<div class="shop-name">' + escHtml(s.name) + '</div>' +
-          walkHtml +
           '<div class="shop-tags">' +
             '<span class="shop-tag area">' + escHtml(s.area) + '</span>' +
             '<span class="shop-tag">' + escHtml(s.genre) + '</span>' +
