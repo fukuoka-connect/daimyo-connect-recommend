@@ -2289,6 +2289,204 @@
         "photoPlaceholder": "豚",
         "bio": null
       }
+    },
+    {
+      "id": "shop-mpq8u0t7",
+      "name": "うどん　ウエスト天神店　　トリュフ釜玉",
+      "area": "天神",
+      "genre": "うどん",
+      "address": "福岡県福岡市中央区天神２丁目３−１０",
+      "googleMapUrl": "https://www.google.com/maps/search/?api=1&query=うどん%20ウエスト天神店%20福岡県福岡市中央区天神２丁目３−１０",
+      "instagram": null,
+      "instagramUrl": null,
+      "phone": "092-737-2011",
+      "hours": "11:00〜23:00",
+      "closedDays": null,
+      "website": "shop-west.jp",
+      "coordinates": {
+        "lat": 33.589500,
+        "lng": 130.401500
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "う",
+        "bio": null
+      }
+    },
+    {
+      "id": "shop-mpq8wdmn",
+      "name": "八ちゃんラーメン",
+      "area": "薬院",
+      "genre": "ラーメン",
+      "address": "福岡県福岡市中央区白金１丁目１−２７",
+      "googleMapUrl": "https://www.google.com/maps/search/?api=1&query=八ちゃんラーメン%20福岡県福岡市中央区白金１丁目１−２７",
+      "instagram": null,
+      "instagramUrl": null,
+      "phone": "092-521-1834",
+      "hours": "18:00〜26:00",
+      "closedDays": "日曜",
+      "coordinates": {
+        "lat": 33.580500,
+        "lng": 130.404500
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "八",
+        "bio": null
+      }
+    },
+    {
+      "id": "33cake",
+      "name": "33cake",
+      "area": "赤坂",
+      "genre": "ケーキ",
+      "address": "福岡県福岡市中央区赤坂１丁目１−２３",
+      "googleMapUrl": "https://www.google.com/maps/search/?api=1&query=33cake%20福岡県福岡市中央区赤坂１丁目１−２３",
+      "instagram": "33cake.jp",
+      "instagramUrl": "https://instagram.com/33cake.jp",
+      "phone": "092-401-7457",
+      "hours": "11:00〜19:00",
+      "closedDays": null,
+      "website": "33cake.jp",
+      "coordinates": {
+        "lat": 33.586200,
+        "lng": 130.392000
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "3",
+        "bio": null
+      }
+    },
+    {
+      "id": "shop-mpq921sz",
+      "name": "屋台のたまちゃん本館",
+      "area": "長浜屋台",
+      "genre": "焼鳥・ラーメン",
+      "address": "福岡県福岡市中央区長浜３丁目１４−４",
+      "googleMapUrl": "https://www.google.com/maps/search/?api=1&query=屋台のたまちゃん本館%20福岡県福岡市中央区長浜３丁目１４−４",
+      "instagram": "yatainotamachan",
+      "instagramUrl": "https://instagram.com/yatainotamachan",
+      "phone": null,
+      "hours": "18:30〜24:00",
+      "closedDays": null,
+      "coordinates": {
+        "lat": 33.596100,
+        "lng": 130.396500
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "屋",
+        "bio": null
+      }
+    },
+    {
+      "id": "shop-mpq98n0p",
+      "name": "テムジン大名店",
+      "area": "大名",
+      "genre": "餃子",
+      "address": "福岡県福岡市中央区大名１丁目１１−２",
+      "googleMapUrl": "https://www.google.com/maps/search/?api=1&query=テムジン大名店%20福岡県福岡市中央区大名１丁目１１−２",
+      "instagram": null,
+      "instagramUrl": null,
+      "phone": "092-751-5870",
+      "hours": "12:00〜24:00",
+      "closedDays": null,
+      "coordinates": {
+        "lat": 33.587600,
+        "lng": 130.394700
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "テ",
+        "bio": null
+      }
+    },
+    {
+      "id": "shop-mpq9elfy",
+      "name": "酔り道スタンド マチルダ",
+      "area": "大名",
+      "genre": "酒場",
+      "address": "福岡県福岡市中央区大名１丁目３−５−１ ARCCUBEⅡ 202号",
+      "googleMapUrl": "https://www.google.com/maps/search/?api=1&query=酔り道スタンド%20マチルダ%20福岡県福岡市中央区大名１丁目３−５−１%20ARCCUBEⅡ%20202号",
+      "instagram": null,
+      "instagramUrl": null,
+      "phone": "092-752-2123",
+      "hours": "19:00〜26:30 ※土曜は28:00まで",
+      "closedDays": null,
+      "coordinates": {
+        "lat": 33.586800,
+        "lng": 130.393500
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "酔",
+        "bio": null
+      }
+    },
+    {
+      "id": "we-are-ready",
+      "name": "We ARE READY",
+      "area": "大名",
+      "genre": "カフェ",
+      "address": "福岡県福岡市中央区大名１丁目１１−１５ 小谷ビル １−A",
+      "googleMapUrl": "https://www.google.com/maps/search/?api=1&query=We%20ARE%20READY%20福岡県福岡市中央区大名１丁目１１−１５%20小谷ビル%20１−A",
+      "instagram": "we.are.ready_fuk",
+      "instagramUrl": "https://instagram.com/we.are.ready_fuk",
+      "phone": "092-734-1050",
+      "hours": "11:00〜19:00",
+      "closedDays": null,
+      "coordinates": {
+        "lat": 33.587500,
+        "lng": 130.394600
+      },
+      "photos": [],
+      "nutsComment": {
+        "short": "",
+        "long": ""
+      },
+      "owner": {
+        "name": null,
+        "photo": null,
+        "photoPlaceholder": "W",
+        "bio": null
+      }
     }
   ]
 }
